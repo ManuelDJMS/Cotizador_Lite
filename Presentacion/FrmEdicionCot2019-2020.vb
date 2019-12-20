@@ -1,4 +1,5 @@
 ﻿Imports System.Runtime.InteropServices
+Imports System.Data.SqlClient
 Public Class FrmEdicionCot2019_2020
     Dim banm, banb As Boolean
     Dim clave1 As String
@@ -80,7 +81,143 @@ Public Class FrmEdicionCot2019_2020
     End Sub
 
     Private Sub FrmEdicionCot2019_2020_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DgEmpresas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
+        DgCotizaciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
+        MetodoMetasInf2019()
+        comando2019 = conexion2019.CreateCommand
+        R = "select isnull(MetAsInf.Clavempresa,'-'), isnull(MetAsInf.Compania,'-'), isnull(MetAsInf.DomicilioConsig,'-'), isnull(MetAsInf.CiudadConsig,'-'), isnull(MetAsInf.EdoConsig,'-'),
+         isnull([Contactos-Clientes-Usuarios].ClaveContacto,'-'), isnull([Contactos-Clientes-Usuarios].Nombre,'-'), isnull([Contactos-Clientes-Usuarios].Tel,'-'),
+         isnull([Contactos-Clientes-Usuarios].Ext,'-'), isnull([Contactos-Clientes-Usuarios].Email,'-'), isnull(EntradaRegistroCot.Numcot,'-'), EntradaRegistroCot.Fecha,
+         isnull(EntradaRegistroCot.Referencia,'-'), isnull(EntradaRegistroCot.Observaciones,'-'), isnull(EntradaRegistroCot.Numcond,'-'), isnull(Condiciones_p_cotizar.donde,'-'),
+         isnull(Condiciones_p_cotizar.Precios,'-'), isnull(Condiciones_p_cotizar.tentrega,'-'), isnull(Condiciones_p_cotizar.modalidad,'-'), isnull([Claves-Elaboro-Cot].Nombre,'-'), 
+         isnull(EntradaRegistroCot.ServicioEn,'-') 
+         from [InformacionGeneral].[dbo].MetAsInf inner join [InformacionGeneral].[dbo].[Contactos-Clientes-Usuarios] on MetAsInf.Clavempresa = [Contactos-Clientes-Usuarios].Clavempresa
+         inner join EntradaRegistroCot on [Contactos-Clientes-Usuarios].ClaveContacto = EntradaRegistroCot.ClaveContacto
+         inner join Condiciones_p_cotizar on EntradaRegistroCot.[Elaboró Cot] = Condiciones_p_cotizar.Numcond 
+         inner join [Claves-Elaboro-Cot] on [Claves-Elaboro-Cot].[Clave-elaboro-cot]= EntradaRegistroCot.[Elaboró Cot] where EntradaRegistroCot.Numcot =" & TxtCotizacion.Text
+        MsgBox(R)
+        comando2019.CommandText = R
+        lector2019 = comando2019.ExecuteReader
+        lector2019.Read()
+        TxtClaveE.Text = lector2019(0)
+        TxtNombreEmpresa.Text = lector2019(1)
+        TxtDomicilio.Text = lector2019(1)
+        TxtCiudad.Text = lector2019(3) = lector2019(3)
+        TxtEstado.Text = lector2019(4)
+        TxtCveContacto.Text = lector2019(5)
+        TxtNombreC.Text = lector2019(6)
+        TxtTelefono.Text = lector2019(7)
+        TxtExt.Text = lector2019(8)
+        TxtCorreo.Text = lector2019(9)
+        TxtReferencia.Text = lector2019(12)
+        TxtObservaciones.Text = lector2019(13)
+        TxtNumCon.Text = lector2019(14)
+        TxtCotizo.Text = lector2019(19)
+        CboServicio.Text = lector2019(20)
+        lector2019.Close()
+        R = "select *from [1Cotizar] where Numcot =" & Val(TxtCotizacion.Text)
+        comando2019.CommandText = R
+        lector2019 = comando2019.ExecuteReader
+        While lector2019.Read()
+            DgCotizaciones.Rows.Add(False, lector2019(2), lector2019(3), lector2019(5), lector2019(6), lector2019(7), lector2019(8), lector2019(10), lector2019(9), lector2019(11))
+        End While
+        lector2019.Close()
+
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim fechaActual As DateTime
+        Dim maximo As Integer
+        If DgCotizaciones.Rows.Count = 0 Then
+            MsgBox("No hay artículos por cotizar¡", MsgBoxStyle.Critical)
+        Else
+            If TxtCotizo2020.Text = "" Then
+                MsgBox("¿Quien Realiza esta Cotización?", MsgBoxStyle.Critical)
+            Else
+                Try
+                    fechaActual = Convert.ToDateTime(DtpDesde.Text).ToShortDateString
+                    Using conexion As New SqlConnection(conexion2020transac)
+                    conexion.Open()
+                    Dim transaction As SqlTransaction
+                    transaction = conexion.BeginTransaction("Sample")
+                    Dim comando As SqlCommand = conexion.CreateCommand()
+                    Dim lector As SqlDataReader
+                    comando.Connection = conexion
+                    comando.Transaction = transaction
+                    If TxtCotizacion.Text.Trim.Equals("") Then
+                        '========================================================== SACAR EL ULTIMO REGISTRO DE COTIZACIONES PARA EL DETALLE DE COTIZACION =============================================================
+                        R = "select MAX(Numcot) from [EntradaRegistroCot]"
+                        comando.CommandText = R
+                        lector = comando.ExecuteReader
+                        lector.Read()
+                        If ((lector(0) Is DBNull.Value) OrElse (lector(0) Is Nothing)) Then
+                            maximo = 1
+                        Else
+                            maximo = lector(0)
+                        End If
+                        lector.Close()
+                        '**************************************************** INSERTA EN ENTRADAREGISTROCOT *************************************************************************************
+                        R = "insert into EntradaRegistroCot (NumCot, Cliente, ClaveContacto, Fecha, Referencia, Numcond, Observaciones, ServicioEn, TipodeCliente, 
+                            CveEmpresa, [Elaboró Cot], ModoDeContabilizar) values (" & maximo + 1 & ",'" & TxtNombreEmpresa.Text & "',
+                            " & Val(TxtCveContacto.Text) & ", (CONVERT(varchar(10), getdate(), 103)),'" & TxtReferencia.Text & "'," & Val(TxtNumCon.Text) & ",
+                            '" & TxtObservaciones.Text & "','" & CboServicio.Text & "'," & Val(TxtTipoCliente.Text) & "," & Val(TxtClaveE.Text) & "," & Val(TxtCotizo2020.Text) & "," & TxtConta.Text & ")"
+                        comando.CommandText = R
+                        comando.ExecuteNonQuery()
+                        '=============================================== CODIGO PARA GUARDAR EN 1COTIZAR =========================================================================================
+                        For i = 0 To DgCotizaciones.Rows.Count - 2
+                            R = "insert into [1Cotizar] (Numcot, PartidaNo, ServCatalogo, Especial, Cant, Tipo, Marca, Modelo, Alcance, 
+                                ID, Punitariocot, Realizado) values (" & maximo + 1 & "," & Val(i + 1) & ",'" & DgCotizaciones.Item(2, i).Value & "',
+                                '" & "-" & "'," & Val(DgCotizaciones.Item(3, i).Value) & ",'" & DgCotizaciones.Item(4, i).Value & "',
+                                '" & DgCotizaciones.Item(5, i).Value & "','" & DgCotizaciones.Item(6, i).Value & "','" & DgCotizaciones.Item(8, i).Value & "','
+                                " & DgCotizaciones.Item(7, i).Value & "'," & Val(DgCotizaciones.Item(10, i).Value) & "," & "0" & ")"
+                            comando.CommandText = R
+                            comando.ExecuteNonQuery()
+                        Next i
+                    Else
+                        ''===================================== Se hace update a una cot apartada, ya existente (UPDATE) ==============================================================
+                        R = "update EntradaRegistroCot set NumCot='" & Val(TxtCotizacion20.Text) & "', Cliente = '" & TxtNombreEmpresa.Text & "', 
+                             ClaveContacto='" & Val(TxtCveContacto.Text) & "', Fecha= (CONVERT(varchar(10), getdate(), 103)), Referencia='" & TxtReferencia.Text & "', 
+                             Numcond='" & Val(TxtNumCon.Text) & "', Observaciones='" & TxtObservaciones.Text & "', ServicioEn='" & CboServicio.Text & "', 
+                             TipodeCliente='1', CveEmpresa='" & Val(TxtClaveE.Text) & "', [Elaboró Cot]=" & Val(TxtCotizo2020.Text) & ", 
+                             ModoDeContabilizar='" & Val(TxtConta.Text) & "' WHERE NumCot='" & Val(TxtCotizacion.Text) & "'"
+                        comando.CommandText = R
+                        comando.ExecuteNonQuery()
+                        For i = 0 To DgCotizaciones.Rows.Count - 2
+                            R = "insert into [1Cotizar] (Numcot, PartidaNo, ServCatalogo, Especial, Cant, Tipo, Marca, Modelo, Alcance, 
+                                 ID, Punitariocot, Realizado) values (" & Val(TxtCotizacion20.Text) & "," & Val(i + 1) & ",'" & DgCotizaciones.Item(2, i).Value & "',
+                                '" & "-" & "'," & Val(DgCotizaciones.Item(3, i).Value) & ",'" & DgCotizaciones.Item(4, i).Value & "',
+                                '" & DgCotizaciones.Item(5, i).Value & "','" & DgCotizaciones.Item(6, i).Value & "','" & DgCotizaciones.Item(8, i).Value & "',
+                                '" & DgCotizaciones.Item(7, i).Value & "'," & Val(DgCotizaciones.Item(10, i).Value) & "," & "0" & ")"
+                            comando.CommandText = R
+                            comando.ExecuteNonQuery()
+                        Next i
+                    End If
+
+                    '============================================================================================================================================================================================
+                    Try
+                        If MessageBox.Show("¿Desea Guardar la información?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
+                            transaction.Commit()
+                            MsgBox("La Cotización se guardó correctamente", MsgBoxStyle.Information, "Guardado Exitoso")
+                            'FrmCotizacion.DgAgregar.Rows.Clear()
+                            Me.Dispose()
+                        Else
+                            transaction.Rollback()
+                            Me.Dispose()
+                        End If
+                    Catch ex As Exception
+                        MsgBox("Commit Exception type: {0} no se pudo insertar por error", MsgBoxStyle.Critical, "Error externo al Sistema")
+                        Try
+                            transaction.Rollback()
+                        Catch ex1 As Exception
+                            MsgBox("Error RollBack", MsgBoxStyle.Critical, "Error interno del Sistema")
+                        End Try
+                    End Try
+                    conexion.Close()
+                End Using
+                Catch ex As Exception
+                MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del Sistema")
+                End Try
+            End If
+        End If
     End Sub
 
     Private Sub BtnMinimizar_Click(sender As Object, e As EventArgs) Handles BtnMinimizar.Click

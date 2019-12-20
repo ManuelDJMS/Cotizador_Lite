@@ -104,7 +104,7 @@ Public Class FrmCotizacion2019
         comando2019.CommandText = R
         lector2019 = comando2019.ExecuteReader
         While lector2019.Read()
-            DgCotizaciones.Rows.Add(lector2019(2), lector2019(1), lector2019(2), lector2019(3), lector2019(4))
+            DgCotizaciones.Rows.Add(lector2019(0), lector2019(1), lector2019(2), lector2019(3), lector2019(4))
         End While
         lector2019.Close()
         conexion2019.Close()
@@ -167,6 +167,11 @@ Public Class FrmCotizacion2019
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub DgCotizaciones_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgCotizaciones.CellDoubleClick
+        FrmEdicionCot2019_2020.TxtCotizacion.Text = DgCotizaciones.Rows(e.RowIndex).Cells(0).Value.ToString
+        FrmEdicionCot2019_2020.Show()
     End Sub
 
     Private Sub FrmHOME_Load(sender As Object, e As EventArgs) Handles MyBase.Load

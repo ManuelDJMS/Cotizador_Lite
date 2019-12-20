@@ -23,17 +23,37 @@ Partial Class FrmCotizacion2019
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmCotizacion2019))
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.GunaAnimateWindow1 = New Guna.UI.WinForms.GunaAnimateWindow(Me.components)
         Me.PanelContenedor = New System.Windows.Forms.Panel()
         Me.PanelFormularios = New System.Windows.Forms.Panel()
+        Me.GunaElipsePanel2 = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.TxtModelo = New Guna.UI.WinForms.GunaTextBox()
+        Me.LbId = New Guna.UI.WinForms.GunaLabel()
+        Me.LbModelo = New Guna.UI.WinForms.GunaLabel()
+        Me.LbMarca = New Guna.UI.WinForms.GunaLabel()
+        Me.lbCot = New Guna.UI.WinForms.GunaLabel()
+        Me.TxtMarca = New Guna.UI.WinForms.GunaTextBox()
+        Me.TxtID = New Guna.UI.WinForms.GunaTextBox()
+        Me.DgCotizaciones = New Guna.UI.WinForms.GunaDataGridView()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GunaElipsePanel1 = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.RbFolio = New Guna.UI.WinForms.GunaRadioButton()
+        Me.RbTodos = New Guna.UI.WinForms.GunaRadioButton()
+        Me.RbArticulo = New Guna.UI.WinForms.GunaRadioButton()
+        Me.RbCotizacion = New Guna.UI.WinForms.GunaRadioButton()
+        Me.GunaLabel8 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaSeparator3 = New Guna.UI.WinForms.GunaSeparator()
         Me.GunaSeparator2 = New Guna.UI.WinForms.GunaSeparator()
         Me.DgEmpresas = New Guna.UI.WinForms.GunaDataGridView()
@@ -42,17 +62,9 @@ Partial Class FrmCotizacion2019
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TxtID = New Guna.UI.WinForms.GunaTextBox()
-        Me.TxtModelo = New Guna.UI.WinForms.GunaTextBox()
-        Me.TxtMarca = New Guna.UI.WinForms.GunaTextBox()
         Me.TxtNombreE = New Guna.UI.WinForms.GunaTextBox()
         Me.TxtClave = New Guna.UI.WinForms.GunaTextBox()
         Me.GunaLabel9 = New Guna.UI.WinForms.GunaLabel()
-        Me.GunaLabel8 = New Guna.UI.WinForms.GunaLabel()
-        Me.lbCot = New Guna.UI.WinForms.GunaLabel()
-        Me.LbMarca = New Guna.UI.WinForms.GunaLabel()
-        Me.LbModelo = New Guna.UI.WinForms.GunaLabel()
-        Me.LbId = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaSeparator1 = New Guna.UI.WinForms.GunaSeparator()
         Me.Label26 = New System.Windows.Forms.Label()
@@ -69,28 +81,16 @@ Partial Class FrmCotizacion2019
         Me.BtnMaximizar = New Guna.UI.WinForms.GunaImageButton()
         Me.BtnMinimizar = New Guna.UI.WinForms.GunaImageButton()
         Me.GunaImageButton4 = New Guna.UI.WinForms.GunaImageButton()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DgCotizaciones = New Guna.UI.WinForms.GunaDataGridView()
-        Me.GunaElipsePanel1 = New Guna.UI.WinForms.GunaElipsePanel()
-        Me.RbArticulo = New Guna.UI.WinForms.GunaRadioButton()
-        Me.RbTodos = New Guna.UI.WinForms.GunaRadioButton()
-        Me.RbFolio = New Guna.UI.WinForms.GunaRadioButton()
-        Me.RbCotizacion = New Guna.UI.WinForms.GunaRadioButton()
-        Me.GunaElipsePanel2 = New Guna.UI.WinForms.GunaElipsePanel()
         Me.PanelContenedor.SuspendLayout()
         Me.PanelFormularios.SuspendLayout()
+        Me.GunaElipsePanel2.SuspendLayout()
+        CType(Me.DgCotizaciones, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GunaElipsePanel1.SuspendLayout()
         CType(Me.DgEmpresas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBarraTitulo.SuspendLayout()
         CType(Me.GunaPictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GunaPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DgCotizaciones, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GunaElipsePanel1.SuspendLayout()
-        Me.GunaElipsePanel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GunaElipse1
@@ -135,6 +135,279 @@ Partial Class FrmCotizacion2019
         Me.PanelFormularios.Size = New System.Drawing.Size(1160, 625)
         Me.PanelFormularios.TabIndex = 5
         '
+        'GunaElipsePanel2
+        '
+        Me.GunaElipsePanel2.BackColor = System.Drawing.Color.Transparent
+        Me.GunaElipsePanel2.BaseColor = System.Drawing.Color.White
+        Me.GunaElipsePanel2.Controls.Add(Me.TxtModelo)
+        Me.GunaElipsePanel2.Controls.Add(Me.LbId)
+        Me.GunaElipsePanel2.Controls.Add(Me.LbModelo)
+        Me.GunaElipsePanel2.Controls.Add(Me.LbMarca)
+        Me.GunaElipsePanel2.Controls.Add(Me.lbCot)
+        Me.GunaElipsePanel2.Controls.Add(Me.TxtMarca)
+        Me.GunaElipsePanel2.Controls.Add(Me.TxtID)
+        Me.GunaElipsePanel2.Location = New System.Drawing.Point(28, 370)
+        Me.GunaElipsePanel2.Name = "GunaElipsePanel2"
+        Me.GunaElipsePanel2.Size = New System.Drawing.Size(739, 43)
+        Me.GunaElipsePanel2.TabIndex = 286
+        '
+        'TxtModelo
+        '
+        Me.TxtModelo.BaseColor = System.Drawing.Color.White
+        Me.TxtModelo.BorderColor = System.Drawing.Color.Silver
+        Me.TxtModelo.BorderSize = 1
+        Me.TxtModelo.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtModelo.FocusedBaseColor = System.Drawing.Color.White
+        Me.TxtModelo.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(175, Byte), Integer))
+        Me.TxtModelo.FocusedForeColor = System.Drawing.SystemColors.ControlText
+        Me.TxtModelo.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtModelo.Location = New System.Drawing.Point(406, 11)
+        Me.TxtModelo.Name = "TxtModelo"
+        Me.TxtModelo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtModelo.Size = New System.Drawing.Size(145, 26)
+        Me.TxtModelo.TabIndex = 179
+        '
+        'LbId
+        '
+        Me.LbId.AutoSize = True
+        Me.LbId.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbId.Location = New System.Drawing.Point(557, 8)
+        Me.LbId.Name = "LbId"
+        Me.LbId.Size = New System.Drawing.Size(29, 20)
+        Me.LbId.TabIndex = 170
+        Me.LbId.Text = "ID:"
+        '
+        'LbModelo
+        '
+        Me.LbModelo.AutoSize = True
+        Me.LbModelo.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbModelo.Location = New System.Drawing.Point(329, 8)
+        Me.LbModelo.Name = "LbModelo"
+        Me.LbModelo.Size = New System.Drawing.Size(71, 20)
+        Me.LbModelo.TabIndex = 171
+        Me.LbModelo.Text = "Modelo:"
+        '
+        'LbMarca
+        '
+        Me.LbMarca.AutoSize = True
+        Me.LbMarca.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbMarca.Location = New System.Drawing.Point(114, 8)
+        Me.LbMarca.Name = "LbMarca"
+        Me.LbMarca.Size = New System.Drawing.Size(63, 20)
+        Me.LbMarca.TabIndex = 172
+        Me.LbMarca.Text = "Marca:"
+        '
+        'lbCot
+        '
+        Me.lbCot.AutoSize = True
+        Me.lbCot.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbCot.Location = New System.Drawing.Point(5, 8)
+        Me.lbCot.Name = "lbCot"
+        Me.lbCot.Size = New System.Drawing.Size(90, 18)
+        Me.lbCot.TabIndex = 173
+        Me.lbCot.Text = "Buscar por:"
+        '
+        'TxtMarca
+        '
+        Me.TxtMarca.BaseColor = System.Drawing.Color.White
+        Me.TxtMarca.BorderColor = System.Drawing.Color.Silver
+        Me.TxtMarca.BorderSize = 1
+        Me.TxtMarca.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtMarca.FocusedBaseColor = System.Drawing.Color.White
+        Me.TxtMarca.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(175, Byte), Integer))
+        Me.TxtMarca.FocusedForeColor = System.Drawing.SystemColors.ControlText
+        Me.TxtMarca.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtMarca.Location = New System.Drawing.Point(183, 11)
+        Me.TxtMarca.Name = "TxtMarca"
+        Me.TxtMarca.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtMarca.Size = New System.Drawing.Size(140, 26)
+        Me.TxtMarca.TabIndex = 178
+        '
+        'TxtID
+        '
+        Me.TxtID.BaseColor = System.Drawing.Color.White
+        Me.TxtID.BorderColor = System.Drawing.Color.Silver
+        Me.TxtID.BorderSize = 1
+        Me.TxtID.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtID.FocusedBaseColor = System.Drawing.Color.White
+        Me.TxtID.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(175, Byte), Integer))
+        Me.TxtID.FocusedForeColor = System.Drawing.SystemColors.ControlText
+        Me.TxtID.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtID.Location = New System.Drawing.Point(589, 11)
+        Me.TxtID.Name = "TxtID"
+        Me.TxtID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtID.Size = New System.Drawing.Size(97, 26)
+        Me.TxtID.TabIndex = 180
+        '
+        'DgCotizaciones
+        '
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.DgCotizaciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DgCotizaciones.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DgCotizaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgCotizaciones.BackgroundColor = System.Drawing.Color.White
+        Me.DgCotizaciones.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DgCotizaciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DgCotizaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(220, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgCotizaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DgCotizaciones.ColumnHeadersHeight = 21
+        Me.DgCotizaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column8, Me.Column9, Me.Column10, Me.Column11})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgCotizaciones.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DgCotizaciones.EnableHeadersVisualStyles = False
+        Me.DgCotizaciones.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgCotizaciones.Location = New System.Drawing.Point(28, 419)
+        Me.DgCotizaciones.Name = "DgCotizaciones"
+        Me.DgCotizaciones.RowHeadersVisible = False
+        Me.DgCotizaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgCotizaciones.Size = New System.Drawing.Size(1107, 197)
+        Me.DgCotizaciones.TabIndex = 285
+        Me.DgCotizaciones.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna
+        Me.DgCotizaciones.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgCotizaciones.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.DgCotizaciones.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.DgCotizaciones.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.DgCotizaciones.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.DgCotizaciones.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.DgCotizaciones.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgCotizaciones.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(220, Byte), Integer))
+        Me.DgCotizaciones.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DgCotizaciones.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.DgCotizaciones.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.DgCotizaciones.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DgCotizaciones.ThemeStyle.HeaderStyle.Height = 21
+        Me.DgCotizaciones.ThemeStyle.ReadOnly = False
+        Me.DgCotizaciones.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgCotizaciones.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DgCotizaciones.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.DgCotizaciones.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.DgCotizaciones.ThemeStyle.RowsStyle.Height = 22
+        Me.DgCotizaciones.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgCotizaciones.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "NumCot"
+        Me.Column7.Name = "Column7"
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "Empresa"
+        Me.Column8.Name = "Column8"
+        '
+        'Column9
+        '
+        Me.Column9.HeaderText = "Fecha"
+        Me.Column9.Name = "Column9"
+        '
+        'Column10
+        '
+        Me.Column10.HeaderText = "Referencia"
+        Me.Column10.Name = "Column10"
+        '
+        'Column11
+        '
+        Me.Column11.HeaderText = "Elaboró"
+        Me.Column11.Name = "Column11"
+        '
+        'GunaElipsePanel1
+        '
+        Me.GunaElipsePanel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GunaElipsePanel1.BackColor = System.Drawing.Color.Transparent
+        Me.GunaElipsePanel1.BaseColor = System.Drawing.Color.White
+        Me.GunaElipsePanel1.Controls.Add(Me.RbFolio)
+        Me.GunaElipsePanel1.Controls.Add(Me.RbTodos)
+        Me.GunaElipsePanel1.Controls.Add(Me.RbArticulo)
+        Me.GunaElipsePanel1.Controls.Add(Me.RbCotizacion)
+        Me.GunaElipsePanel1.Controls.Add(Me.GunaLabel8)
+        Me.GunaElipsePanel1.Location = New System.Drawing.Point(28, 305)
+        Me.GunaElipsePanel1.Name = "GunaElipsePanel1"
+        Me.GunaElipsePanel1.Size = New System.Drawing.Size(571, 43)
+        Me.GunaElipsePanel1.TabIndex = 284
+        '
+        'RbFolio
+        '
+        Me.RbFolio.BaseColor = System.Drawing.SystemColors.Control
+        Me.RbFolio.CheckedOffColor = System.Drawing.Color.Gray
+        Me.RbFolio.CheckedOnColor = System.Drawing.Color.ForestGreen
+        Me.RbFolio.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RbFolio.FillColor = System.Drawing.Color.White
+        Me.RbFolio.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbFolio.Location = New System.Drawing.Point(491, 11)
+        Me.RbFolio.Name = "RbFolio"
+        Me.RbFolio.Size = New System.Drawing.Size(60, 20)
+        Me.RbFolio.TabIndex = 3
+        Me.RbFolio.Text = "Folio"
+        '
+        'RbTodos
+        '
+        Me.RbTodos.BaseColor = System.Drawing.SystemColors.Control
+        Me.RbTodos.CheckedOffColor = System.Drawing.Color.Gray
+        Me.RbTodos.CheckedOnColor = System.Drawing.Color.ForestGreen
+        Me.RbTodos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RbTodos.FillColor = System.Drawing.Color.White
+        Me.RbTodos.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbTodos.Location = New System.Drawing.Point(338, 11)
+        Me.RbTodos.Name = "RbTodos"
+        Me.RbTodos.Size = New System.Drawing.Size(147, 20)
+        Me.RbTodos.TabIndex = 2
+        Me.RbTodos.Text = "Todos los Artículos"
+        '
+        'RbArticulo
+        '
+        Me.RbArticulo.BaseColor = System.Drawing.SystemColors.Control
+        Me.RbArticulo.CheckedOffColor = System.Drawing.Color.Gray
+        Me.RbArticulo.CheckedOnColor = System.Drawing.Color.ForestGreen
+        Me.RbArticulo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RbArticulo.FillColor = System.Drawing.Color.White
+        Me.RbArticulo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbArticulo.Location = New System.Drawing.Point(242, 11)
+        Me.RbArticulo.Name = "RbArticulo"
+        Me.RbArticulo.Size = New System.Drawing.Size(80, 20)
+        Me.RbArticulo.TabIndex = 1
+        Me.RbArticulo.Text = "Artículo"
+        '
+        'RbCotizacion
+        '
+        Me.RbCotizacion.BaseColor = System.Drawing.SystemColors.Control
+        Me.RbCotizacion.Checked = True
+        Me.RbCotizacion.CheckedOffColor = System.Drawing.Color.Gray
+        Me.RbCotizacion.CheckedOnColor = System.Drawing.Color.ForestGreen
+        Me.RbCotizacion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RbCotizacion.FillColor = System.Drawing.Color.White
+        Me.RbCotizacion.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbCotizacion.Location = New System.Drawing.Point(123, 11)
+        Me.RbCotizacion.Name = "RbCotizacion"
+        Me.RbCotizacion.Size = New System.Drawing.Size(100, 20)
+        Me.RbCotizacion.TabIndex = 0
+        Me.RbCotizacion.Text = "Cotización"
+        '
+        'GunaLabel8
+        '
+        Me.GunaLabel8.AutoSize = True
+        Me.GunaLabel8.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel8.Location = New System.Drawing.Point(4, 11)
+        Me.GunaLabel8.Name = "GunaLabel8"
+        Me.GunaLabel8.Size = New System.Drawing.Size(100, 18)
+        Me.GunaLabel8.TabIndex = 174
+        Me.GunaLabel8.Text = "Realizar por:"
+        '
         'GunaSeparator3
         '
         Me.GunaSeparator3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -157,8 +430,8 @@ Partial Class FrmCotizacion2019
         '
         'DgEmpresas
         '
-        DataGridViewCellStyle22.BackColor = System.Drawing.Color.White
-        Me.DgEmpresas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.DgEmpresas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DgEmpresas.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DgEmpresas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -166,24 +439,24 @@ Partial Class FrmCotizacion2019
         Me.DgEmpresas.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgEmpresas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DgEmpresas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(220, Byte), Integer))
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle23.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgEmpresas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(220, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgEmpresas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DgEmpresas.ColumnHeadersHeight = 21
         Me.DgEmpresas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column5, Me.Column6})
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle24.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle24.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgEmpresas.DefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgEmpresas.DefaultCellStyle = DataGridViewCellStyle6
         Me.DgEmpresas.EnableHeadersVisualStyles = False
         Me.DgEmpresas.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgEmpresas.Location = New System.Drawing.Point(28, 106)
@@ -261,54 +534,6 @@ Partial Class FrmCotizacion2019
         Me.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         Me.Column6.Width = 150
         '
-        'TxtID
-        '
-        Me.TxtID.BaseColor = System.Drawing.Color.White
-        Me.TxtID.BorderColor = System.Drawing.Color.Silver
-        Me.TxtID.BorderSize = 1
-        Me.TxtID.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtID.FocusedBaseColor = System.Drawing.Color.White
-        Me.TxtID.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.TxtID.FocusedForeColor = System.Drawing.SystemColors.ControlText
-        Me.TxtID.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtID.Location = New System.Drawing.Point(589, 11)
-        Me.TxtID.Name = "TxtID"
-        Me.TxtID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtID.Size = New System.Drawing.Size(97, 26)
-        Me.TxtID.TabIndex = 180
-        '
-        'TxtModelo
-        '
-        Me.TxtModelo.BaseColor = System.Drawing.Color.White
-        Me.TxtModelo.BorderColor = System.Drawing.Color.Silver
-        Me.TxtModelo.BorderSize = 1
-        Me.TxtModelo.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtModelo.FocusedBaseColor = System.Drawing.Color.White
-        Me.TxtModelo.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.TxtModelo.FocusedForeColor = System.Drawing.SystemColors.ControlText
-        Me.TxtModelo.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtModelo.Location = New System.Drawing.Point(406, 11)
-        Me.TxtModelo.Name = "TxtModelo"
-        Me.TxtModelo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtModelo.Size = New System.Drawing.Size(145, 26)
-        Me.TxtModelo.TabIndex = 179
-        '
-        'TxtMarca
-        '
-        Me.TxtMarca.BaseColor = System.Drawing.Color.White
-        Me.TxtMarca.BorderColor = System.Drawing.Color.Silver
-        Me.TxtMarca.BorderSize = 1
-        Me.TxtMarca.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtMarca.FocusedBaseColor = System.Drawing.Color.White
-        Me.TxtMarca.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.TxtMarca.FocusedForeColor = System.Drawing.SystemColors.ControlText
-        Me.TxtMarca.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtMarca.Location = New System.Drawing.Point(183, 11)
-        Me.TxtMarca.Name = "TxtMarca"
-        Me.TxtMarca.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtMarca.Size = New System.Drawing.Size(140, 26)
-        Me.TxtMarca.TabIndex = 178
-        '
         'TxtNombreE
         '
         Me.TxtNombreE.BaseColor = System.Drawing.Color.White
@@ -350,56 +575,6 @@ Partial Class FrmCotizacion2019
         Me.GunaLabel9.Size = New System.Drawing.Size(75, 20)
         Me.GunaLabel9.TabIndex = 175
         Me.GunaLabel9.Text = "Empresa:"
-        '
-        'GunaLabel8
-        '
-        Me.GunaLabel8.AutoSize = True
-        Me.GunaLabel8.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaLabel8.Location = New System.Drawing.Point(4, 11)
-        Me.GunaLabel8.Name = "GunaLabel8"
-        Me.GunaLabel8.Size = New System.Drawing.Size(100, 18)
-        Me.GunaLabel8.TabIndex = 174
-        Me.GunaLabel8.Text = "Realizar por:"
-        '
-        'lbCot
-        '
-        Me.lbCot.AutoSize = True
-        Me.lbCot.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbCot.Location = New System.Drawing.Point(5, 8)
-        Me.lbCot.Name = "lbCot"
-        Me.lbCot.Size = New System.Drawing.Size(90, 18)
-        Me.lbCot.TabIndex = 173
-        Me.lbCot.Text = "Buscar por:"
-        '
-        'LbMarca
-        '
-        Me.LbMarca.AutoSize = True
-        Me.LbMarca.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbMarca.Location = New System.Drawing.Point(114, 8)
-        Me.LbMarca.Name = "LbMarca"
-        Me.LbMarca.Size = New System.Drawing.Size(63, 20)
-        Me.LbMarca.TabIndex = 172
-        Me.LbMarca.Text = "Marca:"
-        '
-        'LbModelo
-        '
-        Me.LbModelo.AutoSize = True
-        Me.LbModelo.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbModelo.Location = New System.Drawing.Point(329, 8)
-        Me.LbModelo.Name = "LbModelo"
-        Me.LbModelo.Size = New System.Drawing.Size(71, 20)
-        Me.LbModelo.TabIndex = 171
-        Me.LbModelo.Text = "Modelo:"
-        '
-        'LbId
-        '
-        Me.LbId.AutoSize = True
-        Me.LbId.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbId.Location = New System.Drawing.Point(557, 8)
-        Me.LbId.Name = "LbId"
-        Me.LbId.Size = New System.Drawing.Size(29, 20)
-        Me.LbId.TabIndex = 170
-        Me.LbId.Text = "ID:"
         '
         'GunaLabel1
         '
@@ -597,181 +772,6 @@ Partial Class FrmCotizacion2019
         Me.GunaImageButton4.Size = New System.Drawing.Size(32, 32)
         Me.GunaImageButton4.TabIndex = 0
         '
-        'Column11
-        '
-        Me.Column11.HeaderText = "Elaboró"
-        Me.Column11.Name = "Column11"
-        '
-        'Column10
-        '
-        Me.Column10.HeaderText = "Referencia"
-        Me.Column10.Name = "Column10"
-        '
-        'Column9
-        '
-        Me.Column9.HeaderText = "Fecha"
-        Me.Column9.Name = "Column9"
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "Empresa"
-        Me.Column8.Name = "Column8"
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "NumCot"
-        Me.Column7.Name = "Column7"
-        '
-        'DgCotizaciones
-        '
-        DataGridViewCellStyle19.BackColor = System.Drawing.Color.White
-        Me.DgCotizaciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle19
-        Me.DgCotizaciones.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DgCotizaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DgCotizaciones.BackgroundColor = System.Drawing.Color.White
-        Me.DgCotizaciones.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DgCotizaciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.DgCotizaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(220, Byte), Integer))
-        DataGridViewCellStyle20.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle20.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgCotizaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle20
-        Me.DgCotizaciones.ColumnHeadersHeight = 21
-        Me.DgCotizaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column8, Me.Column9, Me.Column10, Me.Column11})
-        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle21.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle21.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgCotizaciones.DefaultCellStyle = DataGridViewCellStyle21
-        Me.DgCotizaciones.EnableHeadersVisualStyles = False
-        Me.DgCotizaciones.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgCotizaciones.Location = New System.Drawing.Point(28, 419)
-        Me.DgCotizaciones.Name = "DgCotizaciones"
-        Me.DgCotizaciones.RowHeadersVisible = False
-        Me.DgCotizaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgCotizaciones.Size = New System.Drawing.Size(1107, 197)
-        Me.DgCotizaciones.TabIndex = 285
-        Me.DgCotizaciones.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna
-        Me.DgCotizaciones.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.DgCotizaciones.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.DgCotizaciones.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
-        Me.DgCotizaciones.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
-        Me.DgCotizaciones.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.DgCotizaciones.ThemeStyle.BackColor = System.Drawing.Color.White
-        Me.DgCotizaciones.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgCotizaciones.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(220, Byte), Integer))
-        Me.DgCotizaciones.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.DgCotizaciones.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        Me.DgCotizaciones.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.DgCotizaciones.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.DgCotizaciones.ThemeStyle.HeaderStyle.Height = 21
-        Me.DgCotizaciones.ThemeStyle.ReadOnly = False
-        Me.DgCotizaciones.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.DgCotizaciones.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.DgCotizaciones.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        Me.DgCotizaciones.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.DgCotizaciones.ThemeStyle.RowsStyle.Height = 22
-        Me.DgCotizaciones.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgCotizaciones.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'GunaElipsePanel1
-        '
-        Me.GunaElipsePanel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GunaElipsePanel1.BackColor = System.Drawing.Color.Transparent
-        Me.GunaElipsePanel1.BaseColor = System.Drawing.Color.White
-        Me.GunaElipsePanel1.Controls.Add(Me.RbFolio)
-        Me.GunaElipsePanel1.Controls.Add(Me.RbTodos)
-        Me.GunaElipsePanel1.Controls.Add(Me.RbArticulo)
-        Me.GunaElipsePanel1.Controls.Add(Me.RbCotizacion)
-        Me.GunaElipsePanel1.Controls.Add(Me.GunaLabel8)
-        Me.GunaElipsePanel1.Location = New System.Drawing.Point(28, 305)
-        Me.GunaElipsePanel1.Name = "GunaElipsePanel1"
-        Me.GunaElipsePanel1.Size = New System.Drawing.Size(571, 43)
-        Me.GunaElipsePanel1.TabIndex = 284
-        '
-        'RbArticulo
-        '
-        Me.RbArticulo.BaseColor = System.Drawing.SystemColors.Control
-        Me.RbArticulo.CheckedOffColor = System.Drawing.Color.Gray
-        Me.RbArticulo.CheckedOnColor = System.Drawing.Color.ForestGreen
-        Me.RbArticulo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.RbArticulo.FillColor = System.Drawing.Color.White
-        Me.RbArticulo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RbArticulo.Location = New System.Drawing.Point(242, 11)
-        Me.RbArticulo.Name = "RbArticulo"
-        Me.RbArticulo.Size = New System.Drawing.Size(80, 20)
-        Me.RbArticulo.TabIndex = 1
-        Me.RbArticulo.Text = "Artículo"
-        '
-        'RbTodos
-        '
-        Me.RbTodos.BaseColor = System.Drawing.SystemColors.Control
-        Me.RbTodos.CheckedOffColor = System.Drawing.Color.Gray
-        Me.RbTodos.CheckedOnColor = System.Drawing.Color.ForestGreen
-        Me.RbTodos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.RbTodos.FillColor = System.Drawing.Color.White
-        Me.RbTodos.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RbTodos.Location = New System.Drawing.Point(338, 11)
-        Me.RbTodos.Name = "RbTodos"
-        Me.RbTodos.Size = New System.Drawing.Size(147, 20)
-        Me.RbTodos.TabIndex = 2
-        Me.RbTodos.Text = "Todos los Artículos"
-        '
-        'RbFolio
-        '
-        Me.RbFolio.BaseColor = System.Drawing.SystemColors.Control
-        Me.RbFolio.CheckedOffColor = System.Drawing.Color.Gray
-        Me.RbFolio.CheckedOnColor = System.Drawing.Color.ForestGreen
-        Me.RbFolio.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.RbFolio.FillColor = System.Drawing.Color.White
-        Me.RbFolio.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RbFolio.Location = New System.Drawing.Point(491, 11)
-        Me.RbFolio.Name = "RbFolio"
-        Me.RbFolio.Size = New System.Drawing.Size(60, 20)
-        Me.RbFolio.TabIndex = 3
-        Me.RbFolio.Text = "Folio"
-        '
-        'RbCotizacion
-        '
-        Me.RbCotizacion.BaseColor = System.Drawing.SystemColors.Control
-        Me.RbCotizacion.Checked = True
-        Me.RbCotizacion.CheckedOffColor = System.Drawing.Color.Gray
-        Me.RbCotizacion.CheckedOnColor = System.Drawing.Color.ForestGreen
-        Me.RbCotizacion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.RbCotizacion.FillColor = System.Drawing.Color.White
-        Me.RbCotizacion.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RbCotizacion.Location = New System.Drawing.Point(123, 11)
-        Me.RbCotizacion.Name = "RbCotizacion"
-        Me.RbCotizacion.Size = New System.Drawing.Size(100, 20)
-        Me.RbCotizacion.TabIndex = 0
-        Me.RbCotizacion.Text = "Cotización"
-        '
-        'GunaElipsePanel2
-        '
-        Me.GunaElipsePanel2.BackColor = System.Drawing.Color.Transparent
-        Me.GunaElipsePanel2.BaseColor = System.Drawing.Color.White
-        Me.GunaElipsePanel2.Controls.Add(Me.TxtModelo)
-        Me.GunaElipsePanel2.Controls.Add(Me.LbId)
-        Me.GunaElipsePanel2.Controls.Add(Me.LbModelo)
-        Me.GunaElipsePanel2.Controls.Add(Me.LbMarca)
-        Me.GunaElipsePanel2.Controls.Add(Me.lbCot)
-        Me.GunaElipsePanel2.Controls.Add(Me.TxtMarca)
-        Me.GunaElipsePanel2.Controls.Add(Me.TxtID)
-        Me.GunaElipsePanel2.Location = New System.Drawing.Point(28, 370)
-        Me.GunaElipsePanel2.Name = "GunaElipsePanel2"
-        Me.GunaElipsePanel2.Size = New System.Drawing.Size(739, 43)
-        Me.GunaElipsePanel2.TabIndex = 286
-        '
         'FrmCotizacion2019
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -789,17 +789,17 @@ Partial Class FrmCotizacion2019
         Me.PanelContenedor.ResumeLayout(False)
         Me.PanelFormularios.ResumeLayout(False)
         Me.PanelFormularios.PerformLayout()
+        Me.GunaElipsePanel2.ResumeLayout(False)
+        Me.GunaElipsePanel2.PerformLayout()
+        CType(Me.DgCotizaciones, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GunaElipsePanel1.ResumeLayout(False)
+        Me.GunaElipsePanel1.PerformLayout()
         CType(Me.DgEmpresas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelBarraTitulo.ResumeLayout(False)
         Me.PanelBarraTitulo.PerformLayout()
         CType(Me.GunaPictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GunaPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DgCotizaciones, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GunaElipsePanel1.ResumeLayout(False)
-        Me.GunaElipsePanel1.PerformLayout()
-        Me.GunaElipsePanel2.ResumeLayout(False)
-        Me.GunaElipsePanel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

@@ -27,4 +27,12 @@ Module Conexiones
             MsgBox("No se pudo conectar a la base de datos" + ex.ToString)
         End Try
     End Sub
+    Sub MetodoInformacionGeneral()
+        Try
+            conexion2019 = New SqlConnection("Data Source=IRONMAN;Initial Catalog=InformacionGeneral; User Id=sa; Password=Met99011578a;Integrated Security=False")
+            conexion2019.Open()
+        Catch ex As Exception
+            MsgBox("No se pudo conectar a la base de datos" + ex.ToString)
+        End Try
+    End Sub
 End Module
