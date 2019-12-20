@@ -97,6 +97,12 @@
     <Compile Include="Presentacion\FrmCotizacion2019.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\FrmCotizacionPorArticulo.Designer.vb">
+      <DependentUpon>FrmCotizacionPorArticulo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmCotizacionPorArticulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\FrmEdicionCot2019-2020.Designer.vb">
       <DependentUpon>FrmEdicionCot2019-2020.vb</DependentUpon>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmCotizacion2019.resx">
       <DependentUpon>FrmCotizacion2019.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmCotizacionPorArticulo.resx">
+      <DependentUpon>FrmCotizacionPorArticulo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmEdicionCot2019-2020.resx">
       <DependentUpon>FrmEdicionCot2019-2020.vb</DependentUpon>
@@ -207,6 +216,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\papel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-save-28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancel-28.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
