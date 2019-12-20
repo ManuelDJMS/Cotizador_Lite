@@ -30,9 +30,19 @@ Partial Class FrmEdicionCot2019_2020
         Me.PanelFormularios = New System.Windows.Forms.Panel()
         Me.BtnBorrar = New Guna.UI.WinForms.GunaButton()
         Me.DgCotizaciones = New Guna.UI.WinForms.GunaDataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GunaVSeparator4 = New Guna.UI.WinForms.GunaVSeparator()
         Me.GunaElipsePanel1 = New Guna.UI.WinForms.GunaElipsePanel()
-        Me.BtnCancelar = New Guna.UI.WinForms.GunaButton()
         Me.btnGuardar = New Guna.UI.WinForms.GunaButton()
         Me.TxtCotizo2020 = New Guna.UI.WinForms.GunaTextBox()
         Me.TxtConta = New Guna.UI.WinForms.GunaTextBox()
@@ -54,6 +64,8 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaLabel46 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel48 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaElipsePanel2 = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
+        Me.TxtRFC = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel23 = New Guna.UI.WinForms.GunaLabel()
         Me.TxtNumCon = New Guna.UI.WinForms.GunaLabel()
         Me.GunaSeparator3 = New Guna.UI.WinForms.GunaSeparator()
@@ -85,7 +97,7 @@ Partial Class FrmEdicionCot2019_2020
         Me.Label26 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GunaLabel2 = New Guna.UI.WinForms.GunaLabel()
-        Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
+        Me.LbCot_Folio = New Guna.UI.WinForms.GunaLabel()
         Me.TxtCotizacion = New Guna.UI.WinForms.GunaTextBox()
         Me.GunaLabel3 = New Guna.UI.WinForms.GunaLabel()
         Me.TxtCotizacion20 = New Guna.UI.WinForms.GunaTextBox()
@@ -101,17 +113,8 @@ Partial Class FrmEdicionCot2019_2020
         Me.BtnMaximizar = New Guna.UI.WinForms.GunaImageButton()
         Me.BtnMinimizar = New Guna.UI.WinForms.GunaImageButton()
         Me.GunaImageButton4 = New Guna.UI.WinForms.GunaImageButton()
-        Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GunaTextBox1 = New Guna.UI.WinForms.GunaTextBox()
+        Me.GunaLabel5 = New Guna.UI.WinForms.GunaLabel()
         Me.PanelContenedor.SuspendLayout()
         Me.PanelFormularios.SuspendLayout()
         CType(Me.DgCotizaciones, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -144,7 +147,7 @@ Partial Class FrmEdicionCot2019_2020
         Me.PanelFormularios.Controls.Add(Me.Label26)
         Me.PanelFormularios.Controls.Add(Me.PictureBox1)
         Me.PanelFormularios.Controls.Add(Me.GunaLabel2)
-        Me.PanelFormularios.Controls.Add(Me.GunaLabel1)
+        Me.PanelFormularios.Controls.Add(Me.LbCot_Folio)
         Me.PanelFormularios.Controls.Add(Me.TxtCotizacion)
         Me.PanelFormularios.Controls.Add(Me.GunaLabel3)
         Me.PanelFormularios.Controls.Add(Me.TxtCotizacion20)
@@ -189,6 +192,7 @@ Partial Class FrmEdicionCot2019_2020
         Me.DgCotizaciones.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DgCotizaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgCotizaciones.BackgroundColor = System.Drawing.Color.White
         Me.DgCotizaciones.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgCotizaciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
@@ -242,6 +246,73 @@ Partial Class FrmEdicionCot2019_2020
         Me.DgCotizaciones.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgCotizaciones.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column1.HeaderText = "Seleccionar"
+        Me.Column1.Name = "Column1"
+        Me.Column1.Width = 80
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column2.HeaderText = "Partida"
+        Me.Column2.Name = "Column2"
+        Me.Column2.Width = 55
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column3.HeaderText = "Código Servicio"
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 110
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column4.HeaderText = "Cantidad"
+        Me.Column4.Name = "Column4"
+        Me.Column4.Width = 65
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Equipo/Descripción"
+        Me.Column5.Name = "Column5"
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Marca"
+        Me.Column6.Name = "Column6"
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "Modelo"
+        Me.Column7.Name = "Column7"
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "ID"
+        Me.Column8.Name = "Column8"
+        '
+        'Column9
+        '
+        Me.Column9.HeaderText = "Intervalo"
+        Me.Column9.Name = "Column9"
+        '
+        'Column10
+        '
+        Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column10.HeaderText = "Precio 2019"
+        Me.Column10.Name = "Column10"
+        Me.Column10.Width = 105
+        '
+        'Column11
+        '
+        Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column11.HeaderText = "Precio 2020"
+        Me.Column11.Name = "Column11"
+        Me.Column11.Width = 105
+        '
         'GunaVSeparator4
         '
         Me.GunaVSeparator4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -257,7 +328,8 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaElipsePanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GunaElipsePanel1.BackColor = System.Drawing.Color.Transparent
         Me.GunaElipsePanel1.BaseColor = System.Drawing.Color.White
-        Me.GunaElipsePanel1.Controls.Add(Me.BtnCancelar)
+        Me.GunaElipsePanel1.Controls.Add(Me.GunaLabel5)
+        Me.GunaElipsePanel1.Controls.Add(Me.GunaTextBox1)
         Me.GunaElipsePanel1.Controls.Add(Me.btnGuardar)
         Me.GunaElipsePanel1.Controls.Add(Me.TxtCotizo2020)
         Me.GunaElipsePanel1.Controls.Add(Me.TxtConta)
@@ -283,32 +355,6 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaElipsePanel1.Size = New System.Drawing.Size(537, 231)
         Me.GunaElipsePanel1.TabIndex = 288
         '
-        'BtnCancelar
-        '
-        Me.BtnCancelar.AnimationHoverSpeed = 0.07!
-        Me.BtnCancelar.AnimationSpeed = 0.03!
-        Me.BtnCancelar.BackColor = System.Drawing.Color.Transparent
-        Me.BtnCancelar.BaseColor = System.Drawing.Color.Firebrick
-        Me.BtnCancelar.BorderColor = System.Drawing.Color.Black
-        Me.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCancelar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.BtnCancelar.FocusedColor = System.Drawing.Color.Empty
-        Me.BtnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnCancelar.ForeColor = System.Drawing.Color.White
-        Me.BtnCancelar.Image = Global.Cotizador_Lite.My.Resources.Resources.icons8_cancel_28
-        Me.BtnCancelar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.BtnCancelar.Location = New System.Drawing.Point(412, 178)
-        Me.BtnCancelar.Name = "BtnCancelar"
-        Me.BtnCancelar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnCancelar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.BtnCancelar.OnHoverForeColor = System.Drawing.Color.White
-        Me.BtnCancelar.OnHoverImage = Nothing
-        Me.BtnCancelar.OnPressedColor = System.Drawing.Color.Black
-        Me.BtnCancelar.Radius = 3
-        Me.BtnCancelar.Size = New System.Drawing.Size(111, 27)
-        Me.BtnCancelar.TabIndex = 221
-        Me.BtnCancelar.Text = "Cancelar"
-        '
         'btnGuardar
         '
         Me.btnGuardar.AnimationHoverSpeed = 0.07!
@@ -323,7 +369,7 @@ Partial Class FrmEdicionCot2019_2020
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
         Me.btnGuardar.Image = Global.Cotizador_Lite.My.Resources.Resources.icons8_save_28
         Me.btnGuardar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnGuardar.Location = New System.Drawing.Point(412, 144)
+        Me.btnGuardar.Location = New System.Drawing.Point(413, 192)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnGuardar.OnHoverBorderColor = System.Drawing.Color.Black
@@ -593,6 +639,8 @@ Partial Class FrmEdicionCot2019_2020
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GunaElipsePanel2.BackColor = System.Drawing.Color.Transparent
         Me.GunaElipsePanel2.BaseColor = System.Drawing.Color.White
+        Me.GunaElipsePanel2.Controls.Add(Me.GunaLabel1)
+        Me.GunaElipsePanel2.Controls.Add(Me.TxtRFC)
         Me.GunaElipsePanel2.Controls.Add(Me.GunaLabel23)
         Me.GunaElipsePanel2.Controls.Add(Me.TxtNumCon)
         Me.GunaElipsePanel2.Controls.Add(Me.GunaSeparator3)
@@ -624,6 +672,26 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaElipsePanel2.Name = "GunaElipsePanel2"
         Me.GunaElipsePanel2.Size = New System.Drawing.Size(574, 231)
         Me.GunaElipsePanel2.TabIndex = 287
+        '
+        'GunaLabel1
+        '
+        Me.GunaLabel1.AutoSize = True
+        Me.GunaLabel1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel1.Location = New System.Drawing.Point(6, 169)
+        Me.GunaLabel1.Name = "GunaLabel1"
+        Me.GunaLabel1.Size = New System.Drawing.Size(40, 18)
+        Me.GunaLabel1.TabIndex = 213
+        Me.GunaLabel1.Text = "RFC:"
+        '
+        'TxtRFC
+        '
+        Me.TxtRFC.AutoSize = True
+        Me.TxtRFC.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtRFC.Location = New System.Drawing.Point(96, 169)
+        Me.TxtRFC.Name = "TxtRFC"
+        Me.TxtRFC.Size = New System.Drawing.Size(14, 20)
+        Me.TxtRFC.TabIndex = 212
+        Me.TxtRFC.Text = "-"
         '
         'GunaLabel23
         '
@@ -788,7 +856,7 @@ Partial Class FrmEdicionCot2019_2020
         '
         Me.GunaLabel4.AutoSize = True
         Me.GunaLabel4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaLabel4.Location = New System.Drawing.Point(6, 168)
+        Me.GunaLabel4.Location = New System.Drawing.Point(6, 192)
         Me.GunaLabel4.Name = "GunaLabel4"
         Me.GunaLabel4.Size = New System.Drawing.Size(64, 18)
         Me.GunaLabel4.TabIndex = 196
@@ -806,10 +874,11 @@ Partial Class FrmEdicionCot2019_2020
         '
         'TxtCorreo
         '
+        Me.TxtCorreo.AutoSize = True
         Me.TxtCorreo.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtCorreo.Location = New System.Drawing.Point(96, 168)
+        Me.TxtCorreo.Location = New System.Drawing.Point(96, 192)
         Me.TxtCorreo.Name = "TxtCorreo"
-        Me.TxtCorreo.Size = New System.Drawing.Size(252, 47)
+        Me.TxtCorreo.Size = New System.Drawing.Size(14, 20)
         Me.TxtCorreo.TabIndex = 194
         Me.TxtCorreo.Text = "-"
         '
@@ -955,16 +1024,16 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaLabel2.TabIndex = 168
         Me.GunaLabel2.Text = "Edición de Cotización MetAs 2019"
         '
-        'GunaLabel1
+        'LbCot_Folio
         '
-        Me.GunaLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GunaLabel1.AutoSize = True
-        Me.GunaLabel1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaLabel1.Location = New System.Drawing.Point(751, 5)
-        Me.GunaLabel1.Name = "GunaLabel1"
-        Me.GunaLabel1.Size = New System.Drawing.Size(127, 20)
-        Me.GunaLabel1.TabIndex = 181
-        Me.GunaLabel1.Text = "Cotización 2019:"
+        Me.LbCot_Folio.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LbCot_Folio.AutoSize = True
+        Me.LbCot_Folio.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbCot_Folio.Location = New System.Drawing.Point(751, 5)
+        Me.LbCot_Folio.Name = "LbCot_Folio"
+        Me.LbCot_Folio.Size = New System.Drawing.Size(127, 20)
+        Me.LbCot_Folio.TabIndex = 181
+        Me.LbCot_Folio.Text = "Cotización 2019:"
         '
         'TxtCotizacion
         '
@@ -1164,77 +1233,33 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaImageButton4.Size = New System.Drawing.Size(32, 32)
         Me.GunaImageButton4.TabIndex = 0
         '
-        'Column1
+        'GunaTextBox1
         '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column1.HeaderText = "Seleccionar"
-        Me.Column1.Name = "Column1"
-        Me.Column1.Width = 80
+        Me.GunaTextBox1.BaseColor = System.Drawing.Color.White
+        Me.GunaTextBox1.BorderColor = System.Drawing.Color.Silver
+        Me.GunaTextBox1.BorderSize = 1
+        Me.GunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.GunaTextBox1.FocusedBaseColor = System.Drawing.Color.White
+        Me.GunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(175, Byte), Integer))
+        Me.GunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText
+        Me.GunaTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.GunaTextBox1.Location = New System.Drawing.Point(485, 136)
+        Me.GunaTextBox1.Name = "GunaTextBox1"
+        Me.GunaTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.GunaTextBox1.Size = New System.Drawing.Size(38, 26)
+        Me.GunaTextBox1.TabIndex = 221
+        Me.GunaTextBox1.Visible = False
         '
-        'Column2
+        'GunaLabel5
         '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column2.HeaderText = "Partida"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 55
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column3.HeaderText = "Código Servicio"
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 110
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column4.HeaderText = "Cantidad"
-        Me.Column4.Name = "Column4"
-        Me.Column4.Width = 65
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Equipo/Descripción"
-        Me.Column5.Name = "Column5"
-        Me.Column5.Width = 250
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Marca"
-        Me.Column6.Name = "Column6"
-        Me.Column6.Width = 150
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "Modelo"
-        Me.Column7.Name = "Column7"
-        Me.Column7.Width = 150
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "ID"
-        Me.Column8.Name = "Column8"
-        Me.Column8.Width = 123
-        '
-        'Column9
-        '
-        Me.Column9.HeaderText = "Intervalo"
-        Me.Column9.Name = "Column9"
-        Me.Column9.Width = 250
-        '
-        'Column10
-        '
-        Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column10.HeaderText = "Precio 2019"
-        Me.Column10.Name = "Column10"
-        Me.Column10.Width = 105
-        '
-        'Column11
-        '
-        Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column11.HeaderText = "Precio 2020"
-        Me.Column11.Name = "Column11"
-        Me.Column11.Width = 105
+        Me.GunaLabel5.AutoSize = True
+        Me.GunaLabel5.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel5.Location = New System.Drawing.Point(384, 138)
+        Me.GunaLabel5.Name = "GunaLabel5"
+        Me.GunaLabel5.Size = New System.Drawing.Size(95, 18)
+        Me.GunaLabel5.TabIndex = 222
+        Me.GunaLabel5.Text = "Num. Cond:"
+        Me.GunaLabel5.Visible = False
         '
         'FrmEdicionCot2019_2020
         '
@@ -1244,6 +1269,7 @@ Partial Class FrmEdicionCot2019_2020
         Me.ClientSize = New System.Drawing.Size(1160, 675)
         Me.Controls.Add(Me.PanelContenedor)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(1160, 675)
         Me.Name = "FrmEdicionCot2019_2020"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -1290,7 +1316,7 @@ Partial Class FrmEdicionCot2019_2020
     Friend WithEvents TxtCotizacion20 As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents GunaLabel3 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents TxtCotizacion As Guna.UI.WinForms.GunaTextBox
-    Friend WithEvents GunaLabel1 As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents LbCot_Folio As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaLabel12 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents TxtDomicilio As Guna.UI.WinForms.GunaLabel
     Friend WithEvents TxtCiudad As Guna.UI.WinForms.GunaLabel
@@ -1337,7 +1363,6 @@ Partial Class FrmEdicionCot2019_2020
     Friend WithEvents TxtConta As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents TxtTipoCliente As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents DgCotizaciones As Guna.UI.WinForms.GunaDataGridView
-    Friend WithEvents BtnCancelar As Guna.UI.WinForms.GunaButton
     Friend WithEvents btnGuardar As Guna.UI.WinForms.GunaButton
     Friend WithEvents BtnBorrar As Guna.UI.WinForms.GunaButton
     Friend WithEvents Column1 As DataGridViewCheckBoxColumn
@@ -1351,4 +1376,8 @@ Partial Class FrmEdicionCot2019_2020
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
+    Friend WithEvents GunaLabel1 As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents TxtRFC As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents GunaLabel5 As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents GunaTextBox1 As Guna.UI.WinForms.GunaTextBox
 End Class

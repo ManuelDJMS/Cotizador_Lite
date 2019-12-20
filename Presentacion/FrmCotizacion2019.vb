@@ -175,6 +175,11 @@ Public Class FrmCotizacion2019
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
+    Private Sub RbFolio_CheckedChanged(sender As Object, e As EventArgs) Handles RbFolio.CheckedChanged
+        respuestafolio = InputBox("Folio", "Ingrese la confirmación metrológica:")
+        FrmEdicionCot2019_2020.Show()
+    End Sub
+
     Private Sub FrmHOME_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GunaAnimateWindow1.AnimationType = Guna.UI.WinForms.GunaAnimateWindow.AnimateWindowType.AW_BLEND
         GunaAnimateWindow1.Start()

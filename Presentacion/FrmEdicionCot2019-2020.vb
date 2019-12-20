@@ -84,43 +84,87 @@ Public Class FrmEdicionCot2019_2020
         DgCotizaciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
         MetodoMetasInf2019()
         comando2019 = conexion2019.CreateCommand
-        R = "select isnull(MetAsInf.Clavempresa,'-'), isnull(MetAsInf.Compania,'-'), isnull(MetAsInf.DomicilioConsig,'-'), isnull(MetAsInf.CiudadConsig,'-'), isnull(MetAsInf.EdoConsig,'-'),
+        If respuestafolio = 0 Then
+            R = "select isnull(MetAsInf.Clavempresa,'-'), isnull(MetAsInf.Compania,'-'), isnull(MetAsInf.DomicilioConsig,'-'), isnull(MetAsInf.CiudadConsig,'-'), isnull(MetAsInf.EdoConsig,'-'),
          isnull([Contactos-Clientes-Usuarios].ClaveContacto,'-'), isnull([Contactos-Clientes-Usuarios].Nombre,'-'), isnull([Contactos-Clientes-Usuarios].Tel,'-'),
          isnull([Contactos-Clientes-Usuarios].Ext,'-'), isnull([Contactos-Clientes-Usuarios].Email,'-'), isnull(EntradaRegistroCot.Numcot,'-'), EntradaRegistroCot.Fecha,
          isnull(EntradaRegistroCot.Referencia,'-'), isnull(EntradaRegistroCot.Observaciones,'-'), isnull(EntradaRegistroCot.Numcond,'-'), isnull(Condiciones_p_cotizar.donde,'-'),
          isnull(Condiciones_p_cotizar.Precios,'-'), isnull(Condiciones_p_cotizar.tentrega,'-'), isnull(Condiciones_p_cotizar.modalidad,'-'), isnull([Claves-Elaboro-Cot].Nombre,'-'), 
-         isnull(EntradaRegistroCot.ServicioEn,'-') 
+         isnull(EntradaRegistroCot.ServicioEn,'-'), isnull(MetAsInf.RFC,'-') 
          from [InformacionGeneral].[dbo].MetAsInf inner join [InformacionGeneral].[dbo].[Contactos-Clientes-Usuarios] on MetAsInf.Clavempresa = [Contactos-Clientes-Usuarios].Clavempresa
          inner join EntradaRegistroCot on [Contactos-Clientes-Usuarios].ClaveContacto = EntradaRegistroCot.ClaveContacto
          inner join Condiciones_p_cotizar on EntradaRegistroCot.[Elaboró Cot] = Condiciones_p_cotizar.Numcond 
          inner join [Claves-Elaboro-Cot] on [Claves-Elaboro-Cot].[Clave-elaboro-cot]= EntradaRegistroCot.[Elaboró Cot] where EntradaRegistroCot.Numcot =" & TxtCotizacion.Text
-        MsgBox(R)
-        comando2019.CommandText = R
-        lector2019 = comando2019.ExecuteReader
-        lector2019.Read()
-        TxtClaveE.Text = lector2019(0)
-        TxtNombreEmpresa.Text = lector2019(1)
-        TxtDomicilio.Text = lector2019(1)
-        TxtCiudad.Text = lector2019(3) = lector2019(3)
-        TxtEstado.Text = lector2019(4)
-        TxtCveContacto.Text = lector2019(5)
-        TxtNombreC.Text = lector2019(6)
-        TxtTelefono.Text = lector2019(7)
-        TxtExt.Text = lector2019(8)
-        TxtCorreo.Text = lector2019(9)
-        TxtReferencia.Text = lector2019(12)
-        TxtObservaciones.Text = lector2019(13)
-        TxtNumCon.Text = lector2019(14)
-        TxtCotizo.Text = lector2019(19)
-        CboServicio.Text = lector2019(20)
-        lector2019.Close()
-        R = "select *from [1Cotizar] where Numcot =" & Val(TxtCotizacion.Text)
-        comando2019.CommandText = R
-        lector2019 = comando2019.ExecuteReader
-        While lector2019.Read()
-            DgCotizaciones.Rows.Add(False, lector2019(2), lector2019(3), lector2019(5), lector2019(6), lector2019(7), lector2019(8), lector2019(10), lector2019(9), lector2019(11))
-        End While
-        lector2019.Close()
+            MsgBox(R)
+            comando2019.CommandText = R
+            lector2019 = comando2019.ExecuteReader
+            lector2019.Read()
+            TxtClaveE.Text = lector2019(0)
+            TxtNombreEmpresa.Text = lector2019(1)
+            TxtDomicilio.Text = lector2019(1)
+            TxtCiudad.Text = lector2019(3) = lector2019(3)
+            TxtEstado.Text = lector2019(4)
+            TxtCveContacto.Text = lector2019(5)
+            TxtNombreC.Text = lector2019(6)
+            TxtTelefono.Text = lector2019(7)
+            TxtExt.Text = lector2019(8)
+            TxtCorreo.Text = lector2019(9)
+            TxtReferencia.Text = lector2019(12)
+            TxtObservaciones.Text = lector2019(13)
+            TxtNumCon.Text = lector2019(14)
+            TxtCotizo.Text = lector2019(19)
+            CboServicio.Text = lector2019(20)
+            TxtRFC.Text = lector2019(21)
+            lector2019.Close()
+            R = "select *from [1Cotizar] where Numcot =" & Val(TxtCotizacion.Text)
+            comando2019.CommandText = R
+            lector2019 = comando2019.ExecuteReader
+            While lector2019.Read()
+                DgCotizaciones.Rows.Add(False, lector2019(2), lector2019(3), lector2019(5), lector2019(6), lector2019(7), lector2019(8), lector2019(10), lector2019(9), lector2019(11))
+            End While
+            lector2019.Close()
+        Else
+            R = "select top 1 isnull(Folio,'-'),isnull(MetAsInf.Clavempresa,'-'), isnull(MetAsInf.Compania,'-'), isnull(MetAsInf.DomicilioConsig,'-'), 
+		         isnull(MetAsInf.CiudadConsig,'-'), isnull(MetAsInf.EdoConsig,'-'),isnull([Contactos-Clientes-Usuarios].ClaveContacto,'-'), 
+		         isnull([Contactos-Clientes-Usuarios].Nombre,'-'), isnull([Contactos-Clientes-Usuarios].Tel,'-'),
+                 isnull([Contactos-Clientes-Usuarios].Ext,'-'), isnull([Contactos-Clientes-Usuarios].Email,'-'),
+                 isnull(RFC,'-')
+		         from [INFORMES-SERVICIOS] INNER JOIN [InformacionGeneral].[dbo].MetAsInf on [INFORMES-SERVICIOS].ClaveContactoConsign=MetAsInf.Clavempresa
+		         inner join [InformacionGeneral].[dbo].[Contactos-Clientes-Usuarios] on [INFORMES-SERVICIOS].Clavecontacto = [Contactos-Clientes-Usuarios].Clavecontacto
+		         where Folio=" & respuestafolio
+            comando2019.CommandText = R
+            lector2019 = comando2019.ExecuteReader
+            lector2019.Read()
+            LbCot_Folio.Text = "Folio"
+            TxtCotizacion.Text = lector2019(0)
+            TxtClaveE.Text = lector2019(1)
+            TxtNombreEmpresa.Text = lector2019(2)
+            TxtDomicilio.Text = lector2019(3)
+            TxtCiudad.Text = lector2019(4)
+            TxtEstado.Text = lector2019(5)
+            TxtCveContacto.Text = lector2019(6)
+            TxtNombreC.Text = lector2019(7)
+            TxtTelefono.Text = lector2019(8)
+            TxtExt.Text = lector2019(9)
+            TxtCorreo.Text = lector2019(10)
+            TxtRFC.Text = lector2019(11)
+            TxtReferencia.Text = "Confirmación Metrológica No." + Convert.ToString(respuestafolio)
+            lector2019.Close()
+            '----------------------------Llenar el grid por folio---------------------------------------------
+            R = "select isnull(ServCatalogo1,'-'),isnull(Tipo,'-'), isnull(Marca,'-'), isnull(Modelo,'-'), 
+                 isnull(ID,'-'), isnull(Puntos,'-'),isnull(PUCalib,'-'),isnull(Alcance,'-'),isnull(Serie,'-'), 
+                 isnull(Informe,'-'), FECHACALIB, MAGNITUD, INFORME from [INFORMES-SERVICIOS] where Folio=" & respuestafolio
+            comando2019.CommandText = R
+            lector2019 = comando2019.ExecuteReader
+            Dim partida As Integer = 1
+            While lector2019.Read()
+                DgCotizaciones.Rows.Add(False, partida, lector2019(0), 1, lector2019(1), lector2019(2), lector2019(3),
+                 lector2019(4), (lector2019(5) + " Referencia Certificado " + lector2019(11) + lector2019(12)), lector2019(6), "-", lector2019(7), lector2019(8), lector2019(9), lector2019(10))
+                partida = partida + 1
+            End While
+            lector2019.Close()
+        End If
+
 
     End Sub
 
