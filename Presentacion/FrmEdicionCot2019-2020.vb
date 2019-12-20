@@ -79,7 +79,9 @@ Public Class FrmEdicionCot2019_2020
         BtnRestaurar.Visible = False
     End Sub
 
-
+    Private Sub FrmEdicionCot2019_2020_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DgEmpresas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
+    End Sub
 
     Private Sub BtnMinimizar_Click(sender As Object, e As EventArgs) Handles BtnMinimizar.Click
         Me.WindowState = FormWindowState.Minimized

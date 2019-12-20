@@ -208,5 +208,11 @@
   <ItemGroup>
     <None Include="Resources\papel.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-save-28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancel-28.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
