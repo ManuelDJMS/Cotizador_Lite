@@ -143,38 +143,38 @@ Public Class FrmEdicionCot2019_2020
                     Dim lector As SqlDataReader
                     comando.Connection = conexion
                     comando.Transaction = transaction
-                    If TxtCotizacion.Text.Trim.Equals("") Then
-                        '========================================================== SACAR EL ULTIMO REGISTRO DE COTIZACIONES PARA EL DETALLE DE COTIZACION =============================================================
-                        R = "select MAX(Numcot) from [EntradaRegistroCot]"
-                        comando.CommandText = R
-                        lector = comando.ExecuteReader
-                        lector.Read()
-                        If ((lector(0) Is DBNull.Value) OrElse (lector(0) Is Nothing)) Then
-                            maximo = 1
-                        Else
-                            maximo = lector(0)
-                        End If
-                        lector.Close()
-                        '**************************************************** INSERTA EN ENTRADAREGISTROCOT *************************************************************************************
-                        R = "insert into EntradaRegistroCot (NumCot, Cliente, ClaveContacto, Fecha, Referencia, Numcond, Observaciones, ServicioEn, TipodeCliente, 
+                        If TxtCotizacion20.Text.Trim.Equals("") Then
+                            '========================================================== SACAR EL ULTIMO REGISTRO DE COTIZACIONES PARA EL DETALLE DE COTIZACION =============================================================
+                            R = "select MAX(Numcot) from [EntradaRegistroCot]"
+                            comando.CommandText = R
+                            lector = comando.ExecuteReader
+                            lector.Read()
+                            If ((lector(0) Is DBNull.Value) OrElse (lector(0) Is Nothing)) Then
+                                maximo = 1
+                            Else
+                                maximo = lector(0)
+                            End If
+                            lector.Close()
+                            '**************************************************** INSERTA EN ENTRADAREGISTROCOT *************************************************************************************
+                            R = "insert into EntradaRegistroCot (NumCot, Cliente, ClaveContacto, Fecha, Referencia, Numcond, Observaciones, ServicioEn, TipodeCliente, 
                             CveEmpresa, [Elaboró Cot], ModoDeContabilizar) values (" & maximo + 1 & ",'" & TxtNombreEmpresa.Text & "',
                             " & Val(TxtCveContacto.Text) & ", (CONVERT(varchar(10), getdate(), 103)),'" & TxtReferencia.Text & "'," & Val(TxtNumCon.Text) & ",
                             '" & TxtObservaciones.Text & "','" & CboServicio.Text & "'," & Val(TxtTipoCliente.Text) & "," & Val(TxtClaveE.Text) & "," & Val(TxtCotizo2020.Text) & "," & TxtConta.Text & ")"
-                        comando.CommandText = R
-                        comando.ExecuteNonQuery()
-                        '=============================================== CODIGO PARA GUARDAR EN 1COTIZAR =========================================================================================
-                        For i = 0 To DgCotizaciones.Rows.Count - 2
-                            R = "insert into [1Cotizar] (Numcot, PartidaNo, ServCatalogo, Especial, Cant, Tipo, Marca, Modelo, Alcance, 
+                            comando.CommandText = R
+                            comando.ExecuteNonQuery()
+                            '=============================================== CODIGO PARA GUARDAR EN 1COTIZAR =========================================================================================
+                            For i = 0 To DgCotizaciones.Rows.Count - 2
+                                R = "insert into [1Cotizar] (Numcot, PartidaNo, ServCatalogo, Especial, Cant, Tipo, Marca, Modelo, Alcance, 
                                 ID, Punitariocot, Realizado) values (" & maximo + 1 & "," & Val(i + 1) & ",'" & DgCotizaciones.Item(2, i).Value & "',
                                 '" & "-" & "'," & Val(DgCotizaciones.Item(3, i).Value) & ",'" & DgCotizaciones.Item(4, i).Value & "',
                                 '" & DgCotizaciones.Item(5, i).Value & "','" & DgCotizaciones.Item(6, i).Value & "','" & DgCotizaciones.Item(8, i).Value & "','
                                 " & DgCotizaciones.Item(7, i).Value & "'," & Val(DgCotizaciones.Item(10, i).Value) & "," & "0" & ")"
-                            comando.CommandText = R
-                            comando.ExecuteNonQuery()
-                        Next i
-                    Else
-                        ''===================================== Se hace update a una cot apartada, ya existente (UPDATE) ==============================================================
-                        R = "update EntradaRegistroCot set NumCot='" & Val(TxtCotizacion20.Text) & "', Cliente = '" & TxtNombreEmpresa.Text & "', 
+                                comando.CommandText = R
+                                comando.ExecuteNonQuery()
+                            Next i
+                        Else
+                            ''===================================== Se hace update a una cot apartada, ya existente (UPDATE) ==============================================================
+                            R = "update EntradaRegistroCot set NumCot='" & Val(TxtCotizacion20.Text) & "', Cliente = '" & TxtNombreEmpresa.Text & "', 
                              ClaveContacto='" & Val(TxtCveContacto.Text) & "', Fecha= (CONVERT(varchar(10), getdate(), 103)), Referencia='" & TxtReferencia.Text & "', 
                              Numcond='" & Val(TxtNumCon.Text) & "', Observaciones='" & TxtObservaciones.Text & "', ServicioEn='" & CboServicio.Text & "', 
                              TipodeCliente='1', CveEmpresa='" & Val(TxtClaveE.Text) & "', [Elaboró Cot]=" & Val(TxtCotizo2020.Text) & ", 
@@ -218,6 +218,42 @@ Public Class FrmEdicionCot2019_2020
                 End Try
             End If
         End If
+    End Sub
+
+    Private Sub TxtCorreoBuscar_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCorreoBuscar.KeyDown
+        Try
+            Select Case e.KeyData
+                Case Keys.Enter
+                    MetodoMetasInf2019()
+                    comando2019 = conexion2019.CreateCommand
+                    Dim R As String
+                    R = "select distinct isnull(MetAsInf.Clavempresa,'-'), isnull(MetAsInf.Compania,'-'), isnull(MetAsInf.DomicilioConsig,'-'), isnull(MetAsInf.CiudadConsig,'-'), isnull(MetAsInf.EdoConsig,'-'),
+                         isnull([Contactos-Clientes-Usuarios].ClaveContacto,'-'), isnull([Contactos-Clientes-Usuarios].Nombre,'-'), isnull([Contactos-Clientes-Usuarios].Tel,'-'),
+                         isnull([Contactos-Clientes-Usuarios].Ext,'-'), isnull([Contactos-Clientes-Usuarios].Email,'-')
+                         from [Contactos-Clientes-Usuarios] inner join MetAsInf on MetAsInf.Clavempresa = [Contactos-Clientes-Usuarios].Clavempresa
+                         where [Contactos-Clientes-Usuarios].Email ='" & TxtCorreoBuscar.Text & "'"
+                    comando2019.CommandText = R
+                    lector2019 = comando2019.ExecuteReader
+                    lector2019.Read()
+                    TxtClaveE.Text = lector2019(0)
+                    TxtNombreEmpresa.Text = lector2019(1)
+                    TxtDomicilio.Text = lector2019(2)
+                    TxtCiudad.Text = lector2019(3)
+                    TxtEstado.Text = lector2019(4)
+                    TxtCveContacto.Text = lector2019(5)
+                    TxtNombreC.Text = lector2019(6)
+                    TxtTelefono.Text = lector2019(7)
+                    TxtExt.Text = lector2019(8)
+                    TxtCorreo.Text = lector2019(9)
+                    lector2019.Close()
+                    conexion2019.Close()
+            End Select
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "El correo que ingreso no existe")
+            cadena = Err.Description
+            cadena = cadena.Replace("'", "")
+            Bitacora("frmEdicionCot2018-2019", "Error al presionar enter y buscar el correo", Err.Number, cadena)
+        End Try
     End Sub
 
     Private Sub BtnMinimizar_Click(sender As Object, e As EventArgs) Handles BtnMinimizar.Click

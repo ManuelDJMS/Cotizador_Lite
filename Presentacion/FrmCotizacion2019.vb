@@ -172,6 +172,7 @@ Public Class FrmCotizacion2019
     Private Sub DgCotizaciones_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgCotizaciones.CellDoubleClick
         FrmEdicionCot2019_2020.TxtCotizacion.Text = DgCotizaciones.Rows(e.RowIndex).Cells(0).Value.ToString
         FrmEdicionCot2019_2020.Show()
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 
     Private Sub FrmHOME_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -181,15 +182,15 @@ Public Class FrmCotizacion2019
         '============================================ BOTON QUE LLENA EL DATAGRID DE LOS CLIENTES ==========================================================
         Try
             MetodoInformacionGeneral()
-            comando2019 = conexion2019.CreateCommand
+            comandogeneral = conexiongeneral.CreateCommand
             R = "select Clavempresa, Compania, RFC, DomicilioConsig, EdoConsig FROM MetAsInf"
-            comando2019.CommandText = R
-            lector2019 = comando2019.ExecuteReader
-            While lector2019.Read()
-                DgEmpresas.Rows.Add(lector2019(0), lector2019(1), lector2019(2), lector2019(3), lector2019(4))
+            comandogeneral.CommandText = R
+            lectorgeneral = comandogeneral.ExecuteReader
+            While lectorgeneral.Read()
+                DgEmpresas.Rows.Add(lectorgeneral(0), lectorgeneral(1), lectorgeneral(2), lectorgeneral(3), lectorgeneral(4))
             End While
-            lector2019.Close()
-            conexion2019.Close()
+            lectorgeneral.Close()
+            conexiongeneral.Close()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del sistema.")
             cadena = Err.Description
@@ -200,18 +201,18 @@ Public Class FrmCotizacion2019
 #End Region
     Sub ConsultarEmpresas()
         Try
-            MetodoMetasInf2019()
+            MetodoInformacionGeneral()
             DgEmpresas.Rows.Clear()
             DgCotizaciones.Rows.Clear()
-            comando2019 = conexion2019.CreateCommand
+            comandogeneral = conexiongeneral.CreateCommand
             R = "select Clavempresa, Compania, RFC, DomicilioConsig, EdoConsig FROM MetAsInf where Clavempresa like '" & TxtClave.Text & "%' and Compania like'" & TxtNombreE.Text & "%'"
-            comando2019.CommandText = R
-            lector2019 = comando2019.ExecuteReader
-            While lector2019.Read()
-                DgEmpresas.Rows.Add(lector2019(0), lector2019(1), lector2019(2), lector2019(3), lector2019(4))
+            comandogeneral.CommandText = R
+            lectorgeneral = comandogeneral.ExecuteReader
+            While lectorgeneral.Read()
+                DgEmpresas.Rows.Add(lectorgeneral(0), lectorgeneral(1), lectorgeneral(2), lectorgeneral(3), lectorgeneral(4))
             End While
-            lector2019.Close()
-            conexion2019.Close()
+            lectorgeneral.Close()
+            conexiongeneral.Close()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del sistema.")
             cadena = Err.Description
