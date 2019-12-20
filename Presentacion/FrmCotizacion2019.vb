@@ -180,7 +180,7 @@ Public Class FrmCotizacion2019
         Guna.UI.Lib.GraphicsHelper.ShadowForm(Me)
         '============================================ BOTON QUE LLENA EL DATAGRID DE LOS CLIENTES ==========================================================
         Try
-            MetodoMetasInf2019()
+            MetodoInformacionGeneral()
             comando2019 = conexion2019.CreateCommand
             R = "select Clavempresa, Compania, RFC, DomicilioConsig, EdoConsig FROM MetAsInf"
             comando2019.CommandText = R

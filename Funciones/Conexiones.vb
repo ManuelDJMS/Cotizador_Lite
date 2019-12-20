@@ -8,6 +8,10 @@ Module Conexiones
     Public conexion2020 As SqlConnection
     Public comando2020 As SqlCommand
     Public lector2020 As SqlDataReader
+    '======================= METASINF-2020 ============================
+    Public conexiongeneral As SqlConnection
+    Public comandogeneral As SqlCommand
+    Public lectorgeneral As SqlDataReader
     '================================================VARIABLE PARA UTILIZAR LA TRANSACCION DEL LIMS=========================================================================
     Public conexion2020transac As String = ("Data Source=IRONMAN;Initial Catalog=METASINF-2020; User Id=sa; Password=Met99011578a;Integrated Security=False")
     '=======================================================================================================================================================================
@@ -29,8 +33,8 @@ Module Conexiones
     End Sub
     Sub MetodoInformacionGeneral()
         Try
-            conexion2019 = New SqlConnection("Data Source=IRONMAN;Initial Catalog=InformacionGeneral; User Id=sa; Password=Met99011578a;Integrated Security=False")
-            conexion2019.Open()
+            conexiongeneral = New SqlConnection("Data Source=IRONMAN;Initial Catalog=InformacionGeneral; User Id=sa; Password=Met99011578a;Integrated Security=False")
+            conexiongeneral.Open()
         Catch ex As Exception
             MsgBox("No se pudo conectar a la base de datos" + ex.ToString)
         End Try
