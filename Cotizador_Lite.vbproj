@@ -223,5 +223,8 @@
   <ItemGroup>
     <None Include="Resources\icons8-cancel-28.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-48.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
