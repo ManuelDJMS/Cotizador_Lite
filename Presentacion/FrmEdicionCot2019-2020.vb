@@ -224,29 +224,28 @@ Public Class FrmEdicionCot2019_2020
         Try
             Select Case e.KeyData
                 Case Keys.Enter
-                    MetodoMetasInf2019()
-                    comando2019 = conexion2019.CreateCommand
-                    Dim R As String
+                    MetodoInformacionGeneral()
+                    comandogeneral = conexiongeneral.CreateCommand
                     R = "select distinct isnull(MetAsInf.Clavempresa,'-'), isnull(MetAsInf.Compania,'-'), isnull(MetAsInf.DomicilioConsig,'-'), isnull(MetAsInf.CiudadConsig,'-'), isnull(MetAsInf.EdoConsig,'-'),
                          isnull([Contactos-Clientes-Usuarios].ClaveContacto,'-'), isnull([Contactos-Clientes-Usuarios].Nombre,'-'), isnull([Contactos-Clientes-Usuarios].Tel,'-'),
                          isnull([Contactos-Clientes-Usuarios].Ext,'-'), isnull([Contactos-Clientes-Usuarios].Email,'-')
                          from [Contactos-Clientes-Usuarios] inner join MetAsInf on MetAsInf.Clavempresa = [Contactos-Clientes-Usuarios].Clavempresa
                          where [Contactos-Clientes-Usuarios].Email ='" & TxtCorreoBuscar.Text & "'"
-                    comando2019.CommandText = R
-                    lector2019 = comando2019.ExecuteReader
-                    lector2019.Read()
-                    TxtClaveE.Text = lector2019(0)
-                    TxtNombreEmpresa.Text = lector2019(1)
-                    TxtDomicilio.Text = lector2019(2)
-                    TxtCiudad.Text = lector2019(3)
-                    TxtEstado.Text = lector2019(4)
-                    TxtCveContacto.Text = lector2019(5)
-                    TxtNombreC.Text = lector2019(6)
-                    TxtTelefono.Text = lector2019(7)
-                    TxtExt.Text = lector2019(8)
-                    TxtCorreo.Text = lector2019(9)
-                    lector2019.Close()
-                    conexion2019.Close()
+                    comandogeneral.CommandText = R
+                    lectorgeneral = comandogeneral.ExecuteReader
+                    lectorgeneral.Read()
+                    TxtClaveE.Text = lectorgeneral(0)
+                    TxtNombreEmpresa.Text = lectorgeneral(1)
+                    TxtDomicilio.Text = lectorgeneral(2)
+                    TxtCiudad.Text = lectorgeneral(3)
+                    TxtEstado.Text = lectorgeneral(4)
+                    TxtCveContacto.Text = lectorgeneral(5)
+                    TxtNombreC.Text = lectorgeneral(6)
+                    TxtTelefono.Text = lectorgeneral(7)
+                    TxtExt.Text = lectorgeneral(8)
+                    TxtCorreo.Text = lectorgeneral(9)
+                    lectorgeneral.Close()
+                    conexiongeneral.Close()
             End Select
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "El correo que ingreso no existe")
@@ -254,6 +253,18 @@ Public Class FrmEdicionCot2019_2020
             cadena = cadena.Replace("'", "")
             Bitacora("frmEdicionCot2018-2019", "Error al presionar enter y buscar el correo", Err.Number, cadena)
         End Try
+    End Sub
+
+    Private Sub BtnBorrar_Click(sender As Object, e As EventArgs) Handles BtnBorrar.Click
+        For i As Integer = DgCotizaciones.Rows.Count() - 1 To 0 Step -1
+            Dim delete As Boolean
+            delete = DgCotizaciones.Rows(i).Cells(0).Value
+            If delete = True Then
+                Dim row As DataGridViewRow
+                row = DgCotizaciones.Rows(i)
+                DgCotizaciones.Rows.Remove(row)
+            End If
+        Next
     End Sub
 
     Private Sub BtnMinimizar_Click(sender As Object, e As EventArgs) Handles BtnMinimizar.Click
