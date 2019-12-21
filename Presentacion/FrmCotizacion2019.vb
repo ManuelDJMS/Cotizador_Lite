@@ -85,24 +85,32 @@ Public Class FrmCotizacion2019
     End Sub
 
     Private Sub DgEmpresas_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgEmpresas.CellDoubleClick
-        MetodoMetasInf2019() ''MetasINF-2019
-        clave1 = DgEmpresas.Rows(e.RowIndex).Cells(0).Value.ToString()
-        If DgCotizaciones.Rows.Count < 2 Then
-        Else
-            DgCotizaciones.Rows.Clear()
-        End If
-        comando2019 = conexion2019.CreateCommand
-        R = "select EntradaRegistroCot.Numcot, EntradaRegistroCot.Cliente, 
+        Try
+            MetodoMetasInf2019() ''MetasINF-2019
+            clave1 = DgEmpresas.Rows(e.RowIndex).Cells(0).Value.ToString()
+            If DgCotizaciones.Rows.Count < 2 Then
+            Else
+                DgCotizaciones.Rows.Clear()
+            End If
+            comando2019 = conexion2019.CreateCommand
+            R = "select EntradaRegistroCot.Numcot, EntradaRegistroCot.Cliente, 
                 EntradaRegistroCot.Fecha, EntradaRegistroCot.Referencia, [Claves-Elaboro-Cot].Nombre as [Elaboró] from EntradaRegistroCot
                 inner join [Claves-Elaboro-Cot] on [Claves-Elaboro-Cot].[Clave-elaboro-cot] = EntradaRegistroCot.[Elaboró Cot]
                 where EntradaRegistroCot.CveEmpresa=" & clave1
-        comando2019.CommandText = R
-        lector2019 = comando2019.ExecuteReader
-        While lector2019.Read()
-            DgCotizaciones.Rows.Add(lector2019(0), lector2019(1), lector2019(2), lector2019(3), lector2019(4))
-        End While
-        lector2019.Close()
-        conexion2019.Close()
+            comando2019.CommandText = R
+            lector2019 = comando2019.ExecuteReader
+            While lector2019.Read()
+                DgCotizaciones.Rows.Add(lector2019(0), lector2019(1), lector2019(2), lector2019(3), lector2019(4))
+            End While
+            lector2019.Close()
+            conexion2019.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del Sistema")
+            cadena = Err.Description
+            cadena = cadena.Replace("'", "")
+            Bitacora("FrmCotizacion2019", "Error al iniciar el formulario", Err.Number, cadena)
+        End Try
+
     End Sub
 
     Dim sw, sh As Integer
@@ -171,7 +179,7 @@ Public Class FrmCotizacion2019
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del sistema.")
             cadena = Err.Description
             cadena = cadena.Replace("'", "")
-            Bitacora("FrmCotizacion", "Error al cargar los clientes", Err.Number, cadena)
+            Bitacora("FrmCotizacion2019", "Error al cargar los clientes", Err.Number, cadena)
         End Try
 
     End Sub
@@ -219,7 +227,7 @@ Public Class FrmCotizacion2019
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del sistema.")
             cadena = Err.Description
             cadena = cadena.Replace("'", "")
-            Bitacora("FrmCotizacion", "Error al cargar los clientes", Err.Number, cadena)
+            Bitacora("FrmCotizacion2019", "Error al cargar los clientes", Err.Number, cadena)
         End Try
     End Sub
 #End Region
@@ -241,7 +249,7 @@ Public Class FrmCotizacion2019
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del sistema.")
             cadena = Err.Description
             cadena = cadena.Replace("'", "")
-            Bitacora("FrmCotizadorLIMS", "Error al consultar los articulos", Err.Number, cadena)
+            Bitacora("FrmCotizacion2019", "Error al consultar las empresas", Err.Number, cadena)
         End Try
     End Sub
     Sub ConsultarCotizaciones()
@@ -252,7 +260,6 @@ Public Class FrmCotizacion2019
             R = "select EntradaRegistroCot.Numcot, EntradaRegistroCot.Cliente, EntradaRegistroCot.Fecha, EntradaRegistroCot.Referencia, [Claves-Elaboro-Cot].Nombre as [Elaboró] from EntradaRegistroCot 
                  inner join [Claves-Elaboro-Cot] on [Claves-Elaboro-Cot].[Clave-elaboro-cot] = EntradaRegistroCot.[Elaboró Cot] inner join [1Cotizar] on EntradaRegistroCot.NumCot=[1Cotizar].NumCot where 
                  EntradaRegistroCot.CveEmpresa=" & clave1 & " and [1Cotizar].Marca like '" & TxtMarca.Text & "%' and [1Cotizar].Modelo like '" & TxtModelo.Text & "%' and [1Cotizar].ID like '" & TxtID.Text & "%'"
-            'MsgBox(R)
             comando2019.CommandText = R
             lector2019 = comando2019.ExecuteReader
             While lector2019.Read()
@@ -264,7 +271,7 @@ Public Class FrmCotizacion2019
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del sistema.")
             cadena = Err.Description
             cadena = cadena.Replace("'", "")
-            Bitacora("FrmCotizadorLIMS", "Error al consultar los articulos", Err.Number, cadena)
+            Bitacora("FrmCotizacion2019", "Error al consultar los articulos de la cotizacion", Err.Number, cadena)
         End Try
     End Sub
 End Class
