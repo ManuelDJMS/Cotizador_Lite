@@ -1,8 +1,10 @@
 ﻿Imports System.Runtime.InteropServices
-Imports System.Data.SqlClient
+Imports System.IO
+
 Public Class FrmCotizacion2019
     Dim banm, banb As Boolean
     Dim clave1 As String
+    Public variable As String
 #Region "FUNCIONALIDADES DEL FORMULARIO"
     'RESIZE DEL FORMULARIO- CAMBIAR TAMAÑO
     Dim cGrip As Integer = 10
@@ -208,6 +210,7 @@ Public Class FrmCotizacion2019
     End Sub
 
     Private Sub FrmHOME_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LeerArchivo()
         GunaAnimateWindow1.AnimationType = Guna.UI.WinForms.GunaAnimateWindow.AnimateWindowType.AW_BLEND
         GunaAnimateWindow1.Start()
         Guna.UI.Lib.GraphicsHelper.ShadowForm(Me)
@@ -272,6 +275,28 @@ Public Class FrmCotizacion2019
             cadena = Err.Description
             cadena = cadena.Replace("'", "")
             Bitacora("FrmCotizacion2019", "Error al consultar los articulos de la cotizacion", Err.Number, cadena)
+        End Try
+    End Sub
+    Sub LeerArchivo()
+        Dim leer As New StreamReader("\\10.10.10.7\Public-2\Cotizador_Lite\Actualizaciones\Version\version.txt")
+        Try
+            'Se abre el txt para ver la version
+            While leer.Peek <> -1
+                Dim linea As String = leer.ReadLine()
+                If String.IsNullOrEmpty(linea) Then
+                    Continue While
+                End If
+                variable = (linea)
+            End While
+            leer.Close()
+            If Not variable = lbVersion.Text Then 'Verifica si la version es igual a la del txt
+                MsgBox("Existe una nueva actualizacion", MsgBoxStyle.Exclamation, "Cotizador Lite")
+                Dim OpenFileDialog As New OpenFileDialog
+                Process.Start("\\10.10.10.7\Public-2\Cotizador_Lite\Actualizaciones\Ultima_Version\Cotizador.msp")
+                Me.Close()
+            End If
+        Catch ex As Exception
+            MsgBox("Se presento un problema al leer el archivo: " & ex.Message, MsgBoxStyle.Critical, ":::Aprendamos de Programación:::")
         End Try
     End Sub
 End Class
