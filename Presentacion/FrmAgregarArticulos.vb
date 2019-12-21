@@ -2,6 +2,7 @@
 Imports System.Runtime.InteropServices
 Public Class FrmAgregarArticulos
     Private Sub FrmAgregarArticulos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        partida1 = partida1 + 1
         MetodoMetasInf2019()
         comando2019 = conexion2019.CreateCommand
         Dim R As String
@@ -18,9 +19,11 @@ Public Class FrmAgregarArticulos
             Dim seleccionado As Boolean
             seleccionado = DGCotizaciones.Rows(i).Cells(0).Value
             If seleccionado = True Then
-                Form1.DGCotizaciones1.Rows.Add(DGCotizaciones.Rows(i).Cells(1).Value, DGCotizaciones.Rows(i).Cells(2).Value, DGCotizaciones.Rows(i).Cells(3).Value, DGCotizaciones.Rows(i).Cells(4).Value, DGCotizaciones.Rows(i).Cells(5).Value, DGCotizaciones.Rows(i).Cells(6).Value, DGCotizaciones.Rows(i).Cells(7).Value, DGCotizaciones.Rows(i).Cells(8).Value, DGCotizaciones.Rows(i).Cells(9).Value)
+                FrmEdicionCot2019_2020.DgCotizaciones.Rows.Add(DGCotizaciones.Rows(i).Cells(1).Value, partida1, DGCotizaciones.Rows(i).Cells(2).Value, DGCotizaciones.Rows(i).Cells(3).Value, DGCotizaciones.Rows(i).Cells(4).Value, DGCotizaciones.Rows(i).Cells(5).Value, DGCotizaciones.Rows(i).Cells(6).Value, DGCotizaciones.Rows(i).Cells(7).Value, DGCotizaciones.Rows(i).Cells(8).Value, DGCotizaciones.Rows(i).Cells(9).Value)
+                partida1 = partida1 + 1
             End If
         Next
+
     End Sub
 #Region "FUNCIONALIDADES DEL FORMULARIO"
     'RESIZE DEL FORMULARIO- CAMBIAR TAMAÑO

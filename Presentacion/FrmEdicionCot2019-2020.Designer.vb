@@ -109,15 +109,16 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaPictureBox2 = New Guna.UI.WinForms.GunaPictureBox()
         Me.BtnRestaurar = New Guna.UI.WinForms.GunaImageButton()
         Me.BtnCerrar = New Guna.UI.WinForms.GunaImageButton()
+        Me.GunaVSeparator2 = New Guna.UI.WinForms.GunaVSeparator()
+        Me.LbLogin = New Guna.UI.WinForms.GunaLabel()
+        Me.GunaPictureBox1 = New Guna.UI.WinForms.GunaPictureBox()
         Me.GunaVSeparator1 = New Guna.UI.WinForms.GunaVSeparator()
         Me.BtnMaximizar = New Guna.UI.WinForms.GunaImageButton()
         Me.BtnMinimizar = New Guna.UI.WinForms.GunaImageButton()
         Me.GunaImageButton4 = New Guna.UI.WinForms.GunaImageButton()
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.GunaAnimateWindow1 = New Guna.UI.WinForms.GunaAnimateWindow(Me.components)
-        Me.GunaPictureBox1 = New Guna.UI.WinForms.GunaPictureBox()
-        Me.LbLogin = New Guna.UI.WinForms.GunaLabel()
-        Me.GunaVSeparator2 = New Guna.UI.WinForms.GunaVSeparator()
+        Me.btnAgregar = New Guna.UI.WinForms.GunaButton()
         Me.PanelContenedor.SuspendLayout()
         Me.PanelFormularios.SuspendLayout()
         CType(Me.DgCotizaciones, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -141,6 +142,7 @@ Partial Class FrmEdicionCot2019_2020
         '
         'PanelFormularios
         '
+        Me.PanelFormularios.Controls.Add(Me.btnAgregar)
         Me.PanelFormularios.Controls.Add(Me.BtnBorrar)
         Me.PanelFormularios.Controls.Add(Me.DgCotizaciones)
         Me.PanelFormularios.Controls.Add(Me.GunaVSeparator4)
@@ -1181,6 +1183,39 @@ Partial Class FrmEdicionCot2019_2020
         Me.BtnCerrar.Size = New System.Drawing.Size(32, 32)
         Me.BtnCerrar.TabIndex = 7
         '
+        'GunaVSeparator2
+        '
+        Me.GunaVSeparator2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GunaVSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.GunaVSeparator2.LineColor = System.Drawing.Color.WhiteSmoke
+        Me.GunaVSeparator2.Location = New System.Drawing.Point(799, 12)
+        Me.GunaVSeparator2.Name = "GunaVSeparator2"
+        Me.GunaVSeparator2.Size = New System.Drawing.Size(10, 25)
+        Me.GunaVSeparator2.TabIndex = 6
+        '
+        'LbLogin
+        '
+        Me.LbLogin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LbLogin.AutoSize = True
+        Me.LbLogin.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbLogin.Location = New System.Drawing.Point(872, 17)
+        Me.LbLogin.Name = "LbLogin"
+        Me.LbLogin.Size = New System.Drawing.Size(62, 20)
+        Me.LbLogin.TabIndex = 5
+        Me.LbLogin.Text = "VENTAS"
+        '
+        'GunaPictureBox1
+        '
+        Me.GunaPictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GunaPictureBox1.BaseColor = System.Drawing.Color.White
+        Me.GunaPictureBox1.Image = Global.Cotizador_Lite.My.Resources.Resources.icons8_verified_account_28
+        Me.GunaPictureBox1.Location = New System.Drawing.Point(825, 8)
+        Me.GunaPictureBox1.Name = "GunaPictureBox1"
+        Me.GunaPictureBox1.Size = New System.Drawing.Size(32, 32)
+        Me.GunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.GunaPictureBox1.TabIndex = 4
+        Me.GunaPictureBox1.TabStop = False
+        '
         'GunaVSeparator1
         '
         Me.GunaVSeparator1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -1241,38 +1276,32 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaAnimateWindow1.Interval = 900
         Me.GunaAnimateWindow1.TargetControl = Me
         '
-        'GunaPictureBox1
+        'btnAgregar
         '
-        Me.GunaPictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GunaPictureBox1.BaseColor = System.Drawing.Color.White
-        Me.GunaPictureBox1.Image = Global.Cotizador_Lite.My.Resources.Resources.icons8_verified_account_28
-        Me.GunaPictureBox1.Location = New System.Drawing.Point(825, 8)
-        Me.GunaPictureBox1.Name = "GunaPictureBox1"
-        Me.GunaPictureBox1.Size = New System.Drawing.Size(32, 32)
-        Me.GunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.GunaPictureBox1.TabIndex = 4
-        Me.GunaPictureBox1.TabStop = False
-        '
-        'LbLogin
-        '
-        Me.LbLogin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LbLogin.AutoSize = True
-        Me.LbLogin.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbLogin.Location = New System.Drawing.Point(872, 17)
-        Me.LbLogin.Name = "LbLogin"
-        Me.LbLogin.Size = New System.Drawing.Size(62, 20)
-        Me.LbLogin.TabIndex = 5
-        Me.LbLogin.Text = "VENTAS"
-        '
-        'GunaVSeparator2
-        '
-        Me.GunaVSeparator2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GunaVSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.GunaVSeparator2.LineColor = System.Drawing.Color.WhiteSmoke
-        Me.GunaVSeparator2.Location = New System.Drawing.Point(799, 12)
-        Me.GunaVSeparator2.Name = "GunaVSeparator2"
-        Me.GunaVSeparator2.Size = New System.Drawing.Size(10, 25)
-        Me.GunaVSeparator2.TabIndex = 6
+        Me.btnAgregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnAgregar.AnimationHoverSpeed = 0.07!
+        Me.btnAgregar.AnimationSpeed = 0.03!
+        Me.btnAgregar.BackColor = System.Drawing.Color.Transparent
+        Me.btnAgregar.BaseColor = System.Drawing.Color.SteelBlue
+        Me.btnAgregar.BorderColor = System.Drawing.Color.Black
+        Me.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAgregar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnAgregar.FocusedColor = System.Drawing.Color.Empty
+        Me.btnAgregar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnAgregar.ForeColor = System.Drawing.Color.White
+        Me.btnAgregar.Image = Global.Cotizador_Lite.My.Resources.Resources.icons8_add_48
+        Me.btnAgregar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnAgregar.Location = New System.Drawing.Point(869, 588)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAgregar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnAgregar.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnAgregar.OnHoverImage = Nothing
+        Me.btnAgregar.OnPressedColor = System.Drawing.Color.Black
+        Me.btnAgregar.Radius = 3
+        Me.btnAgregar.Size = New System.Drawing.Size(148, 28)
+        Me.btnAgregar.TabIndex = 309
+        Me.btnAgregar.Text = "Agregar Artículos"
         '
         'FrmEdicionCot2019_2020
         '
@@ -1395,4 +1424,5 @@ Partial Class FrmEdicionCot2019_2020
     Friend WithEvents GunaVSeparator2 As Guna.UI.WinForms.GunaVSeparator
     Friend WithEvents LbLogin As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaPictureBox1 As Guna.UI.WinForms.GunaPictureBox
+    Friend WithEvents btnAgregar As Guna.UI.WinForms.GunaButton
 End Class

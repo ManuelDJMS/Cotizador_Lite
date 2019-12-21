@@ -264,9 +264,9 @@ Partial Class Form1
         Me.btnAgregar.OnHoverImage = Nothing
         Me.btnAgregar.OnPressedColor = System.Drawing.Color.Black
         Me.btnAgregar.Radius = 3
-        Me.btnAgregar.Size = New System.Drawing.Size(162, 28)
+        Me.btnAgregar.Size = New System.Drawing.Size(148, 28)
         Me.btnAgregar.TabIndex = 308
-        Me.btnAgregar.Text = "Agregar a Cotización"
+        Me.btnAgregar.Text = "Agregar Artículos"
         '
         'DgCotizaciones1
         '

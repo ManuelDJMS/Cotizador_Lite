@@ -124,8 +124,10 @@ Public Class FrmEdicionCot2019_2020
             lector2019 = comando2019.ExecuteReader
             While lector2019.Read()
                 DgCotizaciones.Rows.Add(False, lector2019(2), lector2019(3), lector2019(5), lector2019(6), lector2019(7), lector2019(8), lector2019(10), lector2019(9), lector2019(11))
+                partida1 = lector2019(2).ToString
             End While
             lector2019.Close()
+
         Else
             R = "select top 1 isnull(Folio,'-'),isnull(MetAsInf.Clavempresa,'-'), isnull(MetAsInf.Compania,'-'), isnull(MetAsInf.DomicilioConsig,'-'), 
 		         isnull(MetAsInf.CiudadConsig,'-'), isnull(MetAsInf.EdoConsig,'-'),isnull([Contactos-Clientes-Usuarios].ClaveContacto,'-'), 
@@ -168,7 +170,6 @@ Public Class FrmEdicionCot2019_2020
             End While
             lector2019.Close()
         End If
-
 
     End Sub
 
@@ -344,6 +345,10 @@ Public Class FrmEdicionCot2019_2020
                 DgCotizaciones.Rows.Remove(row)
             End If
         Next
+    End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        FrmAgregarArticulos.ShowDialog()
     End Sub
 
     Private Sub BtnMinimizar_Click(sender As Object, e As EventArgs) Handles BtnMinimizar.Click
