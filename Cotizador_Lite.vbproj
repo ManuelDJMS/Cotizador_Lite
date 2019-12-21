@@ -85,6 +85,12 @@
     </Compile>
     <Compile Include="Funciones\Conexiones.vb" />
     <Compile Include="Funciones\Funciones.vb" />
+    <Compile Include="Presentacion\FrmAgregarArticulos.Designer.vb">
+      <DependentUpon>FrmAgregarArticulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmAgregarArticulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\frmAlert.Designer.vb">
       <DependentUpon>frmAlert.vb</DependentUpon>
     </Compile>
@@ -134,6 +140,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmAgregarArticulos.resx">
+      <DependentUpon>FrmAgregarArticulos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmAlert.resx">
       <DependentUpon>frmAlert.vb</DependentUpon>
