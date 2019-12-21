@@ -5,6 +5,7 @@ Module Funciones
     Public R As String 'VARIABLE QUE ALMACENA TODOS LOS QUERYS
     Public empresa As Integer 'VARIABLE PARA BUSCAR EMPRESA FRMCOTIZACIONPORARTICULO
     Public respuestafolio As Integer = 0
+    Public NumCot As Integer
     '-------------------------CODIGO PARA LAS ALERTAS ---------------------------
     Public Sub Alert(msg As String, type As frmAlert.alertTypeEnum)
         Dim f As frmAlert = New frmAlert

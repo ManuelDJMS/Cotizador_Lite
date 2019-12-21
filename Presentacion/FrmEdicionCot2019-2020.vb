@@ -57,6 +57,7 @@ Public Class FrmEdicionCot2019_2020
     Dim lx, ly As Integer
 
     Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
+        FrmCotizacion2019.RbCotizacion.Checked = True
         Me.Close()
     End Sub
 
@@ -82,6 +83,9 @@ Public Class FrmEdicionCot2019_2020
 
     Private Sub FrmEdicionCot2019_2020_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DgCotizaciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
+        GunaAnimateWindow1.AnimationType = Guna.UI.WinForms.GunaAnimateWindow.AnimateWindowType.AW_BLEND
+        GunaAnimateWindow1.Start()
+        Guna.UI.Lib.GraphicsHelper.ShadowForm(Me)
         MetodoMetasInf2019()
         comando2019 = conexion2019.CreateCommand
         If respuestafolio = 0 Then
@@ -94,15 +98,14 @@ Public Class FrmEdicionCot2019_2020
          from [InformacionGeneral].[dbo].MetAsInf inner join [InformacionGeneral].[dbo].[Contactos-Clientes-Usuarios] on MetAsInf.Clavempresa = [Contactos-Clientes-Usuarios].Clavempresa
          inner join EntradaRegistroCot on [Contactos-Clientes-Usuarios].ClaveContacto = EntradaRegistroCot.ClaveContacto
          inner join Condiciones_p_cotizar on EntradaRegistroCot.[Elaboró Cot] = Condiciones_p_cotizar.Numcond 
-         inner join [Claves-Elaboro-Cot] on [Claves-Elaboro-Cot].[Clave-elaboro-cot]= EntradaRegistroCot.[Elaboró Cot] where EntradaRegistroCot.Numcot =" & TxtCotizacion.Text
-            MsgBox(R)
+         inner join [Claves-Elaboro-Cot] on [Claves-Elaboro-Cot].[Clave-elaboro-cot]= EntradaRegistroCot.[Elaboró Cot] where EntradaRegistroCot.Numcot =" & NumCot
             comando2019.CommandText = R
             lector2019 = comando2019.ExecuteReader
             lector2019.Read()
             TxtClaveE.Text = lector2019(0)
             TxtNombreEmpresa.Text = lector2019(1)
             TxtDomicilio.Text = lector2019(1)
-            TxtCiudad.Text = lector2019(3) = lector2019(3)
+            TxtCiudad.Text = lector2019(3)
             TxtEstado.Text = lector2019(4)
             TxtCveContacto.Text = lector2019(5)
             TxtNombreC.Text = lector2019(6)
@@ -116,7 +119,7 @@ Public Class FrmEdicionCot2019_2020
             CboServicio.Text = lector2019(20)
             TxtRFC.Text = lector2019(21)
             lector2019.Close()
-            R = "select *from [1Cotizar] where Numcot =" & Val(TxtCotizacion.Text)
+            R = "select *from [1Cotizar] where Numcot =" & NumCot
             comando2019.CommandText = R
             lector2019 = comando2019.ExecuteReader
             While lector2019.Read()
@@ -132,6 +135,7 @@ Public Class FrmEdicionCot2019_2020
 		         from [INFORMES-SERVICIOS] INNER JOIN [InformacionGeneral].[dbo].MetAsInf on [INFORMES-SERVICIOS].ClaveContactoConsign=MetAsInf.Clavempresa
 		         inner join [InformacionGeneral].[dbo].[Contactos-Clientes-Usuarios] on [INFORMES-SERVICIOS].Clavecontacto = [Contactos-Clientes-Usuarios].Clavecontacto
 		         where Folio=" & respuestafolio
+
             comando2019.CommandText = R
             lector2019 = comando2019.ExecuteReader
             lector2019.Read()
@@ -199,13 +203,25 @@ Public Class FrmEdicionCot2019_2020
                                 maximo = lector(0)
                             End If
                             lector.Close()
-                            '**************************************************** INSERTA EN ENTRADAREGISTROCOT *************************************************************************************
-                            R = "insert into EntradaRegistroCot (NumCot, Cliente, ClaveContacto, Fecha, Referencia, Numcond, Observaciones, ServicioEn, TipodeCliente, 
+                            '========================================================= DECISION SI SE GUARDA POR FOLIO O POR COT ===================================================================
+                            If respuestafolio = 0 Then
+                                '**************************************************** INSERTA EN ENTRADAREGISTROCOT CON COTIZACION *************************************************************************************
+                                R = "insert into EntradaRegistroCot (NumCot, Cliente, ClaveContacto, Fecha, Referencia, Numcond, Observaciones, ServicioEn, TipodeCliente, 
+                                     CveEmpresa, [Elaboró Cot], ModoDeContabilizar) values (" & maximo + 1 & ",'" & TxtNombreEmpresa.Text & "',
+                                     " & Val(TxtCveContacto.Text) & ", (CONVERT(varchar(10), getdate(), 103)),'" & TxtReferencia.Text & "'," & Val(TxtNumCon.Text) & ",
+                                     '" & TxtObservaciones.Text & "','" & CboServicio.Text & "'," & Val(TxtTipoCliente.Text) & "," & Val(TxtClaveE.Text) & "," & Val(TxtCotizo2020.Text) & "," & TxtConta.Text & ")"
+                                comando.CommandText = R
+                                comando.ExecuteNonQuery()
+                            Else
+
+                                '**************************************************** INSERTA EN ENTRADAREGISTROCOT CON COTIZACION *************************************************************************************
+                                R = "insert into EntradaRegistroCot (NumCot, Cliente, ClaveContacto, Fecha, Referencia, Numcond, Observaciones, ServicioEn, TipodeCliente, 
                             CveEmpresa, [Elaboró Cot], ModoDeContabilizar) values (" & maximo + 1 & ",'" & TxtNombreEmpresa.Text & "',
-                            " & Val(TxtCveContacto.Text) & ", (CONVERT(varchar(10), getdate(), 103)),'" & TxtReferencia.Text & "'," & Val(TxtNumCon.Text) & ",
+                            " & Val(TxtCveContacto.Text) & ", (CONVERT(varchar(10), getdate(), 103)),'" & TxtReferencia.Text & "'," & Val(TxtNumCond.Text) & ",
                             '" & TxtObservaciones.Text & "','" & CboServicio.Text & "'," & Val(TxtTipoCliente.Text) & "," & Val(TxtClaveE.Text) & "," & Val(TxtCotizo2020.Text) & "," & TxtConta.Text & ")"
-                            comando.CommandText = R
-                            comando.ExecuteNonQuery()
+                                comando.CommandText = R
+                                comando.ExecuteNonQuery()
+                            End If
                             '=============================================== CODIGO PARA GUARDAR EN 1COTIZAR =========================================================================================
                             For i = 0 To DgCotizaciones.Rows.Count - 2
                                 R = "insert into [1Cotizar] (Numcot, PartidaNo, ServCatalogo, Especial, Cant, Tipo, Marca, Modelo, Alcance, 
@@ -216,37 +232,56 @@ Public Class FrmEdicionCot2019_2020
                                 comando.CommandText = R
                                 comando.ExecuteNonQuery()
                             Next i
-                        Else
-                            ''===================================== Se hace update a una cot apartada, ya existente (UPDATE) ==============================================================
-                            R = "update EntradaRegistroCot set NumCot='" & Val(TxtCotizacion20.Text) & "', Cliente = '" & TxtNombreEmpresa.Text & "', 
+                        Else '============================ELSE DE DECISION SI ES NUEVA COT O NO ================================================
+                            If respuestafolio = 0 Then
+                                ''===================================== Se hace update a una cot apartada, ya existente (UPDATE) ==============================================================
+                                R = "update EntradaRegistroCot set NumCot='" & Val(TxtCotizacion20.Text) & "', Cliente = '" & TxtNombreEmpresa.Text & "', 
                              ClaveContacto='" & Val(TxtCveContacto.Text) & "', Fecha= (CONVERT(varchar(10), getdate(), 103)), Referencia='" & TxtReferencia.Text & "', 
-                             Numcond='" & Val(TxtNumCon.Text) & "', Observaciones='" & TxtObservaciones.Text & "', ServicioEn='" & CboServicio.Text & "', 
+                             Numcond='" & Val(TxtNumCond.Text) & "', Observaciones='" & TxtObservaciones.Text & "', ServicioEn='" & CboServicio.Text & "', 
                              TipodeCliente='1', CveEmpresa='" & Val(TxtClaveE.Text) & "', [Elaboró Cot]=" & Val(TxtCotizo2020.Text) & ", 
-                             ModoDeContabilizar='" & Val(TxtConta.Text) & "' WHERE NumCot='" & Val(TxtCotizacion.Text) & "'"
-                        comando.CommandText = R
-                        comando.ExecuteNonQuery()
-                        For i = 0 To DgCotizaciones.Rows.Count - 2
-                            R = "insert into [1Cotizar] (Numcot, PartidaNo, ServCatalogo, Especial, Cant, Tipo, Marca, Modelo, Alcance, 
+                             ModoDeContabilizar='" & Val(TxtConta.Text) & "' WHERE NumCot='" & Val(TxtCotizacion20.Text) & "'"
+                                comando.CommandText = R
+                                comando.ExecuteNonQuery()
+                            Else
+                                ''===================================== Se hace update a una cot apartada, ya existente (UPDATE) ==============================================================
+                                R = "update EntradaRegistroCot set NumCot='" & Val(TxtCotizacion20.Text) & "', Cliente = '" & TxtNombreEmpresa.Text & "', 
+                             ClaveContacto='" & Val(TxtCveContacto.Text) & "', Fecha= (CONVERT(varchar(10), getdate(), 103)), Referencia='" & TxtReferencia.Text & "', 
+                             Numcond='" & Val(TxtNumCond.Text) & "', Observaciones='" & TxtObservaciones.Text & "', ServicioEn='" & CboServicio.Text & "', 
+                             TipodeCliente='1', CveEmpresa='" & Val(TxtClaveE.Text) & "', [Elaboró Cot]=" & Val(TxtCotizo2020.Text) & ", 
+                             ModoDeContabilizar='" & Val(TxtConta.Text) & "' WHERE NumCot='" & Val(TxtCotizacion20.Text) & "'"
+                                comando.CommandText = R
+                                comando.ExecuteNonQuery()
+                            End If
+
+                            For i = 0 To DgCotizaciones.Rows.Count - 2
+                                R = "insert into [1Cotizar] (Numcot, PartidaNo, ServCatalogo, Especial, Cant, Tipo, Marca, Modelo, Alcance, 
                                  ID, Punitariocot, Realizado) values (" & Val(TxtCotizacion20.Text) & "," & Val(i + 1) & ",'" & DgCotizaciones.Item(2, i).Value & "',
                                 '" & "-" & "'," & Val(DgCotizaciones.Item(3, i).Value) & ",'" & DgCotizaciones.Item(4, i).Value & "',
                                 '" & DgCotizaciones.Item(5, i).Value & "','" & DgCotizaciones.Item(6, i).Value & "','" & DgCotizaciones.Item(8, i).Value & "',
                                 '" & DgCotizaciones.Item(7, i).Value & "'," & Val(DgCotizaciones.Item(10, i).Value) & "," & "0" & ")"
-                            comando.CommandText = R
-                            comando.ExecuteNonQuery()
-                        Next i
-                    End If
+                                comando.CommandText = R
+                                comando.ExecuteNonQuery()
+                            Next i
+                        End If '****************************DECISION ACERCA DE COT EDITAR O NUEVA
 
-                    '============================================================================================================================================================================================
-                    Try
+                        '============================================================================================================================================================================================
+                        Try
                         If MessageBox.Show("¿Desea Guardar la información?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
                             transaction.Commit()
                             MsgBox("La Cotización se guardó correctamente", MsgBoxStyle.Information, "Guardado Exitoso")
-                            'FrmCotizacion.DgAgregar.Rows.Clear()
-                            Me.Dispose()
-                        Else
-                            transaction.Rollback()
-                            Me.Dispose()
-                        End If
+                                'FrmCotizacion.DgAgregar.Rows.Clear()
+                                respuestafolio = 0
+                                NumCot = 0
+                                FrmCotizacion2019.RbCotizacion.Checked = True
+                                Me.Close()
+
+                            Else
+                                transaction.Rollback()
+                                respuestafolio = 0
+                                NumCot = 0
+                                FrmCotizacion2019.RbCotizacion.Checked = True
+                                Me.Close()
+                            End If
                     Catch ex As Exception
                         MsgBox("Commit Exception type: {0} no se pudo insertar por error", MsgBoxStyle.Critical, "Error externo al Sistema")
                         Try

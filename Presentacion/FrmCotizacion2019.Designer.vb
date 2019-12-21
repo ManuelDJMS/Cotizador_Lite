@@ -23,12 +23,12 @@ Partial Class FrmCotizacion2019
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmCotizacion2019))
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.GunaAnimateWindow1 = New Guna.UI.WinForms.GunaAnimateWindow(Me.components)
@@ -49,6 +49,7 @@ Partial Class FrmCotizacion2019
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GunaElipsePanel1 = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.RbNumCot = New Guna.UI.WinForms.GunaRadioButton()
         Me.RbFolio = New Guna.UI.WinForms.GunaRadioButton()
         Me.RbTodos = New Guna.UI.WinForms.GunaRadioButton()
         Me.RbArticulo = New Guna.UI.WinForms.GunaRadioButton()
@@ -100,7 +101,7 @@ Partial Class FrmCotizacion2019
         'GunaAnimateWindow1
         '
         Me.GunaAnimateWindow1.AnimationType = Guna.UI.WinForms.GunaAnimateWindow.AnimateWindowType.AW_CENTER
-        Me.GunaAnimateWindow1.Interval = 100
+        Me.GunaAnimateWindow1.Interval = 900
         Me.GunaAnimateWindow1.TargetControl = Me
         '
         'PanelContenedor
@@ -241,8 +242,8 @@ Partial Class FrmCotizacion2019
         '
         'DgCotizaciones
         '
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.DgCotizaciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.White
+        Me.DgCotizaciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
         Me.DgCotizaciones.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -251,24 +252,24 @@ Partial Class FrmCotizacion2019
         Me.DgCotizaciones.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgCotizaciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DgCotizaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(220, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgCotizaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(220, Byte), Integer))
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgCotizaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.DgCotizaciones.ColumnHeadersHeight = 21
         Me.DgCotizaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column8, Me.Column9, Me.Column10, Me.Column11})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgCotizaciones.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgCotizaciones.DefaultCellStyle = DataGridViewCellStyle15
         Me.DgCotizaciones.EnableHeadersVisualStyles = False
         Me.DgCotizaciones.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgCotizaciones.Location = New System.Drawing.Point(28, 419)
@@ -331,6 +332,7 @@ Partial Class FrmCotizacion2019
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GunaElipsePanel1.BackColor = System.Drawing.Color.Transparent
         Me.GunaElipsePanel1.BaseColor = System.Drawing.Color.White
+        Me.GunaElipsePanel1.Controls.Add(Me.RbNumCot)
         Me.GunaElipsePanel1.Controls.Add(Me.RbFolio)
         Me.GunaElipsePanel1.Controls.Add(Me.RbTodos)
         Me.GunaElipsePanel1.Controls.Add(Me.RbArticulo)
@@ -338,8 +340,22 @@ Partial Class FrmCotizacion2019
         Me.GunaElipsePanel1.Controls.Add(Me.GunaLabel8)
         Me.GunaElipsePanel1.Location = New System.Drawing.Point(28, 305)
         Me.GunaElipsePanel1.Name = "GunaElipsePanel1"
-        Me.GunaElipsePanel1.Size = New System.Drawing.Size(571, 43)
+        Me.GunaElipsePanel1.Size = New System.Drawing.Size(787, 43)
         Me.GunaElipsePanel1.TabIndex = 284
+        '
+        'RbNumCot
+        '
+        Me.RbNumCot.BaseColor = System.Drawing.SystemColors.Control
+        Me.RbNumCot.CheckedOffColor = System.Drawing.Color.Gray
+        Me.RbNumCot.CheckedOnColor = System.Drawing.Color.ForestGreen
+        Me.RbNumCot.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RbNumCot.FillColor = System.Drawing.Color.White
+        Me.RbNumCot.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbNumCot.Location = New System.Drawing.Point(309, 11)
+        Me.RbNumCot.Name = "RbNumCot"
+        Me.RbNumCot.Size = New System.Drawing.Size(178, 20)
+        Me.RbNumCot.TabIndex = 175
+        Me.RbNumCot.Text = "Número de Cotización"
         '
         'RbFolio
         '
@@ -349,7 +365,7 @@ Partial Class FrmCotizacion2019
         Me.RbFolio.Cursor = System.Windows.Forms.Cursors.Hand
         Me.RbFolio.FillColor = System.Drawing.Color.White
         Me.RbFolio.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RbFolio.Location = New System.Drawing.Point(491, 11)
+        Me.RbFolio.Location = New System.Drawing.Point(243, 11)
         Me.RbFolio.Name = "RbFolio"
         Me.RbFolio.Size = New System.Drawing.Size(60, 20)
         Me.RbFolio.TabIndex = 3
@@ -361,13 +377,15 @@ Partial Class FrmCotizacion2019
         Me.RbTodos.CheckedOffColor = System.Drawing.Color.Gray
         Me.RbTodos.CheckedOnColor = System.Drawing.Color.ForestGreen
         Me.RbTodos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RbTodos.Enabled = False
         Me.RbTodos.FillColor = System.Drawing.Color.White
         Me.RbTodos.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RbTodos.Location = New System.Drawing.Point(338, 11)
+        Me.RbTodos.Location = New System.Drawing.Point(572, 11)
         Me.RbTodos.Name = "RbTodos"
         Me.RbTodos.Size = New System.Drawing.Size(147, 20)
         Me.RbTodos.TabIndex = 2
         Me.RbTodos.Text = "Todos los Artículos"
+        Me.RbTodos.Visible = False
         '
         'RbArticulo
         '
@@ -375,13 +393,15 @@ Partial Class FrmCotizacion2019
         Me.RbArticulo.CheckedOffColor = System.Drawing.Color.Gray
         Me.RbArticulo.CheckedOnColor = System.Drawing.Color.ForestGreen
         Me.RbArticulo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RbArticulo.Enabled = False
         Me.RbArticulo.FillColor = System.Drawing.Color.White
         Me.RbArticulo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RbArticulo.Location = New System.Drawing.Point(242, 11)
+        Me.RbArticulo.Location = New System.Drawing.Point(476, 11)
         Me.RbArticulo.Name = "RbArticulo"
         Me.RbArticulo.Size = New System.Drawing.Size(80, 20)
         Me.RbArticulo.TabIndex = 1
         Me.RbArticulo.Text = "Artículo"
+        Me.RbArticulo.Visible = False
         '
         'RbCotizacion
         '
@@ -394,9 +414,9 @@ Partial Class FrmCotizacion2019
         Me.RbCotizacion.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RbCotizacion.Location = New System.Drawing.Point(123, 11)
         Me.RbCotizacion.Name = "RbCotizacion"
-        Me.RbCotizacion.Size = New System.Drawing.Size(100, 20)
+        Me.RbCotizacion.Size = New System.Drawing.Size(114, 20)
         Me.RbCotizacion.TabIndex = 0
-        Me.RbCotizacion.Text = "Cotización"
+        Me.RbCotizacion.Text = "Cotizaciones"
         '
         'GunaLabel8
         '
@@ -430,8 +450,8 @@ Partial Class FrmCotizacion2019
         '
         'DgEmpresas
         '
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        Me.DgEmpresas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.White
+        Me.DgEmpresas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
         Me.DgEmpresas.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DgEmpresas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -439,31 +459,31 @@ Partial Class FrmCotizacion2019
         Me.DgEmpresas.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgEmpresas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DgEmpresas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(220, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgEmpresas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(220, Byte), Integer))
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgEmpresas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.DgEmpresas.ColumnHeadersHeight = 21
         Me.DgEmpresas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column5, Me.Column6})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgEmpresas.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle18.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgEmpresas.DefaultCellStyle = DataGridViewCellStyle18
         Me.DgEmpresas.EnableHeadersVisualStyles = False
         Me.DgEmpresas.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgEmpresas.Location = New System.Drawing.Point(28, 106)
         Me.DgEmpresas.Name = "DgEmpresas"
         Me.DgEmpresas.ReadOnly = True
         Me.DgEmpresas.RowHeadersVisible = False
-        Me.DgEmpresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
+        Me.DgEmpresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgEmpresas.Size = New System.Drawing.Size(1107, 177)
         Me.DgEmpresas.TabIndex = 281
         Me.DgEmpresas.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna
@@ -698,6 +718,7 @@ Partial Class FrmCotizacion2019
         Me.GunaVSeparator2.Name = "GunaVSeparator2"
         Me.GunaVSeparator2.Size = New System.Drawing.Size(10, 25)
         Me.GunaVSeparator2.TabIndex = 6
+        Me.GunaVSeparator2.Visible = False
         '
         'LbLogin
         '
@@ -706,9 +727,10 @@ Partial Class FrmCotizacion2019
         Me.LbLogin.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LbLogin.Location = New System.Drawing.Point(872, 17)
         Me.LbLogin.Name = "LbLogin"
-        Me.LbLogin.Size = New System.Drawing.Size(65, 20)
+        Me.LbLogin.Size = New System.Drawing.Size(62, 20)
         Me.LbLogin.TabIndex = 5
-        Me.LbLogin.Text = "Manuel"
+        Me.LbLogin.Text = "VENTAS"
+        Me.LbLogin.Visible = False
         '
         'GunaPictureBox1
         '
@@ -721,6 +743,7 @@ Partial Class FrmCotizacion2019
         Me.GunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.GunaPictureBox1.TabIndex = 4
         Me.GunaPictureBox1.TabStop = False
+        Me.GunaPictureBox1.Visible = False
         '
         'GunaVSeparator1
         '
@@ -854,4 +877,5 @@ Partial Class FrmCotizacion2019
     Friend WithEvents RbArticulo As Guna.UI.WinForms.GunaRadioButton
     Friend WithEvents RbCotizacion As Guna.UI.WinForms.GunaRadioButton
     Friend WithEvents GunaElipsePanel2 As Guna.UI.WinForms.GunaElipsePanel
+    Friend WithEvents RbNumCot As Guna.UI.WinForms.GunaRadioButton
 End Class

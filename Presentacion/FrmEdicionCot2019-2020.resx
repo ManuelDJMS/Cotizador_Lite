@@ -754,6 +754,9 @@
         wWAwGKqDamQwGAyG6qAaGQwGg6EqYNj/ByaHnmX9yR+IAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="GunaElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIACuMwAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgGAAAAXHKoZgAAM3VJ
@@ -979,4 +982,7 @@
         pDUghPwBcNKxE8NFP1+SQiKFRMq4o/GeHX+6rOr0fwOZvabSGV+4VwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="GunaAnimateWindow1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>135, 17</value>
+  </metadata>
 </root>

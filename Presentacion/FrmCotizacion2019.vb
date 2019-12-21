@@ -85,11 +85,6 @@ Public Class FrmCotizacion2019
     End Sub
 
     Private Sub DgEmpresas_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgEmpresas.CellDoubleClick
-
-        'Dim DataTable1 As New DataTable
-        'Dim dt2 As New DataTable
-        'Dim cmd As New SqlCommand
-        'Dim da As New SqlDataAdapter
         MetodoMetasInf2019() ''MetasINF-2019
         clave1 = DgEmpresas.Rows(e.RowIndex).Cells(0).Value.ToString()
         If DgCotizaciones.Rows.Count < 2 Then
@@ -155,9 +150,6 @@ Public Class FrmCotizacion2019
     End Sub
 
     Private Sub TxtClave_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtClave.KeyPress
-        'If Not IsNumeric(e.KeyChar) Then
-        '    e.Handled = True
-        'End If
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -170,14 +162,41 @@ Public Class FrmCotizacion2019
     End Sub
 
     Private Sub DgCotizaciones_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgCotizaciones.CellDoubleClick
-        FrmEdicionCot2019_2020.TxtCotizacion.Text = DgCotizaciones.Rows(e.RowIndex).Cells(0).Value.ToString
-        FrmEdicionCot2019_2020.Show()
-        Me.WindowState = FormWindowState.Minimized
+        Try
+            NumCot = DgCotizaciones.Rows(e.RowIndex).Cells(0).Value.ToString
+            FrmEdicionCot2019_2020.TxtCotizacion.Text = NumCot
+            FrmEdicionCot2019_2020.Show()
+            Me.WindowState = FormWindowState.Minimized
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del sistema.")
+            cadena = Err.Description
+            cadena = cadena.Replace("'", "")
+            Bitacora("FrmCotizacion", "Error al cargar los clientes", Err.Number, cadena)
+        End Try
+
     End Sub
 
     Private Sub RbFolio_CheckedChanged(sender As Object, e As EventArgs) Handles RbFolio.CheckedChanged
-        respuestafolio = InputBox("Folio", "Ingrese la confirmación metrológica:")
-        FrmEdicionCot2019_2020.Show()
+        If RbFolio.Checked = True Then
+            respuestafolio = InputBox("Folio", "Ingrese la confirmación metrológica:")
+            FrmEdicionCot2019_2020.LbNumCon.Visible = False
+            FrmEdicionCot2019_2020.TxtNumCon.Visible = False
+            FrmEdicionCot2019_2020.LbtxtNumCon.Visible = True
+            FrmEdicionCot2019_2020.TxtNumCond.Visible = True
+            FrmEdicionCot2019_2020.LbCotizo2019.Enabled = False
+            FrmEdicionCot2019_2020.TxtCotizo.Enabled = False
+            FrmEdicionCot2019_2020.TxtObservaciones.Text = "*La cotización fué realizada en base a la información recibida. Cualquier diferencia entre su solicitud y esta cotización contactar a Ventas*"
+            FrmEdicionCot2019_2020.Show()
+        End If
+
+    End Sub
+
+    Private Sub RbNumCot_CheckedChanged(sender As Object, e As EventArgs) Handles RbNumCot.CheckedChanged
+        If RbNumCot.Checked = True Then
+            NumCot = InputBox("Cotización", "Ingrese el Número de Cotización:")
+            FrmEdicionCot2019_2020.TxtCotizacion.Text = NumCot
+            FrmEdicionCot2019_2020.Show()
+        End If
     End Sub
 
     Private Sub FrmHOME_Load(sender As Object, e As EventArgs) Handles MyBase.Load

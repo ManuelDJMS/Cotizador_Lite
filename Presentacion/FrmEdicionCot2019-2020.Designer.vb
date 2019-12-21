@@ -22,9 +22,10 @@ Partial Class FrmEdicionCot2019_2020
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEdicionCot2019_2020))
         Me.PanelContenedor = New System.Windows.Forms.Panel()
         Me.PanelFormularios = New System.Windows.Forms.Panel()
@@ -43,6 +44,8 @@ Partial Class FrmEdicionCot2019_2020
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GunaVSeparator4 = New Guna.UI.WinForms.GunaVSeparator()
         Me.GunaElipsePanel1 = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.LbtxtNumCon = New Guna.UI.WinForms.GunaLabel()
+        Me.TxtNumCond = New Guna.UI.WinForms.GunaTextBox()
         Me.btnGuardar = New Guna.UI.WinForms.GunaButton()
         Me.TxtCotizo2020 = New Guna.UI.WinForms.GunaTextBox()
         Me.TxtConta = New Guna.UI.WinForms.GunaTextBox()
@@ -59,14 +62,14 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaLabel30 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel32 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel34 = New Guna.UI.WinForms.GunaLabel()
-        Me.GunaLabel37 = New Guna.UI.WinForms.GunaLabel()
+        Me.LbCotizo2019 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel42 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel46 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel48 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaElipsePanel2 = New Guna.UI.WinForms.GunaElipsePanel()
         Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.TxtRFC = New Guna.UI.WinForms.GunaLabel()
-        Me.GunaLabel23 = New Guna.UI.WinForms.GunaLabel()
+        Me.LbNumCon = New Guna.UI.WinForms.GunaLabel()
         Me.TxtNumCon = New Guna.UI.WinForms.GunaLabel()
         Me.GunaSeparator3 = New Guna.UI.WinForms.GunaSeparator()
         Me.GunaSeparator2 = New Guna.UI.WinForms.GunaSeparator()
@@ -106,15 +109,15 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaPictureBox2 = New Guna.UI.WinForms.GunaPictureBox()
         Me.BtnRestaurar = New Guna.UI.WinForms.GunaImageButton()
         Me.BtnCerrar = New Guna.UI.WinForms.GunaImageButton()
-        Me.GunaVSeparator2 = New Guna.UI.WinForms.GunaVSeparator()
-        Me.LbLogin = New Guna.UI.WinForms.GunaLabel()
-        Me.GunaPictureBox1 = New Guna.UI.WinForms.GunaPictureBox()
         Me.GunaVSeparator1 = New Guna.UI.WinForms.GunaVSeparator()
         Me.BtnMaximizar = New Guna.UI.WinForms.GunaImageButton()
         Me.BtnMinimizar = New Guna.UI.WinForms.GunaImageButton()
         Me.GunaImageButton4 = New Guna.UI.WinForms.GunaImageButton()
-        Me.GunaTextBox1 = New Guna.UI.WinForms.GunaTextBox()
-        Me.GunaLabel5 = New Guna.UI.WinForms.GunaLabel()
+        Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
+        Me.GunaAnimateWindow1 = New Guna.UI.WinForms.GunaAnimateWindow(Me.components)
+        Me.GunaPictureBox1 = New Guna.UI.WinForms.GunaPictureBox()
+        Me.LbLogin = New Guna.UI.WinForms.GunaLabel()
+        Me.GunaVSeparator2 = New Guna.UI.WinForms.GunaVSeparator()
         Me.PanelContenedor.SuspendLayout()
         Me.PanelFormularios.SuspendLayout()
         CType(Me.DgCotizaciones, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -175,7 +178,7 @@ Partial Class FrmEdicionCot2019_2020
         Me.BtnBorrar.ImageSize = New System.Drawing.Size(20, 20)
         Me.BtnBorrar.Location = New System.Drawing.Point(1023, 588)
         Me.BtnBorrar.Name = "BtnBorrar"
-        Me.BtnBorrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnBorrar.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.BtnBorrar.OnHoverBorderColor = System.Drawing.Color.Black
         Me.BtnBorrar.OnHoverForeColor = System.Drawing.Color.White
         Me.BtnBorrar.OnHoverImage = Nothing
@@ -187,8 +190,8 @@ Partial Class FrmEdicionCot2019_2020
         '
         'DgCotizaciones
         '
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        Me.DgCotizaciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.DgCotizaciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DgCotizaciones.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -197,24 +200,24 @@ Partial Class FrmEdicionCot2019_2020
         Me.DgCotizaciones.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgCotizaciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DgCotizaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(220, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgCotizaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(220, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgCotizaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DgCotizaciones.ColumnHeadersHeight = 21
         Me.DgCotizaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9, Me.Column10, Me.Column11})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgCotizaciones.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgCotizaciones.DefaultCellStyle = DataGridViewCellStyle3
         Me.DgCotizaciones.EnableHeadersVisualStyles = False
         Me.DgCotizaciones.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgCotizaciones.Location = New System.Drawing.Point(12, 307)
@@ -328,8 +331,8 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaElipsePanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GunaElipsePanel1.BackColor = System.Drawing.Color.Transparent
         Me.GunaElipsePanel1.BaseColor = System.Drawing.Color.White
-        Me.GunaElipsePanel1.Controls.Add(Me.GunaLabel5)
-        Me.GunaElipsePanel1.Controls.Add(Me.GunaTextBox1)
+        Me.GunaElipsePanel1.Controls.Add(Me.LbtxtNumCon)
+        Me.GunaElipsePanel1.Controls.Add(Me.TxtNumCond)
         Me.GunaElipsePanel1.Controls.Add(Me.btnGuardar)
         Me.GunaElipsePanel1.Controls.Add(Me.TxtCotizo2020)
         Me.GunaElipsePanel1.Controls.Add(Me.TxtConta)
@@ -346,7 +349,7 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaElipsePanel1.Controls.Add(Me.GunaLabel30)
         Me.GunaElipsePanel1.Controls.Add(Me.GunaLabel32)
         Me.GunaElipsePanel1.Controls.Add(Me.GunaLabel34)
-        Me.GunaElipsePanel1.Controls.Add(Me.GunaLabel37)
+        Me.GunaElipsePanel1.Controls.Add(Me.LbCotizo2019)
         Me.GunaElipsePanel1.Controls.Add(Me.GunaLabel42)
         Me.GunaElipsePanel1.Controls.Add(Me.GunaLabel46)
         Me.GunaElipsePanel1.Controls.Add(Me.GunaLabel48)
@@ -354,6 +357,34 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaElipsePanel1.Name = "GunaElipsePanel1"
         Me.GunaElipsePanel1.Size = New System.Drawing.Size(537, 231)
         Me.GunaElipsePanel1.TabIndex = 288
+        '
+        'LbtxtNumCon
+        '
+        Me.LbtxtNumCon.AutoSize = True
+        Me.LbtxtNumCon.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbtxtNumCon.Location = New System.Drawing.Point(384, 138)
+        Me.LbtxtNumCon.Name = "LbtxtNumCon"
+        Me.LbtxtNumCon.Size = New System.Drawing.Size(95, 18)
+        Me.LbtxtNumCon.TabIndex = 222
+        Me.LbtxtNumCon.Text = "Num. Cond:"
+        Me.LbtxtNumCon.Visible = False
+        '
+        'TxtNumCond
+        '
+        Me.TxtNumCond.BaseColor = System.Drawing.Color.White
+        Me.TxtNumCond.BorderColor = System.Drawing.Color.Silver
+        Me.TxtNumCond.BorderSize = 1
+        Me.TxtNumCond.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtNumCond.FocusedBaseColor = System.Drawing.Color.White
+        Me.TxtNumCond.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(175, Byte), Integer))
+        Me.TxtNumCond.FocusedForeColor = System.Drawing.SystemColors.ControlText
+        Me.TxtNumCond.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtNumCond.Location = New System.Drawing.Point(485, 136)
+        Me.TxtNumCond.Name = "TxtNumCond"
+        Me.TxtNumCond.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtNumCond.Size = New System.Drawing.Size(38, 26)
+        Me.TxtNumCond.TabIndex = 221
+        Me.TxtNumCond.Visible = False
         '
         'btnGuardar
         '
@@ -371,7 +402,7 @@ Partial Class FrmEdicionCot2019_2020
         Me.btnGuardar.ImageSize = New System.Drawing.Size(20, 20)
         Me.btnGuardar.Location = New System.Drawing.Point(413, 192)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnGuardar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(90, Byte), Integer))
         Me.btnGuardar.OnHoverBorderColor = System.Drawing.Color.Black
         Me.btnGuardar.OnHoverForeColor = System.Drawing.Color.White
         Me.btnGuardar.OnHoverImage = Nothing
@@ -593,15 +624,15 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaLabel34.TabIndex = 200
         Me.GunaLabel34.Text = "Observaciones:"
         '
-        'GunaLabel37
+        'LbCotizo2019
         '
-        Me.GunaLabel37.AutoSize = True
-        Me.GunaLabel37.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaLabel37.Location = New System.Drawing.Point(7, 138)
-        Me.GunaLabel37.Name = "GunaLabel37"
-        Me.GunaLabel37.Size = New System.Drawing.Size(95, 18)
-        Me.GunaLabel37.TabIndex = 197
-        Me.GunaLabel37.Text = "Cotizó 2019:"
+        Me.LbCotizo2019.AutoSize = True
+        Me.LbCotizo2019.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbCotizo2019.Location = New System.Drawing.Point(7, 138)
+        Me.LbCotizo2019.Name = "LbCotizo2019"
+        Me.LbCotizo2019.Size = New System.Drawing.Size(95, 18)
+        Me.LbCotizo2019.TabIndex = 197
+        Me.LbCotizo2019.Text = "Cotizó 2019:"
         '
         'GunaLabel42
         '
@@ -641,7 +672,7 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaElipsePanel2.BaseColor = System.Drawing.Color.White
         Me.GunaElipsePanel2.Controls.Add(Me.GunaLabel1)
         Me.GunaElipsePanel2.Controls.Add(Me.TxtRFC)
-        Me.GunaElipsePanel2.Controls.Add(Me.GunaLabel23)
+        Me.GunaElipsePanel2.Controls.Add(Me.LbNumCon)
         Me.GunaElipsePanel2.Controls.Add(Me.TxtNumCon)
         Me.GunaElipsePanel2.Controls.Add(Me.GunaSeparator3)
         Me.GunaElipsePanel2.Controls.Add(Me.GunaSeparator2)
@@ -693,16 +724,16 @@ Partial Class FrmEdicionCot2019_2020
         Me.TxtRFC.TabIndex = 212
         Me.TxtRFC.Text = "-"
         '
-        'GunaLabel23
+        'LbNumCon
         '
-        Me.GunaLabel23.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GunaLabel23.AutoSize = True
-        Me.GunaLabel23.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaLabel23.Location = New System.Drawing.Point(354, 169)
-        Me.GunaLabel23.Name = "GunaLabel23"
-        Me.GunaLabel23.Size = New System.Drawing.Size(132, 18)
-        Me.GunaLabel23.TabIndex = 211
-        Me.GunaLabel23.Text = "Num. Condición:"
+        Me.LbNumCon.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LbNumCon.AutoSize = True
+        Me.LbNumCon.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbNumCon.Location = New System.Drawing.Point(354, 169)
+        Me.LbNumCon.Name = "LbNumCon"
+        Me.LbNumCon.Size = New System.Drawing.Size(132, 18)
+        Me.LbNumCon.TabIndex = 211
+        Me.LbNumCon.Text = "Num. Condición:"
         '
         'TxtNumCon
         '
@@ -1150,39 +1181,6 @@ Partial Class FrmEdicionCot2019_2020
         Me.BtnCerrar.Size = New System.Drawing.Size(32, 32)
         Me.BtnCerrar.TabIndex = 7
         '
-        'GunaVSeparator2
-        '
-        Me.GunaVSeparator2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GunaVSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.GunaVSeparator2.LineColor = System.Drawing.Color.WhiteSmoke
-        Me.GunaVSeparator2.Location = New System.Drawing.Point(799, 12)
-        Me.GunaVSeparator2.Name = "GunaVSeparator2"
-        Me.GunaVSeparator2.Size = New System.Drawing.Size(10, 25)
-        Me.GunaVSeparator2.TabIndex = 6
-        '
-        'LbLogin
-        '
-        Me.LbLogin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LbLogin.AutoSize = True
-        Me.LbLogin.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbLogin.Location = New System.Drawing.Point(872, 17)
-        Me.LbLogin.Name = "LbLogin"
-        Me.LbLogin.Size = New System.Drawing.Size(65, 20)
-        Me.LbLogin.TabIndex = 5
-        Me.LbLogin.Text = "Manuel"
-        '
-        'GunaPictureBox1
-        '
-        Me.GunaPictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GunaPictureBox1.BaseColor = System.Drawing.Color.White
-        Me.GunaPictureBox1.Image = Global.Cotizador_Lite.My.Resources.Resources.icons8_verified_account_28
-        Me.GunaPictureBox1.Location = New System.Drawing.Point(825, 8)
-        Me.GunaPictureBox1.Name = "GunaPictureBox1"
-        Me.GunaPictureBox1.Size = New System.Drawing.Size(32, 32)
-        Me.GunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.GunaPictureBox1.TabIndex = 4
-        Me.GunaPictureBox1.TabStop = False
-        '
         'GunaVSeparator1
         '
         Me.GunaVSeparator1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -1233,33 +1231,48 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaImageButton4.Size = New System.Drawing.Size(32, 32)
         Me.GunaImageButton4.TabIndex = 0
         '
-        'GunaTextBox1
+        'GunaElipse1
         '
-        Me.GunaTextBox1.BaseColor = System.Drawing.Color.White
-        Me.GunaTextBox1.BorderColor = System.Drawing.Color.Silver
-        Me.GunaTextBox1.BorderSize = 1
-        Me.GunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.GunaTextBox1.FocusedBaseColor = System.Drawing.Color.White
-        Me.GunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.GunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText
-        Me.GunaTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaTextBox1.Location = New System.Drawing.Point(485, 136)
-        Me.GunaTextBox1.Name = "GunaTextBox1"
-        Me.GunaTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.GunaTextBox1.Size = New System.Drawing.Size(38, 26)
-        Me.GunaTextBox1.TabIndex = 221
-        Me.GunaTextBox1.Visible = False
+        Me.GunaElipse1.TargetControl = Me
         '
-        'GunaLabel5
+        'GunaAnimateWindow1
         '
-        Me.GunaLabel5.AutoSize = True
-        Me.GunaLabel5.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaLabel5.Location = New System.Drawing.Point(384, 138)
-        Me.GunaLabel5.Name = "GunaLabel5"
-        Me.GunaLabel5.Size = New System.Drawing.Size(95, 18)
-        Me.GunaLabel5.TabIndex = 222
-        Me.GunaLabel5.Text = "Num. Cond:"
-        Me.GunaLabel5.Visible = False
+        Me.GunaAnimateWindow1.AnimationType = Guna.UI.WinForms.GunaAnimateWindow.AnimateWindowType.AW_CENTER
+        Me.GunaAnimateWindow1.Interval = 900
+        Me.GunaAnimateWindow1.TargetControl = Me
+        '
+        'GunaPictureBox1
+        '
+        Me.GunaPictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GunaPictureBox1.BaseColor = System.Drawing.Color.White
+        Me.GunaPictureBox1.Image = Global.Cotizador_Lite.My.Resources.Resources.icons8_verified_account_28
+        Me.GunaPictureBox1.Location = New System.Drawing.Point(825, 8)
+        Me.GunaPictureBox1.Name = "GunaPictureBox1"
+        Me.GunaPictureBox1.Size = New System.Drawing.Size(32, 32)
+        Me.GunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.GunaPictureBox1.TabIndex = 4
+        Me.GunaPictureBox1.TabStop = False
+        '
+        'LbLogin
+        '
+        Me.LbLogin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LbLogin.AutoSize = True
+        Me.LbLogin.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbLogin.Location = New System.Drawing.Point(872, 17)
+        Me.LbLogin.Name = "LbLogin"
+        Me.LbLogin.Size = New System.Drawing.Size(62, 20)
+        Me.LbLogin.TabIndex = 5
+        Me.LbLogin.Text = "VENTAS"
+        '
+        'GunaVSeparator2
+        '
+        Me.GunaVSeparator2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GunaVSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.GunaVSeparator2.LineColor = System.Drawing.Color.WhiteSmoke
+        Me.GunaVSeparator2.Location = New System.Drawing.Point(799, 12)
+        Me.GunaVSeparator2.Name = "GunaVSeparator2"
+        Me.GunaVSeparator2.Size = New System.Drawing.Size(10, 25)
+        Me.GunaVSeparator2.TabIndex = 6
         '
         'FrmEdicionCot2019_2020
         '
@@ -1296,9 +1309,6 @@ Partial Class FrmEdicionCot2019_2020
     Friend WithEvents GunaPictureBox2 As Guna.UI.WinForms.GunaPictureBox
     Friend WithEvents BtnRestaurar As Guna.UI.WinForms.GunaImageButton
     Friend WithEvents BtnCerrar As Guna.UI.WinForms.GunaImageButton
-    Friend WithEvents GunaVSeparator2 As Guna.UI.WinForms.GunaVSeparator
-    Friend WithEvents LbLogin As Guna.UI.WinForms.GunaLabel
-    Friend WithEvents GunaPictureBox1 As Guna.UI.WinForms.GunaPictureBox
     Friend WithEvents GunaVSeparator1 As Guna.UI.WinForms.GunaVSeparator
     Friend WithEvents BtnMaximizar As Guna.UI.WinForms.GunaImageButton
     Friend WithEvents BtnMinimizar As Guna.UI.WinForms.GunaImageButton
@@ -1338,7 +1348,7 @@ Partial Class FrmEdicionCot2019_2020
     Friend WithEvents TxtExt As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaLabel16 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents TxtCveContacto As Guna.UI.WinForms.GunaLabel
-    Friend WithEvents GunaLabel23 As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents LbNumCon As Guna.UI.WinForms.GunaLabel
     Friend WithEvents TxtNumCon As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaSeparator3 As Guna.UI.WinForms.GunaSeparator
     Friend WithEvents GunaElipsePanel1 As Guna.UI.WinForms.GunaElipsePanel
@@ -1353,7 +1363,7 @@ Partial Class FrmEdicionCot2019_2020
     Friend WithEvents GunaLabel30 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaLabel32 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaLabel34 As Guna.UI.WinForms.GunaLabel
-    Friend WithEvents GunaLabel37 As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents LbCotizo2019 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaLabel42 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaLabel46 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaLabel48 As Guna.UI.WinForms.GunaLabel
@@ -1378,6 +1388,11 @@ Partial Class FrmEdicionCot2019_2020
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
     Friend WithEvents GunaLabel1 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents TxtRFC As Guna.UI.WinForms.GunaLabel
-    Friend WithEvents GunaLabel5 As Guna.UI.WinForms.GunaLabel
-    Friend WithEvents GunaTextBox1 As Guna.UI.WinForms.GunaTextBox
+    Friend WithEvents LbtxtNumCon As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents TxtNumCond As Guna.UI.WinForms.GunaTextBox
+    Friend WithEvents GunaElipse1 As Guna.UI.WinForms.GunaElipse
+    Friend WithEvents GunaAnimateWindow1 As Guna.UI.WinForms.GunaAnimateWindow
+    Friend WithEvents GunaVSeparator2 As Guna.UI.WinForms.GunaVSeparator
+    Friend WithEvents LbLogin As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents GunaPictureBox1 As Guna.UI.WinForms.GunaPictureBox
 End Class
