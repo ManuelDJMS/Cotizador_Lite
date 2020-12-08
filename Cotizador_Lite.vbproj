@@ -240,6 +240,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="papel.ico" />
+    <None Include="Resources\icons8-update-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

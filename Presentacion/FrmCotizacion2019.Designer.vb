@@ -34,6 +34,11 @@ Partial Class FrmCotizacion2019
         Me.GunaAnimateWindow1 = New Guna.UI.WinForms.GunaAnimateWindow(Me.components)
         Me.PanelContenedor = New System.Windows.Forms.Panel()
         Me.PanelFormularios = New System.Windows.Forms.Panel()
+        Me.GunaElipsePanel3 = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.Rb2017 = New Guna.UI.WinForms.GunaRadioButton()
+        Me.Rb2018 = New Guna.UI.WinForms.GunaRadioButton()
+        Me.Rb2019 = New Guna.UI.WinForms.GunaRadioButton()
+        Me.GunaLabel3 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaElipsePanel2 = New Guna.UI.WinForms.GunaElipsePanel()
         Me.TxtModelo = New Guna.UI.WinForms.GunaTextBox()
         Me.LbId = New Guna.UI.WinForms.GunaLabel()
@@ -69,28 +74,34 @@ Partial Class FrmCotizacion2019
         Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaSeparator1 = New Guna.UI.WinForms.GunaSeparator()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GunaLabel2 = New Guna.UI.WinForms.GunaLabel()
         Me.PanelBarraTitulo = New Guna.UI.WinForms.GunaPanel()
+        Me.lbVersion = New Guna.UI.WinForms.GunaLabel()
+        Me.GunaVSeparator2 = New Guna.UI.WinForms.GunaVSeparator()
+        Me.LbLogin = New Guna.UI.WinForms.GunaLabel()
+        Me.GunaVSeparator1 = New Guna.UI.WinForms.GunaVSeparator()
+        Me.GunaImageButton4 = New Guna.UI.WinForms.GunaImageButton()
+        Me.GunaElipsePanel4 = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.RbAnualCot = New Guna.UI.WinForms.GunaRadioButton()
+        Me.RbAnualFolio = New Guna.UI.WinForms.GunaRadioButton()
+        Me.GunaLabel4 = New Guna.UI.WinForms.GunaLabel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GunaPictureBox2 = New Guna.UI.WinForms.GunaPictureBox()
         Me.BtnRestaurar = New Guna.UI.WinForms.GunaImageButton()
         Me.BtnCerrar = New Guna.UI.WinForms.GunaImageButton()
-        Me.GunaVSeparator2 = New Guna.UI.WinForms.GunaVSeparator()
-        Me.LbLogin = New Guna.UI.WinForms.GunaLabel()
         Me.GunaPictureBox1 = New Guna.UI.WinForms.GunaPictureBox()
-        Me.GunaVSeparator1 = New Guna.UI.WinForms.GunaVSeparator()
         Me.BtnMaximizar = New Guna.UI.WinForms.GunaImageButton()
         Me.BtnMinimizar = New Guna.UI.WinForms.GunaImageButton()
-        Me.GunaImageButton4 = New Guna.UI.WinForms.GunaImageButton()
-        Me.lbVersion = New Guna.UI.WinForms.GunaLabel()
         Me.PanelContenedor.SuspendLayout()
         Me.PanelFormularios.SuspendLayout()
+        Me.GunaElipsePanel3.SuspendLayout()
         Me.GunaElipsePanel2.SuspendLayout()
         CType(Me.DgCotizaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GunaElipsePanel1.SuspendLayout()
         CType(Me.DgEmpresas, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBarraTitulo.SuspendLayout()
+        Me.GunaElipsePanel4.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GunaPictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GunaPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -117,6 +128,8 @@ Partial Class FrmCotizacion2019
         '
         'PanelFormularios
         '
+        Me.PanelFormularios.Controls.Add(Me.GunaElipsePanel4)
+        Me.PanelFormularios.Controls.Add(Me.GunaElipsePanel3)
         Me.PanelFormularios.Controls.Add(Me.GunaElipsePanel2)
         Me.PanelFormularios.Controls.Add(Me.DgCotizaciones)
         Me.PanelFormularios.Controls.Add(Me.GunaElipsePanel1)
@@ -136,6 +149,74 @@ Partial Class FrmCotizacion2019
         Me.PanelFormularios.Name = "PanelFormularios"
         Me.PanelFormularios.Size = New System.Drawing.Size(1160, 625)
         Me.PanelFormularios.TabIndex = 5
+        '
+        'GunaElipsePanel3
+        '
+        Me.GunaElipsePanel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GunaElipsePanel3.BackColor = System.Drawing.Color.Transparent
+        Me.GunaElipsePanel3.BaseColor = System.Drawing.Color.White
+        Me.GunaElipsePanel3.Controls.Add(Me.Rb2017)
+        Me.GunaElipsePanel3.Controls.Add(Me.Rb2018)
+        Me.GunaElipsePanel3.Controls.Add(Me.Rb2019)
+        Me.GunaElipsePanel3.Controls.Add(Me.GunaLabel3)
+        Me.GunaElipsePanel3.Location = New System.Drawing.Point(528, 305)
+        Me.GunaElipsePanel3.Name = "GunaElipsePanel3"
+        Me.GunaElipsePanel3.Size = New System.Drawing.Size(257, 43)
+        Me.GunaElipsePanel3.TabIndex = 287
+        '
+        'Rb2017
+        '
+        Me.Rb2017.BaseColor = System.Drawing.SystemColors.Control
+        Me.Rb2017.CheckedOffColor = System.Drawing.Color.Gray
+        Me.Rb2017.CheckedOnColor = System.Drawing.Color.ForestGreen
+        Me.Rb2017.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Rb2017.FillColor = System.Drawing.Color.White
+        Me.Rb2017.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Rb2017.Location = New System.Drawing.Point(189, 11)
+        Me.Rb2017.Name = "Rb2017"
+        Me.Rb2017.Size = New System.Drawing.Size(60, 20)
+        Me.Rb2017.TabIndex = 175
+        Me.Rb2017.Text = "2017"
+        '
+        'Rb2018
+        '
+        Me.Rb2018.BaseColor = System.Drawing.SystemColors.Control
+        Me.Rb2018.CheckedOffColor = System.Drawing.Color.Gray
+        Me.Rb2018.CheckedOnColor = System.Drawing.Color.ForestGreen
+        Me.Rb2018.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Rb2018.FillColor = System.Drawing.Color.White
+        Me.Rb2018.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Rb2018.Location = New System.Drawing.Point(123, 11)
+        Me.Rb2018.Name = "Rb2018"
+        Me.Rb2018.Size = New System.Drawing.Size(60, 20)
+        Me.Rb2018.TabIndex = 3
+        Me.Rb2018.Text = "2018"
+        '
+        'Rb2019
+        '
+        Me.Rb2019.BaseColor = System.Drawing.SystemColors.Control
+        Me.Rb2019.Checked = True
+        Me.Rb2019.CheckedOffColor = System.Drawing.Color.Gray
+        Me.Rb2019.CheckedOnColor = System.Drawing.Color.ForestGreen
+        Me.Rb2019.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Rb2019.FillColor = System.Drawing.Color.White
+        Me.Rb2019.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Rb2019.Location = New System.Drawing.Point(57, 11)
+        Me.Rb2019.Name = "Rb2019"
+        Me.Rb2019.Size = New System.Drawing.Size(60, 20)
+        Me.Rb2019.TabIndex = 0
+        Me.Rb2019.Text = "2019"
+        '
+        'GunaLabel3
+        '
+        Me.GunaLabel3.AutoSize = True
+        Me.GunaLabel3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel3.Location = New System.Drawing.Point(4, 11)
+        Me.GunaLabel3.Name = "GunaLabel3"
+        Me.GunaLabel3.Size = New System.Drawing.Size(47, 18)
+        Me.GunaLabel3.TabIndex = 174
+        Me.GunaLabel3.Text = "AÑO:"
         '
         'GunaElipsePanel2
         '
@@ -341,7 +422,7 @@ Partial Class FrmCotizacion2019
         Me.GunaElipsePanel1.Controls.Add(Me.GunaLabel8)
         Me.GunaElipsePanel1.Location = New System.Drawing.Point(28, 305)
         Me.GunaElipsePanel1.Name = "GunaElipsePanel1"
-        Me.GunaElipsePanel1.Size = New System.Drawing.Size(787, 43)
+        Me.GunaElipsePanel1.Size = New System.Drawing.Size(494, 43)
         Me.GunaElipsePanel1.TabIndex = 284
         '
         'RbNumCot
@@ -628,17 +709,6 @@ Partial Class FrmCotizacion2019
         Me.Label26.TabIndex = 166
         Me.Label26.Text = "Exportar Cotizaciones 2019 a 2020"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 6)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(66, 50)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 52
-        Me.PictureBox1.TabStop = False
-        '
         'GunaLabel2
         '
         Me.GunaLabel2.AutoSize = True
@@ -670,6 +740,124 @@ Partial Class FrmCotizacion2019
         Me.PanelBarraTitulo.Name = "PanelBarraTitulo"
         Me.PanelBarraTitulo.Size = New System.Drawing.Size(1160, 50)
         Me.PanelBarraTitulo.TabIndex = 4
+        '
+        'lbVersion
+        '
+        Me.lbVersion.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbVersion.AutoSize = True
+        Me.lbVersion.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbVersion.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lbVersion.Location = New System.Drawing.Point(46, 17)
+        Me.lbVersion.Name = "lbVersion"
+        Me.lbVersion.Size = New System.Drawing.Size(53, 20)
+        Me.lbVersion.TabIndex = 10
+        Me.lbVersion.Text = "1.0.0.3"
+        '
+        'GunaVSeparator2
+        '
+        Me.GunaVSeparator2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GunaVSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.GunaVSeparator2.LineColor = System.Drawing.Color.WhiteSmoke
+        Me.GunaVSeparator2.Location = New System.Drawing.Point(799, 12)
+        Me.GunaVSeparator2.Name = "GunaVSeparator2"
+        Me.GunaVSeparator2.Size = New System.Drawing.Size(10, 25)
+        Me.GunaVSeparator2.TabIndex = 6
+        '
+        'LbLogin
+        '
+        Me.LbLogin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LbLogin.AutoSize = True
+        Me.LbLogin.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbLogin.Location = New System.Drawing.Point(872, 17)
+        Me.LbLogin.Name = "LbLogin"
+        Me.LbLogin.Size = New System.Drawing.Size(62, 20)
+        Me.LbLogin.TabIndex = 5
+        Me.LbLogin.Text = "VENTAS"
+        '
+        'GunaVSeparator1
+        '
+        Me.GunaVSeparator1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GunaVSeparator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.GunaVSeparator1.LineColor = System.Drawing.Color.WhiteSmoke
+        Me.GunaVSeparator1.Location = New System.Drawing.Point(1035, 12)
+        Me.GunaVSeparator1.Name = "GunaVSeparator1"
+        Me.GunaVSeparator1.Size = New System.Drawing.Size(10, 25)
+        Me.GunaVSeparator1.TabIndex = 3
+        '
+        'GunaImageButton4
+        '
+        Me.GunaImageButton4.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.GunaImageButton4.Image = Nothing
+        Me.GunaImageButton4.ImageSize = New System.Drawing.Size(16, 16)
+        Me.GunaImageButton4.Location = New System.Drawing.Point(8, 8)
+        Me.GunaImageButton4.Name = "GunaImageButton4"
+        Me.GunaImageButton4.OnHoverImage = Nothing
+        Me.GunaImageButton4.OnHoverImageOffset = New System.Drawing.Point(0, -1)
+        Me.GunaImageButton4.Size = New System.Drawing.Size(32, 32)
+        Me.GunaImageButton4.TabIndex = 0
+        '
+        'GunaElipsePanel4
+        '
+        Me.GunaElipsePanel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GunaElipsePanel4.BackColor = System.Drawing.Color.Transparent
+        Me.GunaElipsePanel4.BaseColor = System.Drawing.Color.White
+        Me.GunaElipsePanel4.Controls.Add(Me.RbAnualCot)
+        Me.GunaElipsePanel4.Controls.Add(Me.RbAnualFolio)
+        Me.GunaElipsePanel4.Controls.Add(Me.GunaLabel4)
+        Me.GunaElipsePanel4.Location = New System.Drawing.Point(799, 305)
+        Me.GunaElipsePanel4.Name = "GunaElipsePanel4"
+        Me.GunaElipsePanel4.Size = New System.Drawing.Size(349, 43)
+        Me.GunaElipsePanel4.TabIndex = 288
+        '
+        'RbAnualCot
+        '
+        Me.RbAnualCot.BaseColor = System.Drawing.SystemColors.Control
+        Me.RbAnualCot.CheckedOffColor = System.Drawing.Color.Gray
+        Me.RbAnualCot.CheckedOnColor = System.Drawing.Color.ForestGreen
+        Me.RbAnualCot.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RbAnualCot.FillColor = System.Drawing.Color.White
+        Me.RbAnualCot.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbAnualCot.Location = New System.Drawing.Point(183, 11)
+        Me.RbAnualCot.Name = "RbAnualCot"
+        Me.RbAnualCot.Size = New System.Drawing.Size(60, 20)
+        Me.RbAnualCot.TabIndex = 175
+        Me.RbAnualCot.Text = "Folio"
+        '
+        'RbAnualFolio
+        '
+        Me.RbAnualFolio.BaseColor = System.Drawing.SystemColors.Control
+        Me.RbAnualFolio.CheckedOffColor = System.Drawing.Color.Gray
+        Me.RbAnualFolio.CheckedOnColor = System.Drawing.Color.ForestGreen
+        Me.RbAnualFolio.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RbAnualFolio.FillColor = System.Drawing.Color.White
+        Me.RbAnualFolio.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbAnualFolio.Location = New System.Drawing.Point(77, 11)
+        Me.RbAnualFolio.Name = "RbAnualFolio"
+        Me.RbAnualFolio.Size = New System.Drawing.Size(100, 20)
+        Me.RbAnualFolio.TabIndex = 0
+        Me.RbAnualFolio.Text = "Cotización"
+        '
+        'GunaLabel4
+        '
+        Me.GunaLabel4.AutoSize = True
+        Me.GunaLabel4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel4.Location = New System.Drawing.Point(4, 11)
+        Me.GunaLabel4.Name = "GunaLabel4"
+        Me.GunaLabel4.Size = New System.Drawing.Size(62, 18)
+        Me.GunaLabel4.TabIndex = 174
+        Me.GunaLabel4.Text = "ANUAL:"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 6)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(66, 50)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 52
+        Me.PictureBox1.TabStop = False
         '
         'GunaPictureBox2
         '
@@ -711,27 +899,6 @@ Partial Class FrmCotizacion2019
         Me.BtnCerrar.Size = New System.Drawing.Size(32, 32)
         Me.BtnCerrar.TabIndex = 7
         '
-        'GunaVSeparator2
-        '
-        Me.GunaVSeparator2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GunaVSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.GunaVSeparator2.LineColor = System.Drawing.Color.WhiteSmoke
-        Me.GunaVSeparator2.Location = New System.Drawing.Point(799, 12)
-        Me.GunaVSeparator2.Name = "GunaVSeparator2"
-        Me.GunaVSeparator2.Size = New System.Drawing.Size(10, 25)
-        Me.GunaVSeparator2.TabIndex = 6
-        '
-        'LbLogin
-        '
-        Me.LbLogin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LbLogin.AutoSize = True
-        Me.LbLogin.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbLogin.Location = New System.Drawing.Point(872, 17)
-        Me.LbLogin.Name = "LbLogin"
-        Me.LbLogin.Size = New System.Drawing.Size(62, 20)
-        Me.LbLogin.TabIndex = 5
-        Me.LbLogin.Text = "VENTAS"
-        '
         'GunaPictureBox1
         '
         Me.GunaPictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -743,16 +910,6 @@ Partial Class FrmCotizacion2019
         Me.GunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.GunaPictureBox1.TabIndex = 4
         Me.GunaPictureBox1.TabStop = False
-        '
-        'GunaVSeparator1
-        '
-        Me.GunaVSeparator1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GunaVSeparator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.GunaVSeparator1.LineColor = System.Drawing.Color.WhiteSmoke
-        Me.GunaVSeparator1.Location = New System.Drawing.Point(1035, 12)
-        Me.GunaVSeparator1.Name = "GunaVSeparator1"
-        Me.GunaVSeparator1.Size = New System.Drawing.Size(10, 25)
-        Me.GunaVSeparator1.TabIndex = 3
         '
         'BtnMaximizar
         '
@@ -782,30 +939,6 @@ Partial Class FrmCotizacion2019
         Me.BtnMinimizar.Size = New System.Drawing.Size(32, 32)
         Me.BtnMinimizar.TabIndex = 1
         '
-        'GunaImageButton4
-        '
-        Me.GunaImageButton4.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.GunaImageButton4.Image = Nothing
-        Me.GunaImageButton4.ImageSize = New System.Drawing.Size(16, 16)
-        Me.GunaImageButton4.Location = New System.Drawing.Point(8, 8)
-        Me.GunaImageButton4.Name = "GunaImageButton4"
-        Me.GunaImageButton4.OnHoverImage = Nothing
-        Me.GunaImageButton4.OnHoverImageOffset = New System.Drawing.Point(0, -1)
-        Me.GunaImageButton4.Size = New System.Drawing.Size(32, 32)
-        Me.GunaImageButton4.TabIndex = 0
-        '
-        'lbVersion
-        '
-        Me.lbVersion.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbVersion.AutoSize = True
-        Me.lbVersion.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbVersion.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lbVersion.Location = New System.Drawing.Point(46, 17)
-        Me.lbVersion.Name = "lbVersion"
-        Me.lbVersion.Size = New System.Drawing.Size(53, 20)
-        Me.lbVersion.TabIndex = 10
-        Me.lbVersion.Text = "1.0.0.0"
-        '
         'FrmCotizacion2019
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -823,15 +956,19 @@ Partial Class FrmCotizacion2019
         Me.PanelContenedor.ResumeLayout(False)
         Me.PanelFormularios.ResumeLayout(False)
         Me.PanelFormularios.PerformLayout()
+        Me.GunaElipsePanel3.ResumeLayout(False)
+        Me.GunaElipsePanel3.PerformLayout()
         Me.GunaElipsePanel2.ResumeLayout(False)
         Me.GunaElipsePanel2.PerformLayout()
         CType(Me.DgCotizaciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GunaElipsePanel1.ResumeLayout(False)
         Me.GunaElipsePanel1.PerformLayout()
         CType(Me.DgEmpresas, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelBarraTitulo.ResumeLayout(False)
         Me.PanelBarraTitulo.PerformLayout()
+        Me.GunaElipsePanel4.ResumeLayout(False)
+        Me.GunaElipsePanel4.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GunaPictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GunaPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -890,4 +1027,13 @@ Partial Class FrmCotizacion2019
     Friend WithEvents GunaElipsePanel2 As Guna.UI.WinForms.GunaElipsePanel
     Friend WithEvents RbNumCot As Guna.UI.WinForms.GunaRadioButton
     Friend WithEvents lbVersion As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents GunaElipsePanel3 As Guna.UI.WinForms.GunaElipsePanel
+    Friend WithEvents Rb2017 As Guna.UI.WinForms.GunaRadioButton
+    Friend WithEvents Rb2018 As Guna.UI.WinForms.GunaRadioButton
+    Friend WithEvents Rb2019 As Guna.UI.WinForms.GunaRadioButton
+    Friend WithEvents GunaLabel3 As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents GunaElipsePanel4 As Guna.UI.WinForms.GunaElipsePanel
+    Friend WithEvents RbAnualCot As Guna.UI.WinForms.GunaRadioButton
+    Friend WithEvents RbAnualFolio As Guna.UI.WinForms.GunaRadioButton
+    Friend WithEvents GunaLabel4 As Guna.UI.WinForms.GunaLabel
 End Class

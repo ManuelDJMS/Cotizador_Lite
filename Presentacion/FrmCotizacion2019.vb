@@ -88,8 +88,16 @@ Public Class FrmCotizacion2019
 
     Private Sub DgEmpresas_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgEmpresas.CellDoubleClick
         Try
-            MetodoMetasInf2019() ''MetasINF-2019
+            If Rb2019.Checked = True Then
+                MetodoMetasInf2019()
+            ElseIf Rb2018.Checked = True Then
+                MetodoMetasInf2018()
+            ElseIf Rb2017.Checked = True Then
+                MetodoMetasInf2017()
+            End If
+            ''MetasINF-2019
             clave1 = DgEmpresas.Rows(e.RowIndex).Cells(0).Value.ToString()
+            empresa = DgEmpresas.Rows(e.RowIndex).Cells(0).Value.ToString()
             If DgCotizaciones.Rows.Count < 2 Then
             Else
                 DgCotizaciones.Rows.Clear()
@@ -174,6 +182,7 @@ Public Class FrmCotizacion2019
     Private Sub DgCotizaciones_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgCotizaciones.CellDoubleClick
         Try
             NumCot = DgCotizaciones.Rows(e.RowIndex).Cells(0).Value.ToString
+
             FrmEdicionCot2019_2020.TxtCotizacion.Text = NumCot
             FrmEdicionCot2019_2020.Show()
             Me.WindowState = FormWindowState.Minimized
@@ -187,26 +196,48 @@ Public Class FrmCotizacion2019
     End Sub
 
     Private Sub RbFolio_CheckedChanged(sender As Object, e As EventArgs) Handles RbFolio.CheckedChanged
-        If RbFolio.Checked = True Then
-            respuestafolio = InputBox("Folio", "Ingrese la confirmación metrológica:")
-            FrmEdicionCot2019_2020.LbNumCon.Visible = False
-            FrmEdicionCot2019_2020.TxtNumCon.Visible = False
-            FrmEdicionCot2019_2020.LbtxtNumCon.Visible = True
-            FrmEdicionCot2019_2020.TxtNumCond.Visible = True
-            FrmEdicionCot2019_2020.LbCotizo2019.Enabled = False
-            FrmEdicionCot2019_2020.TxtCotizo.Enabled = False
-            FrmEdicionCot2019_2020.TxtObservaciones.Text = "*La cotización fué realizada en base a la información recibida. Cualquier diferencia entre su solicitud y esta cotización contactar a Ventas*"
-            FrmEdicionCot2019_2020.Show()
-        End If
-
+        Try
+            If RbFolio.Checked = True Then
+                respuestafolio = InputBox("Folio", "Ingrese la confirmación metrológica:")
+                If Rb2019.Checked = True Then
+                    anio = 2019
+                ElseIf Rb2018.Checked = True Then
+                    anio = 2018
+                ElseIf Rb2017.Checked = True Then
+                    anio = 2017
+                End If
+                FrmEdicionCot2019_2020.LbNumCon.Visible = False
+                FrmEdicionCot2019_2020.TxtNumCon.Visible = False
+                FrmEdicionCot2019_2020.LbtxtNumCon.Visible = True
+                FrmEdicionCot2019_2020.TxtNumCond.Visible = True
+                FrmEdicionCot2019_2020.LbCotizo2019.Enabled = False
+                FrmEdicionCot2019_2020.TxtCotizo.Enabled = False
+                FrmEdicionCot2019_2020.TxtObservaciones.Text = "*La cotización fué realizada en base a la información recibida. Cualquier diferencia entre su solicitud y esta cotización contactar a Ventas*"
+                FrmEdicionCot2019_2020.Show()
+            End If
+        Catch ex As Exception
+            MsgBox("Se canceló la búsqueda", MsgBoxStyle.Critical, "Folio")
+        End Try
     End Sub
 
     Private Sub RbNumCot_CheckedChanged(sender As Object, e As EventArgs) Handles RbNumCot.CheckedChanged
-        If RbNumCot.Checked = True Then
-            NumCot = InputBox("Cotización", "Ingrese el Número de Cotización:")
-            FrmEdicionCot2019_2020.TxtCotizacion.Text = NumCot
-            FrmEdicionCot2019_2020.Show()
-        End If
+        Try
+
+            If RbNumCot.Checked = True Then
+                NumCot = InputBox("Cotización", "Ingrese el Número de Cotización:")
+                If Rb2019.Checked = True Then
+                    anio = 2019
+                ElseIf Rb2018.Checked = True Then
+                    anio = 2018
+                ElseIf Rb2017.Checked = True Then
+                    anio = 2017
+                End If
+                FrmEdicionCot2019_2020.TxtCotizacion.Text = NumCot
+                FrmEdicionCot2019_2020.Show()
+            End If
+        Catch ex As Exception
+            MsgBox("Se canceló la búsqueda", MsgBoxStyle.Critical, "Número de Cotización")
+        End Try
     End Sub
 
     Private Sub FrmHOME_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -232,6 +263,119 @@ Public Class FrmCotizacion2019
             cadena = cadena.Replace("'", "")
             Bitacora("FrmCotizacion2019", "Error al cargar los clientes", Err.Number, cadena)
         End Try
+    End Sub
+
+    Private Sub Rb2019_CheckedChanged(sender As Object, e As EventArgs) Handles Rb2019.CheckedChanged
+        Try
+            anio = 2019
+            If clave1 <> 0 Then
+                MetodoMetasInf2019()
+
+                If DgCotizaciones.Rows.Count < 2 Then
+                Else
+                    DgCotizaciones.Rows.Clear()
+                End If
+                comando2019 = conexion2019.CreateCommand
+                R = "select EntradaRegistroCot.Numcot, EntradaRegistroCot.Cliente, 
+                EntradaRegistroCot.Fecha, EntradaRegistroCot.Referencia, [Claves-Elaboro-Cot].Nombre as [Elaboró] from EntradaRegistroCot
+                inner join [Claves-Elaboro-Cot] on [Claves-Elaboro-Cot].[Clave-elaboro-cot] = EntradaRegistroCot.[Elaboró Cot]
+                where EntradaRegistroCot.CveEmpresa=" & clave1
+                comando2019.CommandText = R
+                lector2019 = comando2019.ExecuteReader
+                While lector2019.Read()
+                    DgCotizaciones.Rows.Add(lector2019(0), lector2019(1), lector2019(2), lector2019(3), lector2019(4))
+                End While
+                lector2019.Close()
+                conexion2019.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del Sistema")
+            cadena = Err.Description
+            cadena = cadena.Replace("'", "")
+            Bitacora("FrmCotizacion2019", "Error al iniciar el formulario", Err.Number, cadena)
+        End Try
+    End Sub
+
+    Private Sub Rb2018_CheckedChanged(sender As Object, e As EventArgs) Handles Rb2018.CheckedChanged
+        Try
+            If clave1 <> 0 Then
+                anio = 2018
+                MetodoMetasInf2018()
+
+                If DgCotizaciones.Rows.Count < 2 Then
+                Else
+                    DgCotizaciones.Rows.Clear()
+                End If
+                comando2019 = conexion2019.CreateCommand
+                R = "select EntradaRegistroCot.Numcot, EntradaRegistroCot.Cliente, 
+                EntradaRegistroCot.Fecha, EntradaRegistroCot.Referencia, [Claves-Elaboro-Cot].Nombre as [Elaboró] from EntradaRegistroCot
+                inner join [Claves-Elaboro-Cot] on [Claves-Elaboro-Cot].[Clave-elaboro-cot] = EntradaRegistroCot.[Elaboró Cot]
+                where EntradaRegistroCot.CveEmpresa=" & clave1
+                comando2019.CommandText = R
+                lector2019 = comando2019.ExecuteReader
+                While lector2019.Read()
+                    DgCotizaciones.Rows.Add(lector2019(0), lector2019(1), lector2019(2), lector2019(3), lector2019(4))
+                End While
+                lector2019.Close()
+                conexion2019.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del Sistema")
+            cadena = Err.Description
+            cadena = cadena.Replace("'", "")
+            Bitacora("FrmCotizacion2019", "Error al iniciar el formulario", Err.Number, cadena)
+        End Try
+    End Sub
+
+    Private Sub Rb2017_CheckedChanged(sender As Object, e As EventArgs) Handles Rb2017.CheckedChanged
+        Try
+            If clave1 <> 0 Then
+                MetodoMetasInf2017()
+                anio = 2017
+                If DgCotizaciones.Rows.Count < 2 Then
+                Else
+                    DgCotizaciones.Rows.Clear()
+                End If
+                comando2019 = conexion2019.CreateCommand
+                R = "select EntradaRegistroCot.Numcot, EntradaRegistroCot.Cliente, 
+                EntradaRegistroCot.Fecha, EntradaRegistroCot.Referencia, [Claves-Elaboro-Cot].Nombre as [Elaboró] from EntradaRegistroCot
+                inner join [Claves-Elaboro-Cot] on [Claves-Elaboro-Cot].[Clave-elaboro-cot] = EntradaRegistroCot.[Elaboró Cot]
+                where EntradaRegistroCot.CveEmpresa=" & clave1
+                comando2019.CommandText = R
+                lector2019 = comando2019.ExecuteReader
+                While lector2019.Read()
+                    DgCotizaciones.Rows.Add(lector2019(0), lector2019(1), lector2019(2), lector2019(3), lector2019(4))
+                End While
+                lector2019.Close()
+                conexion2019.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del Sistema")
+            cadena = Err.Description
+            cadena = cadena.Replace("'", "")
+            Bitacora("FrmCotizacion2019", "Error al iniciar el formulario", Err.Number, cadena)
+        End Try
+    End Sub
+
+    Private Sub RbAnualFolio_CheckedChanged(sender As Object, e As EventArgs) Handles RbAnualFolio.CheckedChanged
+        If empresa = 0 Then
+            MsgBox("No se ha seleccionado ninguna empresa", MsgBoxStyle.Critical, "Error del Sistema")
+        Else
+            anual = 1
+            cot = 1
+            FrmEdicionCot2019_2020.Show()
+            Me.WindowState = FormWindowState.Minimized
+        End If
+    End Sub
+
+    Private Sub RbAnualCot_CheckedChanged(sender As Object, e As EventArgs) Handles RbAnualCot.CheckedChanged
+        If empresa = 0 Then
+            MsgBox("No se ha seleccionado ninguna empresa", MsgBoxStyle.Critical, "Error del Sistema")
+        Else
+            anual = 1
+            FrmEdicionCot2019_2020.Show()
+            Me.WindowState = FormWindowState.Minimized
+        End If
     End Sub
 #End Region
     Sub ConsultarEmpresas()

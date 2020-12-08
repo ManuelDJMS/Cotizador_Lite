@@ -3,10 +3,14 @@ Imports System.Data.SqlClient
 Module Funciones
     Public cadena As String 'VARIABLE PARA LA BITACORA
     Public R As String 'VARIABLE QUE ALMACENA TODOS LOS QUERYS
-    Public empresa As Integer 'VARIABLE PARA BUSCAR EMPRESA FRMCOTIZACIONPORARTICULO
+    Public empresa As Integer = 0 'VARIABLE PARA BUSCAR EMPRESA FRMCOTIZACIONPORARTICULO
     Public respuestafolio As Integer = 0
     Public NumCot As Integer
     Public partida1 As Integer = 1 'VARIABLE PARA CONTROLAR LA PARTIDA PARA AGREGAR ARTICULOS
+    Public anio As Integer
+    Public anual As Integer
+    Public cot As Integer = 0
+    Public fol As Integer = 0
     '-------------------------CODIGO PARA LAS ALERTAS ---------------------------
     Public Sub Alert(msg As String, type As frmAlert.alertTypeEnum)
         Dim f As frmAlert = New frmAlert

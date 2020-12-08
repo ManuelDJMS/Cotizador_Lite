@@ -13,27 +13,43 @@ Module Conexiones
     Public comandogeneral As SqlCommand
     Public lectorgeneral As SqlDataReader
     '================================================VARIABLE PARA UTILIZAR LA TRANSACCION DEL LIMS=========================================================================
-    Public conexion2020transac As String = ("Data Source=IRONMAN;Initial Catalog=METASINF-2020; User Id=sa; Password=Met99011578a;Integrated Security=False")
+    Public conexion2020transac As String = ("Data Source=10.10.10.254\COMPAC2;Initial Catalog=METASINF-2020; User Id=sa; Password=Met99011578a;Integrated Security=False")
     '=======================================================================================================================================================================
     Sub MetodoMetasInf2019()
         Try
-            conexion2019 = New SqlConnection("Data Source=IRONMAN;Initial Catalog=MetasInf-2019; User Id=sa; Password=Met99011578a;Integrated Security=False")
+            conexion2019 = New SqlConnection("Data Source=10.10.10.254\COMPAC2;Initial Catalog=MetasInf-2019; User Id=sa; Password=Met99011578a;Integrated Security=False")
             conexion2019.Open()
         Catch ex As Exception
             MsgBox("No se pudo conectar a la base de datos" + ex.ToString)
         End Try
     End Sub
-    Sub MetodoCotizador2020()
+    Sub MetodoMetasInf2018()
         Try
-            conexion2020 = New SqlConnection("Data Source=SERVER3\COMPAC2;Initial Catalog=MetasCotizador-3; User Id=sa; Password=Met99011578a;Integrated Security=False")
-            conexion2020.Open()
+            conexion2019 = New SqlConnection("Data Source=10.10.10.254\COMPAC2;Initial Catalog=MetasInf-2018; User Id=sa; Password=Met99011578a;Integrated Security=False")
+            conexion2019.Open()
         Catch ex As Exception
             MsgBox("No se pudo conectar a la base de datos" + ex.ToString)
         End Try
     End Sub
+    Sub MetodoMetasInf2017()
+        Try
+            conexion2019 = New SqlConnection("Data Source=10.10.10.254\COMPAC2;Initial Catalog=MetasInf-2017; User Id=sa; Password=Met99011578a;Integrated Security=False")
+            conexion2019.Open()
+        Catch ex As Exception
+            MsgBox("No se pudo conectar a la base de datos" + ex.ToString)
+        End Try
+    End Sub
+    'Sub MetodoCotizador2020()
+    '    Try
+    '        conexion2020 = New SqlConnection("Data Source=SERVER3\COMPAC2;Initial Catalog=MetasCotizador-3; User Id=sa; Password=Met99011578a;Integrated Security=False")
+    '        conexion2020.Open()
+    '    Catch ex As Exception
+    '        MsgBox("No se pudo conectar a la base de datos" + ex.ToString)
+    '    End Try
+    'End Sub
     Sub MetodoInformacionGeneral()
         Try
-            conexiongeneral = New SqlConnection("Data Source=IRONMAN;Initial Catalog=InformacionGeneral; User Id=sa; Password=Met99011578a;Integrated Security=False")
+            conexiongeneral = New SqlConnection("Data Source=10.10.10.254\COMPAC2;Initial Catalog=InformacionGeneral; User Id=sa; Password=Met99011578a;Integrated Security=False")
             conexiongeneral.Open()
         Catch ex As Exception
             MsgBox("No se pudo conectar a la base de datos" + ex.ToString)

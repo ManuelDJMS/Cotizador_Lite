@@ -29,7 +29,6 @@ Partial Class FrmEdicionCot2019_2020
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEdicionCot2019_2020))
         Me.PanelContenedor = New System.Windows.Forms.Panel()
         Me.PanelFormularios = New System.Windows.Forms.Panel()
-        Me.BtnBorrar = New Guna.UI.WinForms.GunaButton()
         Me.DgCotizaciones = New Guna.UI.WinForms.GunaDataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -46,7 +45,6 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaElipsePanel1 = New Guna.UI.WinForms.GunaElipsePanel()
         Me.LbtxtNumCon = New Guna.UI.WinForms.GunaLabel()
         Me.TxtNumCond = New Guna.UI.WinForms.GunaTextBox()
-        Me.btnGuardar = New Guna.UI.WinForms.GunaButton()
         Me.TxtCotizo2020 = New Guna.UI.WinForms.GunaTextBox()
         Me.TxtConta = New Guna.UI.WinForms.GunaTextBox()
         Me.TxtTipoCliente = New Guna.UI.WinForms.GunaTextBox()
@@ -98,7 +96,6 @@ Partial Class FrmEdicionCot2019_2020
         Me.LbMarca = New Guna.UI.WinForms.GunaLabel()
         Me.GunaSeparator1 = New Guna.UI.WinForms.GunaSeparator()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GunaLabel2 = New Guna.UI.WinForms.GunaLabel()
         Me.LbCot_Folio = New Guna.UI.WinForms.GunaLabel()
         Me.TxtCotizacion = New Guna.UI.WinForms.GunaTextBox()
@@ -106,26 +103,30 @@ Partial Class FrmEdicionCot2019_2020
         Me.TxtCotizacion20 = New Guna.UI.WinForms.GunaTextBox()
         Me.GunaVSeparator3 = New Guna.UI.WinForms.GunaVSeparator()
         Me.PanelBarraTitulo = New Guna.UI.WinForms.GunaPanel()
-        Me.GunaPictureBox2 = New Guna.UI.WinForms.GunaPictureBox()
-        Me.BtnRestaurar = New Guna.UI.WinForms.GunaImageButton()
-        Me.BtnCerrar = New Guna.UI.WinForms.GunaImageButton()
         Me.GunaVSeparator2 = New Guna.UI.WinForms.GunaVSeparator()
         Me.LbLogin = New Guna.UI.WinForms.GunaLabel()
-        Me.GunaPictureBox1 = New Guna.UI.WinForms.GunaPictureBox()
         Me.GunaVSeparator1 = New Guna.UI.WinForms.GunaVSeparator()
-        Me.BtnMaximizar = New Guna.UI.WinForms.GunaImageButton()
-        Me.BtnMinimizar = New Guna.UI.WinForms.GunaImageButton()
         Me.GunaImageButton4 = New Guna.UI.WinForms.GunaImageButton()
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.GunaAnimateWindow1 = New Guna.UI.WinForms.GunaAnimateWindow(Me.components)
+        Me.BntActualizarPart = New Guna.UI.WinForms.GunaButton()
         Me.btnAgregar = New Guna.UI.WinForms.GunaButton()
+        Me.BtnBorrar = New Guna.UI.WinForms.GunaButton()
+        Me.btnGuardar = New Guna.UI.WinForms.GunaButton()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.GunaPictureBox2 = New Guna.UI.WinForms.GunaPictureBox()
+        Me.BtnRestaurar = New Guna.UI.WinForms.GunaImageButton()
+        Me.BtnCerrar = New Guna.UI.WinForms.GunaImageButton()
+        Me.GunaPictureBox1 = New Guna.UI.WinForms.GunaPictureBox()
+        Me.BtnMaximizar = New Guna.UI.WinForms.GunaImageButton()
+        Me.BtnMinimizar = New Guna.UI.WinForms.GunaImageButton()
         Me.PanelContenedor.SuspendLayout()
         Me.PanelFormularios.SuspendLayout()
         CType(Me.DgCotizaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GunaElipsePanel1.SuspendLayout()
         Me.GunaElipsePanel2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBarraTitulo.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GunaPictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GunaPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -142,6 +143,7 @@ Partial Class FrmEdicionCot2019_2020
         '
         'PanelFormularios
         '
+        Me.PanelFormularios.Controls.Add(Me.BntActualizarPart)
         Me.PanelFormularios.Controls.Add(Me.btnAgregar)
         Me.PanelFormularios.Controls.Add(Me.BtnBorrar)
         Me.PanelFormularios.Controls.Add(Me.DgCotizaciones)
@@ -162,33 +164,6 @@ Partial Class FrmEdicionCot2019_2020
         Me.PanelFormularios.Name = "PanelFormularios"
         Me.PanelFormularios.Size = New System.Drawing.Size(1160, 625)
         Me.PanelFormularios.TabIndex = 6
-        '
-        'BtnBorrar
-        '
-        Me.BtnBorrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnBorrar.AnimationHoverSpeed = 0.07!
-        Me.BtnBorrar.AnimationSpeed = 0.03!
-        Me.BtnBorrar.BackColor = System.Drawing.Color.Transparent
-        Me.BtnBorrar.BaseColor = System.Drawing.Color.Firebrick
-        Me.BtnBorrar.BorderColor = System.Drawing.Color.Black
-        Me.BtnBorrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnBorrar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.BtnBorrar.FocusedColor = System.Drawing.Color.Empty
-        Me.BtnBorrar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnBorrar.ForeColor = System.Drawing.Color.White
-        Me.BtnBorrar.Image = Global.Cotizador_Lite.My.Resources.Resources.icons8_cancel_28
-        Me.BtnBorrar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.BtnBorrar.Location = New System.Drawing.Point(1023, 588)
-        Me.BtnBorrar.Name = "BtnBorrar"
-        Me.BtnBorrar.OnHoverBaseColor = System.Drawing.Color.IndianRed
-        Me.BtnBorrar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.BtnBorrar.OnHoverForeColor = System.Drawing.Color.White
-        Me.BtnBorrar.OnHoverImage = Nothing
-        Me.BtnBorrar.OnPressedColor = System.Drawing.Color.Black
-        Me.BtnBorrar.Radius = 3
-        Me.BtnBorrar.Size = New System.Drawing.Size(111, 27)
-        Me.BtnBorrar.TabIndex = 291
-        Me.BtnBorrar.Text = "Eliminar"
         '
         'DgCotizaciones
         '
@@ -387,32 +362,6 @@ Partial Class FrmEdicionCot2019_2020
         Me.TxtNumCond.Size = New System.Drawing.Size(38, 26)
         Me.TxtNumCond.TabIndex = 221
         Me.TxtNumCond.Visible = False
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.AnimationHoverSpeed = 0.07!
-        Me.btnGuardar.AnimationSpeed = 0.03!
-        Me.btnGuardar.BackColor = System.Drawing.Color.Transparent
-        Me.btnGuardar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(85, Byte), Integer))
-        Me.btnGuardar.BorderColor = System.Drawing.Color.Black
-        Me.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnGuardar.FocusedColor = System.Drawing.Color.Empty
-        Me.btnGuardar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Image = Global.Cotizador_Lite.My.Resources.Resources.icons8_save_28
-        Me.btnGuardar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnGuardar.Location = New System.Drawing.Point(413, 192)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(90, Byte), Integer))
-        Me.btnGuardar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnGuardar.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnGuardar.OnHoverImage = Nothing
-        Me.btnGuardar.OnPressedColor = System.Drawing.Color.Black
-        Me.btnGuardar.Radius = 3
-        Me.btnGuardar.Size = New System.Drawing.Size(111, 28)
-        Me.btnGuardar.TabIndex = 220
-        Me.btnGuardar.Text = "Guardar"
         '
         'TxtCotizo2020
         '
@@ -1034,17 +983,6 @@ Partial Class FrmEdicionCot2019_2020
         Me.Label26.TabIndex = 170
         Me.Label26.Text = "Exportar Cotizaciones 2019 a 2020"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(11, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(66, 50)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 169
-        Me.PictureBox1.TabStop = False
-        '
         'GunaLabel2
         '
         Me.GunaLabel2.AutoSize = True
@@ -1143,6 +1081,177 @@ Partial Class FrmEdicionCot2019_2020
         Me.PanelBarraTitulo.Size = New System.Drawing.Size(1160, 50)
         Me.PanelBarraTitulo.TabIndex = 5
         '
+        'GunaVSeparator2
+        '
+        Me.GunaVSeparator2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GunaVSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.GunaVSeparator2.LineColor = System.Drawing.Color.WhiteSmoke
+        Me.GunaVSeparator2.Location = New System.Drawing.Point(799, 12)
+        Me.GunaVSeparator2.Name = "GunaVSeparator2"
+        Me.GunaVSeparator2.Size = New System.Drawing.Size(10, 25)
+        Me.GunaVSeparator2.TabIndex = 6
+        '
+        'LbLogin
+        '
+        Me.LbLogin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LbLogin.AutoSize = True
+        Me.LbLogin.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbLogin.Location = New System.Drawing.Point(872, 17)
+        Me.LbLogin.Name = "LbLogin"
+        Me.LbLogin.Size = New System.Drawing.Size(62, 20)
+        Me.LbLogin.TabIndex = 5
+        Me.LbLogin.Text = "VENTAS"
+        '
+        'GunaVSeparator1
+        '
+        Me.GunaVSeparator1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GunaVSeparator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.GunaVSeparator1.LineColor = System.Drawing.Color.WhiteSmoke
+        Me.GunaVSeparator1.Location = New System.Drawing.Point(1035, 12)
+        Me.GunaVSeparator1.Name = "GunaVSeparator1"
+        Me.GunaVSeparator1.Size = New System.Drawing.Size(10, 25)
+        Me.GunaVSeparator1.TabIndex = 3
+        '
+        'GunaImageButton4
+        '
+        Me.GunaImageButton4.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.GunaImageButton4.Image = Nothing
+        Me.GunaImageButton4.ImageSize = New System.Drawing.Size(16, 16)
+        Me.GunaImageButton4.Location = New System.Drawing.Point(8, 8)
+        Me.GunaImageButton4.Name = "GunaImageButton4"
+        Me.GunaImageButton4.OnHoverImage = Nothing
+        Me.GunaImageButton4.OnHoverImageOffset = New System.Drawing.Point(0, -1)
+        Me.GunaImageButton4.Size = New System.Drawing.Size(32, 32)
+        Me.GunaImageButton4.TabIndex = 0
+        '
+        'GunaElipse1
+        '
+        Me.GunaElipse1.TargetControl = Me
+        '
+        'GunaAnimateWindow1
+        '
+        Me.GunaAnimateWindow1.AnimationType = Guna.UI.WinForms.GunaAnimateWindow.AnimateWindowType.AW_CENTER
+        Me.GunaAnimateWindow1.Interval = 900
+        Me.GunaAnimateWindow1.TargetControl = Me
+        '
+        'BntActualizarPart
+        '
+        Me.BntActualizarPart.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.BntActualizarPart.AnimationHoverSpeed = 0.07!
+        Me.BntActualizarPart.AnimationSpeed = 0.03!
+        Me.BntActualizarPart.BackColor = System.Drawing.Color.Transparent
+        Me.BntActualizarPart.BaseColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.BntActualizarPart.BorderColor = System.Drawing.Color.Black
+        Me.BntActualizarPart.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BntActualizarPart.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.BntActualizarPart.FocusedColor = System.Drawing.Color.Empty
+        Me.BntActualizarPart.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.BntActualizarPart.ForeColor = System.Drawing.Color.White
+        Me.BntActualizarPart.Image = Global.Cotizador_Lite.My.Resources.Resources.icons8_update_48
+        Me.BntActualizarPart.ImageSize = New System.Drawing.Size(20, 20)
+        Me.BntActualizarPart.Location = New System.Drawing.Point(716, 588)
+        Me.BntActualizarPart.Name = "BntActualizarPart"
+        Me.BntActualizarPart.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BntActualizarPart.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.BntActualizarPart.OnHoverForeColor = System.Drawing.Color.White
+        Me.BntActualizarPart.OnHoverImage = Nothing
+        Me.BntActualizarPart.OnPressedColor = System.Drawing.Color.Black
+        Me.BntActualizarPart.Radius = 3
+        Me.BntActualizarPart.Size = New System.Drawing.Size(148, 28)
+        Me.BntActualizarPart.TabIndex = 310
+        Me.BntActualizarPart.Text = "Actualizar Partidas"
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnAgregar.AnimationHoverSpeed = 0.07!
+        Me.btnAgregar.AnimationSpeed = 0.03!
+        Me.btnAgregar.BackColor = System.Drawing.Color.Transparent
+        Me.btnAgregar.BaseColor = System.Drawing.Color.SteelBlue
+        Me.btnAgregar.BorderColor = System.Drawing.Color.Black
+        Me.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAgregar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnAgregar.FocusedColor = System.Drawing.Color.Empty
+        Me.btnAgregar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnAgregar.ForeColor = System.Drawing.Color.White
+        Me.btnAgregar.Image = Global.Cotizador_Lite.My.Resources.Resources.icons8_add_48
+        Me.btnAgregar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnAgregar.Location = New System.Drawing.Point(869, 588)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAgregar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnAgregar.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnAgregar.OnHoverImage = Nothing
+        Me.btnAgregar.OnPressedColor = System.Drawing.Color.Black
+        Me.btnAgregar.Radius = 3
+        Me.btnAgregar.Size = New System.Drawing.Size(148, 28)
+        Me.btnAgregar.TabIndex = 309
+        Me.btnAgregar.Text = "Agregar Artículos"
+        '
+        'BtnBorrar
+        '
+        Me.BtnBorrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnBorrar.AnimationHoverSpeed = 0.07!
+        Me.BtnBorrar.AnimationSpeed = 0.03!
+        Me.BtnBorrar.BackColor = System.Drawing.Color.Transparent
+        Me.BtnBorrar.BaseColor = System.Drawing.Color.Firebrick
+        Me.BtnBorrar.BorderColor = System.Drawing.Color.Black
+        Me.BtnBorrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnBorrar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.BtnBorrar.FocusedColor = System.Drawing.Color.Empty
+        Me.BtnBorrar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnBorrar.ForeColor = System.Drawing.Color.White
+        Me.BtnBorrar.Image = Global.Cotizador_Lite.My.Resources.Resources.icons8_cancel_28
+        Me.BtnBorrar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.BtnBorrar.Location = New System.Drawing.Point(1023, 588)
+        Me.BtnBorrar.Name = "BtnBorrar"
+        Me.BtnBorrar.OnHoverBaseColor = System.Drawing.Color.IndianRed
+        Me.BtnBorrar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.BtnBorrar.OnHoverForeColor = System.Drawing.Color.White
+        Me.BtnBorrar.OnHoverImage = Nothing
+        Me.BtnBorrar.OnPressedColor = System.Drawing.Color.Black
+        Me.BtnBorrar.Radius = 3
+        Me.BtnBorrar.Size = New System.Drawing.Size(111, 27)
+        Me.BtnBorrar.TabIndex = 291
+        Me.BtnBorrar.Text = "Eliminar"
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.AnimationHoverSpeed = 0.07!
+        Me.btnGuardar.AnimationSpeed = 0.03!
+        Me.btnGuardar.BackColor = System.Drawing.Color.Transparent
+        Me.btnGuardar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(85, Byte), Integer))
+        Me.btnGuardar.BorderColor = System.Drawing.Color.Black
+        Me.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnGuardar.FocusedColor = System.Drawing.Color.Empty
+        Me.btnGuardar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnGuardar.ForeColor = System.Drawing.Color.White
+        Me.btnGuardar.Image = Global.Cotizador_Lite.My.Resources.Resources.icons8_save_28
+        Me.btnGuardar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnGuardar.Location = New System.Drawing.Point(413, 192)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.btnGuardar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnGuardar.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnGuardar.OnHoverImage = Nothing
+        Me.btnGuardar.OnPressedColor = System.Drawing.Color.Black
+        Me.btnGuardar.Radius = 3
+        Me.btnGuardar.Size = New System.Drawing.Size(111, 28)
+        Me.btnGuardar.TabIndex = 220
+        Me.btnGuardar.Text = "Guardar"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(11, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(66, 50)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 169
+        Me.PictureBox1.TabStop = False
+        '
         'GunaPictureBox2
         '
         Me.GunaPictureBox2.BaseColor = System.Drawing.Color.White
@@ -1183,27 +1292,6 @@ Partial Class FrmEdicionCot2019_2020
         Me.BtnCerrar.Size = New System.Drawing.Size(32, 32)
         Me.BtnCerrar.TabIndex = 7
         '
-        'GunaVSeparator2
-        '
-        Me.GunaVSeparator2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GunaVSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.GunaVSeparator2.LineColor = System.Drawing.Color.WhiteSmoke
-        Me.GunaVSeparator2.Location = New System.Drawing.Point(799, 12)
-        Me.GunaVSeparator2.Name = "GunaVSeparator2"
-        Me.GunaVSeparator2.Size = New System.Drawing.Size(10, 25)
-        Me.GunaVSeparator2.TabIndex = 6
-        '
-        'LbLogin
-        '
-        Me.LbLogin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LbLogin.AutoSize = True
-        Me.LbLogin.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbLogin.Location = New System.Drawing.Point(872, 17)
-        Me.LbLogin.Name = "LbLogin"
-        Me.LbLogin.Size = New System.Drawing.Size(62, 20)
-        Me.LbLogin.TabIndex = 5
-        Me.LbLogin.Text = "VENTAS"
-        '
         'GunaPictureBox1
         '
         Me.GunaPictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -1215,16 +1303,6 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.GunaPictureBox1.TabIndex = 4
         Me.GunaPictureBox1.TabStop = False
-        '
-        'GunaVSeparator1
-        '
-        Me.GunaVSeparator1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GunaVSeparator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.GunaVSeparator1.LineColor = System.Drawing.Color.WhiteSmoke
-        Me.GunaVSeparator1.Location = New System.Drawing.Point(1035, 12)
-        Me.GunaVSeparator1.Name = "GunaVSeparator1"
-        Me.GunaVSeparator1.Size = New System.Drawing.Size(10, 25)
-        Me.GunaVSeparator1.TabIndex = 3
         '
         'BtnMaximizar
         '
@@ -1254,55 +1332,6 @@ Partial Class FrmEdicionCot2019_2020
         Me.BtnMinimizar.Size = New System.Drawing.Size(32, 32)
         Me.BtnMinimizar.TabIndex = 1
         '
-        'GunaImageButton4
-        '
-        Me.GunaImageButton4.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.GunaImageButton4.Image = Nothing
-        Me.GunaImageButton4.ImageSize = New System.Drawing.Size(16, 16)
-        Me.GunaImageButton4.Location = New System.Drawing.Point(8, 8)
-        Me.GunaImageButton4.Name = "GunaImageButton4"
-        Me.GunaImageButton4.OnHoverImage = Nothing
-        Me.GunaImageButton4.OnHoverImageOffset = New System.Drawing.Point(0, -1)
-        Me.GunaImageButton4.Size = New System.Drawing.Size(32, 32)
-        Me.GunaImageButton4.TabIndex = 0
-        '
-        'GunaElipse1
-        '
-        Me.GunaElipse1.TargetControl = Me
-        '
-        'GunaAnimateWindow1
-        '
-        Me.GunaAnimateWindow1.AnimationType = Guna.UI.WinForms.GunaAnimateWindow.AnimateWindowType.AW_CENTER
-        Me.GunaAnimateWindow1.Interval = 900
-        Me.GunaAnimateWindow1.TargetControl = Me
-        '
-        'btnAgregar
-        '
-        Me.btnAgregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnAgregar.AnimationHoverSpeed = 0.07!
-        Me.btnAgregar.AnimationSpeed = 0.03!
-        Me.btnAgregar.BackColor = System.Drawing.Color.Transparent
-        Me.btnAgregar.BaseColor = System.Drawing.Color.SteelBlue
-        Me.btnAgregar.BorderColor = System.Drawing.Color.Black
-        Me.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAgregar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnAgregar.FocusedColor = System.Drawing.Color.Empty
-        Me.btnAgregar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btnAgregar.ForeColor = System.Drawing.Color.White
-        Me.btnAgregar.Image = Global.Cotizador_Lite.My.Resources.Resources.icons8_add_48
-        Me.btnAgregar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnAgregar.Location = New System.Drawing.Point(869, 588)
-        Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnAgregar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnAgregar.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnAgregar.OnHoverImage = Nothing
-        Me.btnAgregar.OnPressedColor = System.Drawing.Color.Black
-        Me.btnAgregar.Radius = 3
-        Me.btnAgregar.Size = New System.Drawing.Size(148, 28)
-        Me.btnAgregar.TabIndex = 309
-        Me.btnAgregar.Text = "Agregar Artículos"
-        '
         'FrmEdicionCot2019_2020
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1324,9 +1353,9 @@ Partial Class FrmEdicionCot2019_2020
         Me.GunaElipsePanel1.PerformLayout()
         Me.GunaElipsePanel2.ResumeLayout(False)
         Me.GunaElipsePanel2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelBarraTitulo.ResumeLayout(False)
         Me.PanelBarraTitulo.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GunaPictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GunaPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -1425,4 +1454,5 @@ Partial Class FrmEdicionCot2019_2020
     Friend WithEvents LbLogin As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaPictureBox1 As Guna.UI.WinForms.GunaPictureBox
     Friend WithEvents btnAgregar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents BntActualizarPart As Guna.UI.WinForms.GunaButton
 End Class
